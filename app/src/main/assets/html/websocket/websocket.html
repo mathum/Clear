@@ -1,0 +1,146 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>IMSSocket</title>
+	<script language="javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script language="javascript" src="js/socket.io-1.2.0.js"></script>
+	<script>
+		var socketArray = new Array();
+		
+		//{mac:@mac , app:@app , percent:@percent}
+		function sendAppInfo(appinfo){
+			//imsCommand.log('sendAppInfo');
+			var delFlag = false;
+			for(var i =0 ; i < socketArray.length ; i++){
+				//imsCommand.log(socketArray[i].io.uri);
+				try{
+					socketArray[i].emit('appPlayInfo', appinfo );
+					//socketArray[i].emit('appPlayInfo', {mac:'dddd' , app:'即' , percent:(new Date()).getTime()} );
+					
+					
+				}catch(e){
+					//console.log(socketArray);
+					imsCommand.removeServer(socketArray[i].io.uri);
+					delete socketArray[i] ;
+					delFlag = true ;
+					//console.log(socketArray);
+				}
+				
+			}
+			
+			if(delFlag){//删除过期
+				var _copy = new Array();
+				for(var i =0 ; i < socketArray.length ; i++){
+					if(	socketArray[i] ){
+						_copy.push( socketArray[i] );
+					}
+					
+				}
+				socketArray = _copy;
+			}
+		}
+		
+		function removeSocket(uri) {
+			var delFlag = false;
+			for(var i =0 ; i < socketArray.length ; i++){
+				if (socketArray[i].io.uri == uri) {
+					delete socketArray[i] ;
+					delFlag = true ;
+				}
+			}
+			
+			if(delFlag){//删除过期
+				var _copy = new Array();
+				for(var i =0 ; i < socketArray.length ; i++){
+					if(	socketArray[i] ){
+						_copy.push( socketArray[i] );
+					}
+					
+				}
+				socketArray = _copy;
+			}
+		}
+		
+		function GetRequest() {
+			var url = location.search; //获取url中"?"符后的字串
+			var theRequest = new Object();
+			if (url.indexOf("?") != -1) { 
+				var str = url.substr(1);
+				strs = str.split("&");
+				for(var i = 0; i < strs.length; i ++) { 
+					theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+				}
+			}
+			return theRequest;
+		}
+		
+		
+		function connectViaURL(){
+			var theRequst = GetRequest();
+			var factory = new WebsocketFactory(theRequst);
+			factory.connect();
+		}
+		
+		function connectViaJSON(json){
+			var factory = new WebsocketFactory(json);
+			factory.connect();
+		}
+		
+		
+		function WebsocketFactory(request){
+			var server = request['server'];
+			var port = request['port'];
+			var mac = request['mac'];
+			var version = request['version'];
+			var localIp = request['ip'];
+			
+			this.socket = null;
+			var self = this;
+			
+			this.connect = function(){
+				//var self = this;
+				
+				self.socket = io.connect('http://' + server + ':' + port);
+				socketArray.push(self.socket);
+				self.socket.on('connected',function (socketId) {
+					var isActive = imsCommand.isActive();
+					var user = {
+						'mac':mac,
+						'version':version,
+						'ip':localIp,
+						'state':isActive
+					};
+					
+					self.socket.emit('login', user, function(result) {
+						imsCommand.connected(server);
+						console.log(result);
+					});
+					  
+				 });
+				self.socket.on('msg', function(data) {
+					var order = data['order'];
+					if (order) {
+						imsCommand.onmessage(server, order);
+					} else {
+						imsCommand.onmessage(server, data);
+					}
+					data['order']='';
+					self.socket.emit('msgReceived', data, function(result) {
+						console.log(result);
+					});
+				});
+				
+				self.socket.on('disconnect', function () {
+					imsCommand.disconnected(server);
+					setTimeout(function(){
+						socket.connect();
+					},3000);
+				});
+			}
+	
+		}
+		
+		connectViaURL(); 
+		
+		 
+	</script>
+</head>

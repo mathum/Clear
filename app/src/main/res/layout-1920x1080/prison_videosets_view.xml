@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/videosets_bg_no_line" >
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="@dimen/videosets_cover_width"
+        android:layout_height="@dimen/videosets_cover_height"
+        android:layout_marginLeft="@dimen/videosets_left_blank_width"
+        android:layout_marginTop="@dimen/videosets_top1_blank_width"
+        android:scaleType="fitXY"/>
+
+    
+    <LinearLayout 
+        android:id="@+id/ll_cover_box"
+        android:layout_marginLeft="@dimen/videosets_box_to_left_width"
+        android:layout_marginTop="@dimen/videosets_box_to_top_height"
+        android:layout_width="@dimen/videosets_cover_box_width"
+        android:layout_height="@dimen/videosets_cover_box_height"
+        android:orientation="vertical"
+        android:background="@drawable/videsets_cover_box_bg"
+        ></LinearLayout>
+    
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_width="@dimen/videosets_introduction_width"
+        android:layout_height="@dimen/videosets_introduction_height"
+        android:layout_below="@+id/iv_cover"
+        android:lineSpacingExtra="@dimen/videosets_introduction_line_space"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="@dimen/videosets_left_blank_width"
+        android:layout_marginTop="@dimen/videosets_separator2_height" />
+    
+    <TextView
+        android:id="@+id/tv_videosets_name"
+        android:layout_width="@dimen/videosets_name_width"
+        android:layout_height="@dimen/videosets_name_height" 
+        android:layout_marginTop="@dimen/videosets_top2_blank_width"
+        android:layout_toRightOf="@+id/iv_cover"
+        android:layout_marginLeft="@dimen/videosets_separator1_width"
+        android:text=""
+        android:textSize="40sp"
+        android:textColor="#ffffff"
+        android:gravity="left"
+        />
+	<LinearLayout
+	    android:id="@+id/ll_divide"
+	    android:layout_width="@dimen/videosets_divide_line_witdh"
+	    android:layout_height="@dimen/videosets_divide_line_height"
+	    android:background="#ffffff"
+	    android:layout_below="@+id/tv_videosets_name"
+	    android:layout_alignLeft="@+id/tv_videosets_name"
+	    android:layout_marginTop="@dimen/videosets_separator4_height"
+	    android:orientation="horizontal"
+	    > 
+	</LinearLayout> 
+	<LinearLayout 
+	    android:id="@+id/ll_labels"
+	    android:orientation="horizontal"
+	    android:layout_below="@+id/ll_divide"
+	    android:layout_marginTop="10px"
+	    android:gravity="center_vertical"
+	    android:layout_toRightOf="@+id/tv_introduction"
+	    android:layout_marginLeft="@dimen/videosets_separator_width"
+	    android:layout_width="@dimen/videosets_divide_line_witdh"
+	    android:layout_height="80px"
+	    >
+	    <TextView 
+	        android:id="@+id/tv_label1"
+	        android:textSize="18sp"
+	        android:layout_marginLeft="@dimen/videosets_separator3_label1_width"
+	        android:layout_width="@dimen/videosets_button_label_width"
+	        android:layout_height="@dimen/videosets_button_label_height"
+	        android:text="1-20"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:visibility="invisible"
+			android:background="@drawable/videosets_label_bg_selector"
+	        />
+	    <TextView 
+	        android:id="@+id/tv_label2"
+	        android:textSize="18sp"
+	        android:layout_marginLeft="@dimen/videosets_separator3_width"
+	        android:layout_width="@dimen/videosets_button_label_width"
+	        android:layout_height="@dimen/videosets_button_label_height"
+	        android:text="21-40"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:visibility="invisible"
+			android:background="@drawable/videosets_label_bg_selector"
+	        />
+	    <TextView 
+	        android:id="@+id/tv_label3"
+	        android:textSize="18sp"
+	        android:layout_marginLeft="@dimen/videosets_separator3_label3_width"
+	        android:layout_width="@dimen/videosets_button_label_width"
+	        android:layout_height="@dimen/videosets_button_label_height"
+	        android:text="41-60"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:visibility="invisible"
+			android:background="@drawable/videosets_label_bg_selector"
+	        />
+	    <TextView 
+	        android:id="@+id/tv_label4"
+	        android:textSize="18sp"
+	        android:layout_marginLeft="@dimen/videosets_separator3_label3_width"
+	        android:layout_width="@dimen/videosets_button_label_width"
+	        android:layout_height="@dimen/videosets_button_label_height"
+	        android:text="61-80"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:visibility="invisible"
+			android:background="@drawable/videosets_label_bg_selector"
+	        />
+	    <TextView 
+	        android:id="@+id/tv_label5"
+	        android:textSize="18sp"
+	        android:layout_marginLeft="@dimen/videosets_separator3_label3_width"
+	        android:layout_width="@dimen/videosets_button_label_width"
+	        android:layout_height="@dimen/videosets_button_label_height"
+	        android:text="81-100"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:visibility="invisible"
+			android:background="@drawable/videosets_label_bg_selector"
+	        />
+	    
+	    
+	    
+	    
+	</LinearLayout>
+
+	  <GridView
+	      android:id="@+id/gv_videosets"
+	      android:layout_width="@dimen/videosets_episode_gv_width"
+	      android:layout_height="@dimen/videosets_episode_gv_height"
+	      android:layout_alignLeft="@+id/ll_labels"
+	      android:layout_below="@+id/ll_labels"
+	      android:layout_marginTop="@dimen/videosets_episode_gv_margin_top"
+	      android:columnWidth="@dimen/videosets_episode_gv_column_width"
+	      android:gravity="center"
+	      android:horizontalSpacing="@dimen/videosets_episode_gv_horiz_space"
+	      android:numColumns="2"
+	      android:listSelector="@drawable/videosets_item_bg_selector"
+	      android:verticalSpacing="@dimen/videosets_episode_gv_vertical_space" >
+	      
+	  </GridView> 
+    
+</RelativeLayout>

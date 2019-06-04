@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+ 
+     <ImageView
+         android:id="@+id/thj_worldclock_main"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_gravity="center"/>
+         
+    
+    
+    <TextView 
+        android:id="@+id/thj_worldclock_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150px"
+        android:layout_marginLeft="285px"
+        android:shadowColor="#000000"
+       android:shadowDx="0"
+       android:shadowDy="2"
+       android:shadowRadius="4"
+        android:textSize="57px"/>
+    
+    <TextView 
+        android:id="@+id/thj_worldclock_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="867px"
+        android:layout_marginLeft="330px"
+        android:textSize="33px"
+        />
+    
+    <TextView 
+        android:id="@+id/thj_worldclock_beijing_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="601.5px"
+        android:layout_marginLeft="283.5px"
+        android:textSize="30px"/>
+    
+    <TextView 
+        android:id="@+id/thj_worldclock_beijing_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="660px"
+        android:layout_marginLeft="283.5px"
+        android:textSize="57px"/>
+    
+     <TextView 
+         android:id="@+id/thj_worldclock_beijing_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="664.5px"
+        android:layout_marginLeft="475.5px"
+        android:textSize="21px"/>
+      
+      <TextView 
+        android:id="@+id/thj_worldclock_beijing_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="697.5px"
+        android:layout_marginLeft="475.5px"
+        android:textSize="21px"
+        />
+      
+      <TextView 
+        android:id="@+id/thj_worldclock_world_city"
+        android:layout_width="367.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250.5px"
+        android:layout_marginTop="250.5px"
+        android:textSize="54px"
+        android:gravity="center"
+        android:text="北京"/>
+      
+       <TextView 
+        android:id="@+id/thj_worldclock_world_time"
+        android:layout_width="367.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250.5px"
+        android:layout_marginTop="345px"
+        android:textSize="108px"
+        android:gravity="center"
+        android:textColor="#ffffff"/>
+       
+       <TextView
+        android:id="@+id/thj_worldclock_world_date_week" 
+        android:layout_width="367.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250.5px"
+        android:layout_marginTop="459px"
+        android:textSize="30px"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:text="2015/08/24 星期一"/>
+        
+       <TextView
+           android:id="@+id/thj_worldclock_time_zone" 
+        android:layout_width="1002px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="616.5px"
+        android:layout_marginTop="768px"
+        android:textSize="31.5px"
+        android:gravity="center"
+        android:textColor="#FBB03B"
+        android:text="东九区（首尔，东京）"/>
+       
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="765px"
+        android:layout_marginLeft="760.5px"
+        android:src="@drawable/leftclock"
+        />
+      
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="765px"
+        android:layout_marginLeft="1486.5px"
+        android:src="@drawable/rightclock"
+        />
+      
+      <TextView
+        android:id="@+id/thj_worldclock_select_text" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1540.5px"
+        android:layout_marginTop="868.5px"
+        android:textSize="27px"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:text="返回"/>
+      
+      <TextView
+        android:id="@+id/thj_worldclock_back_text" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1395px"
+        android:layout_marginTop="868.5px"
+        android:textSize="27px"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:text="选择"/>
+        
+    
+    
+    <ImageView
+        android:id="@+id/thj_worldclock_btn"
+        android:layout_width="43px"
+        android:layout_height="537px"
+        android:scaleType="fitXY"
+        android:src="@drawable/wordcolock_focus1"
+        android:layout_marginTop="219px"
+        android:layout_marginLeft="1164px"/>
+    
+    
+</FrameLayout>

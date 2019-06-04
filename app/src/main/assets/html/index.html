@@ -1,0 +1,1037 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Settings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css" >
+    body{
+        text-align:center;
+        font-family: tahoma, arial;
+        background: #fff;
+    }
+    .datagrid{
+        #margin-left:auto;
+        #margin-right:auto;
+        width:700px;
+        border-collapse:collapse;
+        border:1px #333 solid;
+    }
+    .datagrid th{
+        width:200px;
+        text-align: left;
+        background: #DDDDDD;
+        padding: 3px;
+        border:1px #333 solid;
+    }
+    .datagrid td{
+        padding: 3px;
+        border: none;
+        border:1px #333 solid;
+    }
+    .ad{
+        display:none;
+    }
+    .inputText{
+        width:500px;
+    }
+    select{
+        width:500px;
+    }
+</style>
+<script type="text/javascript">
+    var isIE = false;
+    var xmlHttp = false;
+    try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+        try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e2) {
+            xmlHttp = false;
+        }
+    }
+    if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+        xmlHttp = new XMLHttpRequest();
+        isIE = false;
+    } else {
+        isIE = true;
+    }
+
+    var oldmainserverip;
+    
+    function setElementValue(response) {
+        var json = eval("(" + response + ")");
+        document.getElementById("mainserverip").value = json.mainserverip;
+        oldmainserverip = json.mainserverip;
+        document.getElementById("mainserverport").value = json.mainserverport;
+        document.getElementById("logserver").value = json.logserver;
+        document.getElementById("updateserver").value = json.updateserver;
+        document.getElementById("worksection").value = json.worksection;
+        document.getElementById("downloadsection").value = json.downloadsection;
+        document.getElementById("version").value = json.version;
+        document.getElementById("osversion").value = json.osversion;
+        document.getElementById("deviceid").value = json.deviceid;
+        document.getElementById("ip").value = json.ip;
+        document.getElementById("uuid").value = json.uuid;
+        document.getElementById("licence").value = json.licence;
+        document.getElementById("offsetleft").value = json.offsetleft;
+        document.getElementById("offsettop").value = json.offsettop;
+        document.getElementById("offsetwidth").value = json.offsetwidth;
+        document.getElementById("offsetheight").value = json.offsetheight;
+        document.getElementById("connectservers").value = json.connectservers;
+        if (json.connectstatus == "true") {
+            document.getElementById("connectstatus").value = "已连接";
+            document.getElementById("connectstatus").style.color = '#00bde0';
+        } else {
+            document.getElementById("connectstatus").value = "未连接";
+            document.getElementById("connectstatus").style.color = '#ff0000';
+        }
+        
+        if (json.debugflag == "true") {
+            document.getElementById("debugflag").options[0].selected = true;
+        } else {
+            document.getElementById("debugflag").options[1].selected = true;
+        }
+        
+        document.getElementById("mainserverurl").value = json.mainserverurl;
+        
+        var connecttype = json.connecttype;
+        if (connecttype == 1) {
+            document.getElementById("connecttype").options[1].selected = true;
+            document.getElementById("mainserverurltr").style.display = 'none';
+        } else if (connecttype == 2) {
+            document.getElementById("connecttype").options[2].selected = true;
+            displayShow(document.getElementById("mainserverurltr"));
+        } else {
+            document.getElementById("connecttype").options[0].selected = true;
+            document.getElementById("mainserverurltr").style.display = 'none';
+        }
+        
+        var syssetid = new Array();
+        syssetid = json.syncsetid.split("-");
+        
+        document.getElementById("syncsetid1").value = syssetid[0];
+        document.getElementById("syncsetid2").value = syssetid[1];
+        document.getElementById("syncmulticastip").value = json.syncmulticastip;
+        document.getElementById("syncmulticastport").value = json.syncmulticastport;
+        document.getElementById("syncswitchtimeout").value = json.syncswitchtimeout;
+        
+        if (json.programsync == "true") {
+            document.getElementById("programsync").options[0].selected = true;
+            document.getElementById("syncsetid1").disabled = "";
+            document.getElementById("syncsetid2").disabled = "";
+            document.getElementById("syncmulticastip").disabled = "";
+            document.getElementById("syncmulticastport").disabled = "";
+            document.getElementById("syncswitchtimeout").disabled = "";
+        } else {
+            document.getElementById("programsync").options[1].selected = true;
+            document.getElementById("syncsetid1").disabled = "disabled";
+            document.getElementById("syncsetid2").disabled = "disabled";
+            document.getElementById("syncmulticastip").disabled = "disabled";
+            document.getElementById("syncmulticastport").disabled = "disabled";
+            document.getElementById("syncswitchtimeout").disabled = "disabled";
+        }
+        
+        if (json.syncismaster == "true") {
+            document.getElementById("syncismaster").value = "主盒子";
+        } else {
+            document.getElementById("syncismaster").value = "从盒子";
+        }
+        
+        if (json.forceusb == "true") {
+            document.getElementById("forceusb").options[0].selected = true;
+        } else {
+            document.getElementById("forceusb").options[1].selected = true;
+        }
+        
+        if (json.showdownloadinfo == "true") {
+            document.getElementById("showdownloadinfo").options[0].selected = true;
+        } else {
+            document.getElementById("showdownloadinfo").options[1].selected = true;
+        }
+    }
+    
+    function setSimElementValue(response) {
+        var json = eval("(" + response + ")");
+        document.getElementById("simmainserverip").value = json.simmainserverip;
+        oldmainserverip = json.simmainserverip;
+        document.getElementById("simlogserver").value = json.simlogserver;
+        document.getElementById("simupdateserver").value = json.simupdateserver;
+        document.getElementById("simversion").value = json.simversion;
+        document.getElementById("simosversion").value = json.simosversion;
+        document.getElementById("simdeviceid").value = json.simdeviceid;
+        document.getElementById("simip").value = json.simip;
+        if (json.simconnectstatus == "true") {
+            document.getElementById("simconnectstatus").value = "已连接";
+            document.getElementById("simconnectstatus").style.color = '#00bde0';
+        } else {
+            document.getElementById("simconnectstatus").value = "未连接";
+            document.getElementById("simconnectstatus").style.color = '#ff0000';
+        }
+    }
+    
+    function pageload() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getsimpleinfo=true");
+        setSimElementValue(xmlHttp.responseText);
+    }
+    
+    function getSysInfo() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getinfo=true");
+        setElementValue(xmlHttp.responseText);
+    }
+    
+    function saveInfo(flag) {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var jsonStr = '{';
+        
+        var value = document.getElementById("mainserverip").value;
+        if (checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("mainserverip").focus();
+            return -1;
+        }
+        jsonStr += '"mainserverip":"' + value + '"';
+        
+        value = document.getElementById("mainserverport").value;
+        if (checkNum(value) == false) {
+            alert("端口号必须为正整数，请重新输入");
+            document.getElementById("mainserverport").focus();
+            return -1;
+        }
+        jsonStr += ',"mainserverport":' + value;
+        
+        value = document.getElementById("mainserverurl").value;
+        if (value == null || value == undefined || value == ""
+                && document.getElementById("connecttype").options[2].selected == true) {
+            alert("服务器前缀不能为空，请重新输入");
+            document.getElementById("mainserverurl").focus();
+            return -1;
+        }
+        jsonStr += ',"mainserverurl":"' + value + '"';
+        
+        value = document.getElementById("logserver").value;
+        if (value != "" && checkUrl(value) == false) {
+            alert("网址格式错误，请重新输入");
+            document.getElementById("logserver").focus();
+            return -1;
+        }
+        jsonStr += ',"logserver":"' + value + '"';
+        
+        value = document.getElementById("updateserver").value;
+        if (checkUrl(value) == false) {
+            alert("网址格式错误，请重新输入");
+            document.getElementById("updateserver").focus();
+            return -1;
+        }
+        jsonStr += ',"updateserver":"' + value + '"';
+       
+        if (document.getElementById("connecttype").options[1].selected == true) {
+            jsonStr += ',"connecttype":1';
+        } else if (document.getElementById("connecttype").options[2].selected == true) {
+            jsonStr += ',"connecttype":2';
+        } else {
+            jsonStr += ',"connecttype":0';
+        }
+        
+        jsonStr += ',"debugflag":' + document.getElementById("debugflag").value;
+       
+        value = document.getElementById("offsetleft").value;
+        if (parseInt(value) != value) {
+            alert("偏移量必须为整数，请重新输入");
+            document.getElementById("offsetleft").focus();
+            return -1;
+        }
+        jsonStr += ',"offsetleft":' + value;
+        
+        value = document.getElementById("offsettop").value;
+        if (parseInt(value) != value) {
+            alert("偏移量必须为整数，请重新输入");
+            document.getElementById("offsettop").focus();
+            return -1;
+        }
+        jsonStr += ',"offsettop":' + value;
+        
+        value = document.getElementById("offsetwidth").value;
+        if (parseInt(value) != value) {
+            alert("偏移量必须为整数，请重新输入");
+            document.getElementById("offsetwidth").focus();
+            return -1;
+        }
+        jsonStr += ',"offsetwidth":' + value;
+        
+        value = document.getElementById("offsetheight").value;
+        if (parseInt(value) != value) {
+            alert("偏移量必须为整数，请重新输入");
+            document.getElementById("offsetheight").focus();
+            return -1;
+        }
+        jsonStr += ',"offsetheight":' + value;
+       
+        value = document.getElementById("licence").value;
+        jsonStr += ', "licence":"' + value + '"';
+        
+        jsonStr += ',"programsync":' + document.getElementById("programsync").value;
+       
+        value = document.getElementById("syncsetid1").value;
+        if (parseInt(value) != value) {
+            alert("同步组ID1必须为整数，请重新输入");
+            document.getElementById("syncsetid1").focus();
+            return -1;
+        }
+        jsonStr += ',"syncsetid":"' + value;
+        
+        value = document.getElementById("syncsetid2").value;
+        if (parseInt(value) != value) {
+            alert("同步组ID2必须为整数，请重新输入");
+            document.getElementById("syncsetid2").focus();
+            return -1;
+        }
+        jsonStr += '-' + value + '"';
+        
+        value = document.getElementById("syncmulticastip").value;
+        if (checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("syncmulticastip").focus();
+            return -1;
+        }
+        jsonStr += ',"syncmulticastip":"' + value + '"';
+        
+        value = document.getElementById("syncmulticastport").value;
+        if (parseInt(value) != value) {
+            alert("端口必须为整数，请重新输入");
+            document.getElementById("syncmulticastport").focus();
+            return -1;
+        }
+        jsonStr += ',"syncmulticastport":' + value;
+        
+        value = document.getElementById("syncswitchtimeout").value;
+        if (parseInt(value) != value) {
+            alert("超时时间必须为整数，请重新输入");
+            document.getElementById("syncswitchtimeout").focus();
+            return -1;
+        }
+        jsonStr += ',"syncswitchtimeout":' + value;
+        
+        jsonStr += ',"forceusb":' + document.getElementById("forceusb").value;
+        jsonStr += ',"showdownloadinfo":' + document.getElementById("showdownloadinfo").value;
+        
+        jsonStr += '}';
+        xmlHttp.send("setinfo=" + jsonStr);
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            if (flag == 1) {
+                alert("保存成功");
+            }
+        } else {
+            alert("保存失败：" + result);
+            return -1;
+        }
+    }
+    
+    function refreshInfo() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getinfo=true");
+        setElementValue(xmlHttp.responseText);
+    }
+    
+    function saveSimInfo(flag) {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var jsonStr = '{';
+        
+        var value = document.getElementById("simmainserverip").value;
+        if (checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("simmainserverip").focus();
+            return -1;
+        } else if (value == oldmainserverip) {
+            return -1;
+        }
+        jsonStr += '"simmainserverip":"' + value + '"';
+
+        var logvalue = document.getElementById("simlogserver").value;
+        var updatevalue = document.getElementById("simupdateserver").value;
+        if (oldmainserverip != logvalue || oldmainserverip != updatevalue) {
+            var truthBeTold = confirm("日志或升级服务器和主控服务器不一致。\n单击“确定”重置为一样。\n否则单击“取消”，进入高级设置中设置。");
+            if (truthBeTold) {
+            
+            } else {
+                return -1;
+            }
+        }
+        
+        jsonStr += '}';
+        xmlHttp.send("setsimpleinfo=" + jsonStr);
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            if (flag == 1) {
+                alert("保存成功");
+            }
+        } else {
+            alert("保存失败：" + result);
+            return -1;
+        }
+    }
+    
+    function refreshSimInfo() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getsimpleinfo=true");
+        setSimElementValue(xmlHttp.responseText);
+    }
+    
+    function reboot() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=reboot");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("重启成功");
+        } else {
+            alert("重启失败：" + result);
+        }
+    }
+    
+    function poweroff() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=poweroff");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("关机成功");
+        } else {
+            alert("关机失败：" + result);
+        }
+    }
+    
+    function restartApp() {
+        if (saveInfo(0) == -1) {
+            return;
+        }
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=restart");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("立即生效成功");
+        } else {
+            alert("立即生效失败：" + result);
+        }
+    }
+    
+    function restartSimApp() {
+        if (saveSimInfo(0) == -1) {
+            return;
+        }
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=restart");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("立即生效成功");
+        } else {
+            alert("立即生效失败：" + result);
+        }
+    }
+    
+    function qrhide() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=qrhide");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("隐藏成功");
+        } else {
+            alert("隐藏失败：" + result);
+        }
+    }
+    
+    function qrshow() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=qrshow");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("显示成功");
+        } else {
+            alert("显示失败：" + result);
+        }
+    }
+    
+    function checkNum(value) {
+        var re = /^[1-9]\d*$/;
+        if (!re.test(value)) {
+            return false;
+        }
+        return true;
+    }
+    
+    function checkUrl(value) {
+        var re = /[a-zA-z]+:\/\/[^\s]*/;
+        if (!re.test(value)) {
+            return false;
+        }
+        return true;
+    }
+    
+    //function checkIP(value) {
+    //    var re = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+    //    if (!re.test(value)) {
+    //        return false;
+    //    }
+    //    return true;
+    //}
+    
+    function checkIP(value) {
+        var ipArray,ip,j;
+        ip = value;
+ 
+        if (/[A-Za-z_-]/.test(ip)) {
+            if(!/^([\w-]+\.)+((com)|(net)|(org)|(gov\.cn)|(info)|(cc)|(com\.cn)|(net\.cn)|(org\.cn)|(name)|(biz)|(tv)|(cn)|(mobi)|(name)|(sh)|(ac)|(io)|(tw)|(com\.tw)|(hk)|(com\.hk)|(ws)|(travel)|(us)|(tm)|(la)|(me\.uk)|(org\.uk)|(ltd\.uk)|(plc\.uk)|(in)|(eu)|(it)|(jp))$/.test(ip)){
+                return false;
+            }
+        } else {
+            ipArray = ip.split(".");
+            j = ipArray.length
+            if (j != 4) {
+                return false;
+            }
+            for (var i = 0; i < 4; i++) {
+                if (ipArray[i].length==0 || ipArray[i]>255) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    function netSettings() {
+        getNetInfo();
+        netMode(document.getElementById("net_mode"));
+        document.getElementById("sysTable").style.display = 'none';
+        document.getElementById("simpleTable").style.display = 'none';
+        displayShow(document.getElementById("netTable"));
+    }
+    
+    function sysSettings() {
+        getSysInfo();
+        document.getElementById("simpleTable").style.display = 'none';
+        document.getElementById("netTable").style.display = 'none';
+        displayShow(document.getElementById("sysTable"));
+    }
+    
+    function simSettings() {
+        refreshSimInfo();
+        document.getElementById("sysTable").style.display = 'none';
+        document.getElementById("netTable").style.display = 'none';
+        displayShow(document.getElementById("simpleTable"));
+    }
+
+    function displayShow(obj){
+        if (document.all) {    //IE
+            obj.style.display='block';
+        } else if (document.getElementById) {   //chrome
+            obj.style.display='table-row';
+        } else {
+            obj.style.display='';
+        }
+    }
+    
+    function netMode(obj) {
+        if (obj.options[0].selected == true) {
+            document.getElementById("net_ip").disabled = "disabled";
+            document.getElementById("net_netmask").disabled = "disabled";
+            document.getElementById("net_gateway").disabled = "disabled";
+            document.getElementById("net_dns1").disabled = "disabled";
+            document.getElementById("net_dns2").disabled = "disabled";
+        } else {
+            document.getElementById("net_ip").disabled = "";
+            document.getElementById("net_netmask").disabled = "";
+            document.getElementById("net_gateway").disabled = "";
+            document.getElementById("net_dns1").disabled = "";
+            document.getElementById("net_dns2").disabled = "";
+        }
+    }
+    
+    function getNetInfo() {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getnetinfo=true");
+        setNetElementValue(xmlHttp.responseText);
+    }
+    
+    function setNetElementValue(response) {
+        var json = eval("(" + response + ")");
+        document.getElementById("net_ip").value = json.ip;
+        document.getElementById("net_netmask").value = json.netmask;
+        document.getElementById("net_gateway").value = json.gateway;
+        document.getElementById("net_dns1").value = json.dns1;
+        document.getElementById("net_dns2").value = json.dns2;
+        var mode = json.mode;
+        if (mode == "dhcp") {
+            document.getElementById("net_mode").options[0].selected = true;
+        } else {
+            document.getElementById("net_mode").options[1].selected = true;
+        }
+    }
+    
+    function refreshNetInfo() {
+        getNetInfo();
+        netMode(document.getElementById("net_mode"));
+    }
+    
+    function restartNet() {
+        if (saveNetInfo(0) == -1) {
+            return;
+        }
+        if (confirm("保存成功，重启后才会生效，是否立即重启？")) {
+            xmlHttp.open("POST","index.html", false);
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlHttp.send("op=reboot");
+            var result = xmlHttp.responseText;
+            if (result == "true") {
+                alert("立即生效成功");
+            } else {
+                alert("立即生效失败：" + result);
+            }
+        }
+    }
+    
+    function saveNetInfo(flag) {
+        xmlHttp.open("POST","index.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var jsonStr = '{';
+        
+        var value = document.getElementById("net_mode").value;
+        jsonStr += '"mode":"' + value + '"';
+        var mode = value;
+        
+        value = document.getElementById("net_ip").value;
+        if (mode != "dhcp" && checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("net_ip").focus();
+            return -1;
+        }
+        jsonStr += ',"ip":"' + value + '"';
+        
+        value = document.getElementById("net_netmask").value;
+        if (mode != "dhcp" && checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("net_netmask").focus();
+            return -1;
+        }
+        jsonStr += ',"netmask":"' + value + '"';
+        
+        value = document.getElementById("net_gateway").value;
+        if (mode != "dhcp" && checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("net_gateway").focus();
+            return -1;
+        }
+        jsonStr += ',"gateway":"' + value + '"';
+        
+        value = document.getElementById("net_dns1").value;
+        if (mode != "dhcp" && value != "" && checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("net_dns1").focus();
+            return -1;
+        }
+        jsonStr += ',"dns1":"' + value + '"';
+        
+        value = document.getElementById("net_dns2").value;
+        if (mode != "dhcp" && value != "" && checkIP(value) == false) {
+            alert("IP格式错误，请重新输入");
+            document.getElementById("net_dns2").focus();
+            return -1;
+        }
+        jsonStr += ',"dns2":"' + value + '"';
+        
+        jsonStr += '}';
+        xmlHttp.send("setnetinfo=" + jsonStr);
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            if (flag == 1) {
+                alert("保存成功");
+            }
+        } else {
+            alert("保存失败：" + result);
+            return -1;
+        }
+    }
+    
+    function syncChange() {
+        if (document.getElementById("programsync").value == "true") {
+            document.getElementById("syncsetid1").disabled = "";
+            document.getElementById("syncsetid2").disabled = "";
+            document.getElementById("syncmulticastip").disabled = "";
+            document.getElementById("syncmulticastport").disabled = "";
+            document.getElementById("syncswitchtimeout").disabled = "";
+        } else {
+            document.getElementById("syncsetid1").disabled = "disabled";
+            document.getElementById("syncsetid2").disabled = "disabled";
+            document.getElementById("syncmulticastip").disabled = "disabled";
+            document.getElementById("syncmulticastport").disabled = "disabled";
+            document.getElementById("syncswitchtimeout").disabled = "disabled";
+        }
+    }
+    
+    function connectTypeChange() {
+        if (document.getElementById("connecttype").options[1].selected == true) {
+            document.getElementById("mainserverport").value = 3001;
+            document.getElementById("mainserverurltr").style.display = 'none';
+        } else if (document.getElementById("connecttype").options[2].selected == true) {
+            document.getElementById("mainserverport").value = 80;
+            displayShow(document.getElementById("mainserverurltr"));
+        } else {
+            document.getElementById("mainserverport").value = 19003;
+            document.getElementById("mainserverurltr").style.display = 'none';
+        }
+    }
+    
+</script>
+<body onLoad="pageload();">
+    <table border="1" id="simpleTable" class="datagrid">
+        <tr class="nc">
+            <th colspan="2"><div align="center">系统设置</div></th>
+        </tr>
+
+        <tr>
+            <th>vod服务器</th>
+            <td>
+                <input value="" type="text" id="simmainserverip" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>日志服务器</th>
+            <td>
+                <input value="" type="text" id="simlogserver" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>升级服务器</th>
+            <td>
+                <input value="" type="text" id="simupdateserver" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>服务器连接状态</th>
+            <td>
+                <input value="" type="text" id="simconnectstatus" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>软件版本号</th>
+            <td>
+                <input value="" type="text" id="simversion" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>系统版本号</th>
+            <td>
+                <input value="" type="text" id="simosversion" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>设备ID</th>
+            <td>
+                <input value="" type="text" id="simdeviceid" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>IP地址</th>
+            <td>
+                <input value="" type="text" id="simip" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr class="nc">
+            <td colspan="2">
+                <div align="center">
+                    <input type="button" id="simsave" value="保存" onClick="saveSimInfo(1);"/>
+                    <input type="button" id="simrefresh" value="刷新" onClick="refreshSimInfo();"/>
+                    <input type="button" id="simrestart" value="立即生效" onClick="restartSimApp();"/>
+        <!--             <input type="button" id="simsys" value="高级" onClick="sysSettings();" disabled/> -->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" id="sysTable" class="datagrid" style="display:none;">
+        <tr class="nc">
+            <th colspan="2"><div align="center">系统设置</div></th>
+        </tr>
+
+        <tr>
+            <th>IMS服务器IP</th>
+            <td>
+                <input value="" type="text" id="mainserverip" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>IMS服务器端口</th>
+            <td>
+                <input value="" type="text" id="mainserverport" class="inputText"/>
+            </td>
+        </tr>
+        <tr id="mainserverurltr" style="display:none;">
+            <th>vod服务器地址</th>
+            <td>
+                <input value="" type="text" id="mainserverurl" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>日志服务器</th>
+            <td>
+                <input value="" type="text" id="logserver" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>升级服务器</th>
+            <td>
+                <input value="" type="text" id="updateserver" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>服务器连接类型</th>
+            <td>
+                <select id="connecttype" onchange="connectTypeChange();">
+                    <option value="socket">Socket
+                    <option value="websocket">WebSocket
+                    <option value="http">Http
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>服务器连接状态</th>
+            <td>
+                <input value="" type="text" id="connectstatus" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>已连接服务器</th>
+            <td>
+                <input value="" type="text" id="connectservers" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>视频横向偏移量</th>
+            <td>
+                <input value="" type="text" id="offsetleft" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>视频纵向偏移量</th>
+            <td>
+                <input value="" type="text" id="offsettop" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>视频宽度偏移量</th>
+            <td>
+                <input value="" type="text" id="offsetwidth" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>视频高度偏移量</th>
+            <td>
+                <input value="" type="text" id="offsetheight" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>运行区间</th>
+            <td>
+                <input value="" type="text" id="worksection" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>下载区间</th>
+            <td>
+                <input value="" type="text" id="downloadsection" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>是否打印本地日志</th>
+            <td>
+                <select id="debugflag">
+                    <option value="true">打印
+                    <option value="false">不打印
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>是否同步播放</th>
+            <td>
+                <select id="programsync" onchange="syncChange();">
+                    <option value="true">同步
+                    <option value="false">不同步
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>同步组别</th>
+            <td>
+                <input value="" type="text" id="syncismaster" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>同步组ID(1-1)</th>
+            <td>
+                <input value="" type="text" id="syncsetid1" style="width:200px;"/>
+                -
+                <input value="" type="text" id="syncsetid2" style="width:200px;"/>
+            </td>
+        </tr>
+        <tr>
+            <th>同步组播地址</th>
+            <td>
+                <input value="" type="text" id="syncmulticastip" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>同步组播端口</th>
+            <td>
+                <input value="" type="text" id="syncmulticastport" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>同步最长等待时间</th>
+            <td>
+                <input value="" type="text" id="syncswitchtimeout" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>USB丢失是否强制重启</th>
+            <td>
+                <select id="forceusb">
+                    <option value="true">强制重启
+                    <option value="false">不重启
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示全局下载进度</th>
+            <td>
+                <select id="showdownloadinfo">
+                    <option value="true">显示
+                    <option value="false">不显示
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>软件版本号</th>
+            <td>
+                <input value="" type="text" id="version" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>系统版本号</th>
+            <td>
+                <input value="" type="text" id="osversion" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>设备ID</th>
+            <td>
+                <input value="" type="text" id="deviceid" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>IP地址</th>
+            <td>
+                <input value="" type="text" id="ip" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>UUID</th>
+            <td>
+                <input value="" type="text" id="uuid" class="inputText" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <th>注册码</th>
+            <td>
+                <input value="" type="text" id="licence" class="inputText"/>
+            </td>
+        </tr>
+        <tr class="nc">
+            <td colspan="2">
+                <div align="center">
+                    <input type="button" id="save" value="保存" onClick="saveInfo(1);"/>
+                    <input type="button" id="refresh" value="刷新" onClick="refreshInfo();"/>
+                    <input type="button" id="restart" value="立即生效" onClick="restartApp();"/>
+                    <input type="button" id="simple" value="基础设置" onClick="simSettings();"/>
+                    <input type="button" id="reboot" value="重启" onClick="reboot();"/>
+                    <input type="button" id="poweroff" value="关机" onClick="poweroff();"/>
+                    <input type="button" id="qrhide" value="二维码隐藏" onClick="qrhide();" disabled/>
+                    <input type="button" id="qrshow" value="二维码显示" onClick="qrshow();" disabled/>
+                    <input type="button" id="net" value="网络设置" onClick="netSettings();" disabled/>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" id="netTable" class="datagrid" style="display:none;">
+        <tr class="nc">
+            <th colspan="2"><div align="center">网络设置（有线网络）</div></th>
+        </tr>
+
+        <tr>
+            <th>网络模式</th>
+            <td>
+                <select id="net_mode" onchange="netMode(this)" >
+                    <option value="dhcp">DHCP
+                    <option value="manual">静态
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <th>IP地址</th>
+            <td>
+                <input value="" type="text" id="net_ip" class="inputText" disabled />
+            </td>
+        </tr>
+        <tr>
+            <th>子网掩码</th>
+            <td>
+                <input value="" type="text" id="net_netmask" class="inputText" disabled />
+            </td>
+        </tr>
+        <tr>
+            <th>网关</th>
+            <td>
+                <input value="" type="text" id="net_gateway" class="inputText" disabled />
+            </td>
+        </tr>
+        <tr>
+            <th>DNS1</th>
+            <td>
+                <input value="" type="text" id="net_dns1" class="inputText" disabled />
+            </td>
+        </tr>
+        <tr>
+            <th>DNS2</th>
+            <td>
+                <input value="" type="text" id="net_dns2" class="inputText" disabled />
+            </td>
+        </tr>
+        <tr class="nc">
+            <td colspan="2">
+                <div align="center">
+                    <input type="button" id="net_save" value="保存" onClick="saveNetInfo(1);"/>
+                    <input type="button" id="net_refresh" value="刷新" onClick="refreshNetInfo();"/>
+                    <input type="button" id="net_restart" value="立即生效" onClick="restartNet();"/>
+                    <input type="button" id="net_reboot" value="重启" onClick="reboot();" disabled/>
+                    <input type="button" id="net_poweroff" value="关机" onClick="poweroff();" disabled/>
+                    <input type="button" id="sys" value="系统设置" onClick="sysSettings();" disabled/>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

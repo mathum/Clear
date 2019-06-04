@@ -1,0 +1,262 @@
+<LinearLayout  xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" xmlns:android="http://schemas.android.com/apk/res/android">
+
+     
+	  
+          
+         <RelativeLayout
+            android:id="@+id/settings_auth_server"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="60dip" >
+	
+		    <TextView
+		        android:id="@+id/settings_auth_server_textview"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/auth_server" />
+		
+		    <EditText
+		        android:id="@+id/settings_auth_server_edittext"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/settings_auth_server_textview"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"
+		        android:singleLine="true"
+		        android:ellipsize="end"
+		        android:hint="@string/setting_url"
+		        />
+		</RelativeLayout>
+	
+         <RelativeLayout
+            android:id="@+id/settings_update_server"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="10dip" >
+         <TextView
+		        android:id="@+id/settings_update_server_textview"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/update_server" />
+		
+		    <EditText
+		        android:id="@+id/settings_update_server_edittext"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/settings_update_server_textview"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"
+		        android:singleLine="true"
+		        android:ellipsize="end"
+		        android:hint="@string/setting_url"
+		        />
+		</RelativeLayout>
+		
+         <RelativeLayout
+            android:id="@+id/room_id_info"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="10dip" >
+         <TextView
+		        android:id="@+id/room_id_title"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/room_id_title" />
+		
+		    <EditText
+		        android:id="@+id/room_id_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/room_id_title"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"
+		        android:singleLine="true"
+		        android:ellipsize="end"
+		        android:hint="@string/room_id_text"
+		        />
+		</RelativeLayout>
+		
+          <RelativeLayout
+            android:id="@+id/reboot_setting"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="10dip" >
+         <TextView
+		        android:id="@+id/reboot_title"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/reboot_title"/>
+         
+         <Spinner 
+             android:id="@+id/reboot_enable_spinner"
+             	android:layout_width="120dip"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/reboot_title"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"/>
+         
+         <Spinner 
+             android:id="@+id/reboot_hour_spinner"
+             	android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/reboot_enable_spinner"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"/>
+         
+         <Spinner 
+             android:id="@+id/reboot_minute_spinner"
+             	android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/reboot_hour_spinner"
+		        android:layout_centerVertical="true"
+		        android:layout_marginLeft="5dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingLeft="8dip"/>
+		</RelativeLayout>
+         
+         <RelativeLayout
+            android:id="@+id/ip_info"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="10dip" >
+         <TextView
+		        android:id="@+id/ip_info_title"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/ip_info_title" />
+		
+		    <TextView
+		        android:id="@+id/ip_info_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/ip_info_title"
+		        android:layout_centerVertical="true"
+		        android:layout_centerInParent="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="25sp"
+                android:singleLine="true"
+		        android:text="@string/ip_info_text"
+		        />
+		</RelativeLayout>
+   
+   <RelativeLayout
+            android:id="@+id/version_info"
+    		android:layout_width="800dip"
+		    android:layout_height="wrap_content"
+		    android:paddingRight="30dip"
+		    android:layout_marginLeft="50dip"
+	        android:layout_marginTop="10dip" >
+         <TextView
+		        android:id="@+id/version_info_title"
+		        android:layout_width="160dip"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:paddingLeft="20dip"
+		        android:layout_centerVertical="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="20sp"
+		        android:text="@string/version_info_titletext" />
+		
+		    <TextView
+		        android:id="@+id/version_info_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/version_info_title"
+		        android:layout_centerVertical="true"
+		        android:layout_centerInParent="true"
+		        android:textColor="#FFC9C9C9"
+		        android:textSize="25sp"
+                android:singleLine="true"
+		        android:hint="@string/version_info_code"
+		        />
+		</RelativeLayout>
+		
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dip" >
+        <Button 
+           android:id="@+id/settings_save_button"
+           android:layout_width="171dip"
+           android:layout_height="49dip"
+           android:layout_centerVertical="true"
+           android:layout_centerInParent="true"
+           android:text="@string/settings_save_buttontext"/>
+        
+           
+      </RelativeLayout>
+      
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip" >
+        <Button 
+           android:id="@+id/system_settings_button"
+           android:layout_width="171dip"
+           android:layout_height="49dip"
+           android:layout_centerVertical="true"
+           android:layout_centerInParent="true"
+           android:text="@string/system_settings_buttontext"/>
+        
+           
+      </RelativeLayout>
+ 
+</LinearLayout>
+    
+
+

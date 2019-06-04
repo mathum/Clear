@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:id="@+id/tv_surfaceview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></RelativeLayout>
+    <FrameLayout 
+        android:id="@+id/liveview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center">
+        
+        <ImageView 
+            android:id="@+id/liveview_bk"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_recommend_bk"/>
+        <LinearLayout
+            android:id="@+id/live_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+	        <ImageView
+	            android:id="@+id/live_title_pic"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:adjustViewBounds="true"/>
+	        <TextView 
+	            android:id="@+id/live_title_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/channellist"
+	        android:layout_width="525px"
+	        android:layout_height="fill_parent"
+	        android:layout_marginTop="100px"
+	        android:layout_marginLeft="60px"
+	        android:layout_marginBottom="60px"
+	        android:orientation="vertical">
+	        <FrameLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="80px">
+	            <ImageView
+			        android:layout_width="fill_parent"
+			        android:layout_height="fill_parent"
+			        android:adjustViewBounds="true"
+			        android:scaleType="fitXY"
+			        android:alpha="0.8"
+			        android:src="@drawable/channellist_title" />
+		        <TextView
+		            android:id="@+id/channellist_title"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:textSize="52.5px"
+		            android:lineSpacingExtra="7.5px"
+		            android:lines="1"
+		            android:gravity="center"
+		            android:layout_gravity="center"
+		            android:ellipsize="end"/>
+	        </FrameLayout>
+	        <View
+	            android:layout_width="fill_parent"
+	            android:layout_height="15px"
+	            android:background="@android:color/transparent" />
+	        
+	    </LinearLayout>
+	    <LinearLayout
+	        android:id="@+id/channel_coming"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="585px"
+	        android:layout_marginBottom="60px"
+	        android:layout_gravity="bottom|right"
+	        android:gravity="center_vertical"
+	        android:visibility="invisible"
+	        android:orientation="vertical"
+	        android:background="@drawable/channel_coming" >
+	        <TextView
+	            android:id="@+id/channel_coming_one"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:lineSpacingExtra="6px"
+	            android:textSize="30px"
+	            android:layout_marginLeft="75px"
+	            android:lines="1" />
+	        <TextView
+	            android:id="@+id/channel_coming_two"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:lineSpacingExtra="6px"
+	            android:textSize="30px"
+	            android:layout_marginLeft="50px"
+	            android:lines="1" />
+	        <TextView
+	            android:id="@+id/channel_coming_three"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:lineSpacingExtra="6px"
+	            android:textSize="30px"
+	            android:layout_marginLeft="75px"
+	            android:lines="1" />
+	    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/insert_index"
+            android:layout_marginRight="60px"
+            android:layout_marginTop="15px"
+            android:layout_gravity="right"
+            android:layout_width="270px"
+            android:visibility="gone"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/tv_insert_num"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="12"
+                android:textSize="114px"
+                android:textColor="#0ff100"
+             />
+        </LinearLayout>
+
+        <LinearLayout 
+            android:id="@+id/ll_prompt"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="96px"
+            android:layout_width="420px"
+            android:layout_height="99px"
+            android:visibility="gone"
+            android:background="#333333"
+            android:alpha="0.8"
+            android:orientation="vertical"
+            >
+            <TextView
+            	android:id="@+id/tv_channel_not_exist"
+            	android:layout_width="fill_parent"
+            	android:layout_height="fill_parent"
+            	android:gravity="center"
+            	android:typeface="serif"
+            	android:text="@string/str_channel_not_exist"   
+            	android:textSize="49.5px" 
+                
+               />
+        </LinearLayout>
+        
+        
+    </FrameLayout>
+
+</RelativeLayout>

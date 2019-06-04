@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_video_item"
+    android:layout_width="@dimen/videosets_episode_gv_column_width"
+    android:layout_height="@dimen/videosets_episode_gv_column_height"
+    android:focusable="false"
+    android:orientation="horizontal"
+     >
+<!-- android:background="@drawable/videosets_item_bg_selector" -->
+    <TextView 
+        android:id="@+id/tv_video_item_index"
+        android:layout_width="60px"
+        android:layout_height="@dimen/videosets_item_episode_height"
+        android:layout_marginLeft="28px"
+        android:text="1"
+        android:textSize="36px"
+        android:textColor="#ffffff" />
+     
+    <com.clearcrane.util.MarqueeTextView
+        android:gravity="left"
+        android:id="@+id/tv_video_item_content"
+        android:layout_width="375px"
+        android:layout_height="@dimen/videosets_item_episode_height"
+        android:text="学习雷锋"
+        android:textSize="36px"
+        android:paddingLeft="15px"
+        android:lineSpacingExtra ="9px"
+        android:textColor="#ffffff" />
+     
+    
+</LinearLayout>

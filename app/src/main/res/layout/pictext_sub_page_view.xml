@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    >
+    
+  <FrameLayout
+   android:id="@+id/picTextList_layout"
+   android:layout_height="fill_parent"
+   android:layout_width="fill_parent"
+   >
+   
+ 
+  
+ </FrameLayout>
+ 
+        <TextView
+       android:id="@+id/pagination_sign"
+       android:layout_width="200px"
+       android:layout_height="200px"
+       android:layout_marginRight="1700px"
+       />
+    
+  
+ </RelativeLayout>
+

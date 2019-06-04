@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_access_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="60px"
+        android:text="本机可用时间为：12:00~14:00"
+        />
+        <!-- modify by ll on 2016/12/28 
+        android:singleLine="true" />
+        -->
+
+</LinearLayout>

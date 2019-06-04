@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <FrameLayout 
+        android:id="@+id/sub_menu_icon_fl"
+        android:layout_width="wrap_content"
+	    android:layout_height="120px"
+	    android:layout_gravity="center_horizontal|top"
+	    android:layout_marginLeft="10.5px"
+	    android:layout_marginRight="10.5px" >
+	    
+        <ImageView
+	        android:id="@+id/shuiwu_bg_pic"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+        	android:src="@drawable/sub_icon_shuiwu" />
+    
+        <ImageView
+	        android:id="@+id/sub_pic_text_wrapcontent_border"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	        android:visibility="invisible"
+        	android:src="@drawable/sub_focus_bg" />
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" >
+        
+	        <FrameLayout
+	            android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_vertical|left" >
+			    <ImageView
+			        android:id="@+id/sub_pic_text_wrapcontent_pic"
+			        android:layout_width="105px"
+			        android:layout_height="wrap_content"
+			       	android:layout_gravity="center_horizontal|top"
+			        android:adjustViewBounds="true"/>
+			    <ImageView
+			        android:id="@+id/sub_pic_text_wrapcontent_pic_focus"
+			        android:layout_width="105px"
+			        android:layout_height="wrap_content"
+			       	android:layout_gravity="center_horizontal|top"
+			        android:adjustViewBounds="true"/>
+		    </FrameLayout>
+		    <TextView 
+		        android:id="@+id/sub_pic_text_wrapcontent_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_vertical"
+		        android:lines="1"
+		        android:textStyle="bold"
+		        android:layout_marginRight="7.5px"
+		        android:textSize="24px" />
+	    </LinearLayout>
+	</FrameLayout>
+
+
+    <!-- following the second icon list ... -->
+
+</LinearLayout>

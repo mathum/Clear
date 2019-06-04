@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout 
+        android:id="@+id/main_menu_icon_fl"
+        android:layout_width="wrap_content"
+	    android:layout_height="135px"
+	    android:layout_gravity="center_horizontal|top"
+	    android:layout_marginBottom="30px">
+	    
+        <ImageView
+	        android:id="@+id/pic_text_wrapcontent_border"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	       	android:layout_gravity="center_horizontal|top"
+	        android:adjustViewBounds="true"
+	        android:visibility="invisible"
+        	android:src="@drawable/center_background" />
+        
+        <FrameLayout
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal|top" >
+		    <ImageView
+		        android:id="@+id/pic_text_wrapcontent_pic"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		       	android:layout_gravity="center_horizontal|top"
+		        android:adjustViewBounds="true"/>
+		    <ImageView
+		        android:id="@+id/pic_text_wrapcontent_pic_focus"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		       	android:layout_gravity="center_horizontal|top"
+		        android:adjustViewBounds="true"/>
+		    <TextView 
+		        android:id="@+id/pic_text_wrapcontent_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal|bottom"
+		        android:layout_marginTop="15px"
+		        android:textSize="24px" />
+	    </FrameLayout>
+	</FrameLayout>
+
+    <!-- following the second icon list ... -->
+
+</LinearLayout>

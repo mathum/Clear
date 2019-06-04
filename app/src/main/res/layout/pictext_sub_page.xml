@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/picTet_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/picText_pic_border"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:background="@drawable/main_page_top_box"
+            android:visibility="invisible" />
+
+        <com.clearcrane.util.MarqueeTextView
+            android:id="@+id/picText_name"
+            android:layout_width="500px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20px"
+            android:layout_marginLeft="70px"
+            android:gravity="left|center"
+            android:text="12312"
+            android:textSize="16px" />
+
+        <TextView
+            android:id="@+id/picText_date"
+            android:layout_width="match_parent"
+            android:layout_height="45px"
+            android:layout_marginBottom="20px"
+            android:layout_marginLeft="600px"
+            android:gravity="center"
+            android:text="fdasfdafadsdfadsdfdsfdasfdas"
+            android:textSize="16px" />
+
+        <!--
+             <ImageView
+            android:id="@+id/line"
+            android:layout_width="1200px"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@drawable/pictext_white_line" />
+        -->
+    </FrameLayout>
+
+</LinearLayout>

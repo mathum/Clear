@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imagecycle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    <FrameLayout 
+        android:id="@+id/language_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="90dp"
+        android:layout_alignParentBottom="true">
+        
+        <ImageView
+            android:id="@+id/body_background"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/body_background"
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
+        
+		<ImageView
+            android:id="@+id/trans_background1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center_vertical|left"
+            android:src="@drawable/left" />
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center" >
+		    <ImageView
+			    android:layout_width="wrap_content"
+			    android:layout_weight="1"
+			    android:layout_height="fill_parent"
+			    android:src="@drawable/rail_background"
+			    android:visibility="invisible"  />
+			<ImageView
+			    android:id="@+id/rail_background1"
+			    android:layout_width="wrap_content"
+			    android:layout_weight="1"
+			    android:layout_height="fill_parent"
+			    android:src="@drawable/rail_background" />
+			
+			<ImageView
+			    android:id="@+id/rail_background2"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:src="@drawable/rail_background" />
+			
+			<ImageView
+			    android:id="@+id/rail_background3"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:src="@drawable/rail_background"
+			    android:visibility="invisible" />
+			
+			<ImageView
+			    android:id="@+id/rail_background4"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:src="@drawable/rail_background"
+			    android:visibility="invisible" />
+			
+			<ImageView
+			    android:id="@+id/rail_background5"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:src="@drawable/rail_background" />
+			
+			<ImageView
+			    android:id="@+id/rail_background6"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:src="@drawable/rail_background" />
+			<ImageView
+			    android:layout_width="wrap_content"
+			    android:layout_weight="1"
+			    android:layout_height="fill_parent"
+			    android:src="@drawable/rail_background"
+			    android:visibility="invisible"  />
+
+		</LinearLayout>
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:gravity="center" >
+            
+            <ImageView
+                android:id="@+id/trans_background2"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/left" />
+	        <ImageView 
+	            android:id="@+id/center_background"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:adjustViewBounds="true"
+	            android:src="@drawable/center_background" />
+	        <ImageView
+                android:id="@+id/trans_background3"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:src="@drawable/right" />
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/trans_background4"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/right" />
+        
+        <FrameLayout 
+            android:id="@+id/language_tab"
+	        android:layout_width="fill_parent"
+	        android:layout_height="80dp"
+	        android:layout_gravity="center"
+	        android:gravity="center" >
+
+        </FrameLayout>
+        
+     	<TextView 
+            android:id="@+id/language_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="23dp"
+            android:text="中文" />
+        
+    </FrameLayout>
+    <ImageView 
+        android:id="@+id/ok_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ok_background" />
+    <FrameLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+     	<ImageView
+     	    android:id="@+id/logo_background"
+     	    android:layout_width="300dp"
+     	    android:layout_height="300dp"
+     	    android:src="@drawable/logo_background" />
+	    <ImageView
+	        android:id="@+id/logo"
+	        android:layout_width="150dp"
+	        android:layout_height="150dp"
+	        android:layout_marginLeft="70dp"
+	        android:layout_marginTop="30dp" />
+	    
+    </FrameLayout>
+    <!-- <RelativeLayout 
+        android:id="@+id/weather_layout"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+
+	    <RelativeLayout 
+	        android:id="@+id/weather"
+	        android:layout_width="200dp"
+	        android:layout_height="200dp" >
+
+	        <TextView
+	            android:id="@+id/weather_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="25dp"
+	            android:textSize="20dp"
+	            android:text="12~22C"
+	            android:layout_alignParentRight="true" />
+	        
+	        <ImageView
+	            android:id="@+id/weather_pic"
+	            android:layout_width="20dp"
+	            android:layout_height="25dp"
+	            android:src="@drawable/weather_pic"
+	            android:layout_toLeftOf="@+id/weather_text"/>
+	        <TextView
+	            android:id="@+id/weather_day"
+	            android:layout_width="wrap_content"
+	            android:layout_height="25dp"
+	            android:textSize="20dp"
+	            android:layout_below="@+id/weather_pic"
+	            android:layout_alignParentRight="true"
+	            android:text="Wethenday, March 19" />
+
+        </RelativeLayout>	        
+        <TextView 
+            android:id="@+id/weather_time"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textSize="45dp"
+            android:text="15:38"
+            android:layout_toRightOf="@+id/weather" />
+         
+    </RelativeLayout> -->
+    <FrameLayout 
+          android:layout_width="900dp"
+	        android:layout_height="300dp"
+	        android:layout_centerInParent="true"
+		>
+	    
+        <ImageView
+	        android:id="@+id/language_bg_pic"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginBottom="110dp"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	        android:visibility="invisible"
+        	android:src="@drawable/sub_icon_shuiwu" />
+	    <LinearLayout 
+	        android:id="@+id/message"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical">
+	        <TextView 
+	            android:id="@+id/message_title"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="35sp"
+	            android:lineSpacingExtra="5dp"
+	            android:textStyle="bold"/>
+	        <TextView 
+	            android:id="@+id/message_body"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="30sp"
+	            android:layout_marginTop="5dp"
+	            android:layout_marginBottom="5dp"
+	            android:textStyle="bold|italic"
+	            />
+	        <TextView 
+	            android:id="@+id/message_manager"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="45sp"
+	            android:lineSpacingExtra="5dp"
+	            android:textStyle="bold"
+	            android:gravity="right"/>
+	            
+	    	</LinearLayout>
+	</FrameLayout>
+</RelativeLayout>

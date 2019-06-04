@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <ImageView
+        android:layout_width="181.5px"
+        android:layout_height="181.5px"
+        android:id="@+id/AppItemImage"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitCenter"
+        android:layout_margin="5dip"
+        android:background="@drawable/grid_item_icon_bg"
+        android:padding="24px" >
+    </ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AppItemText"
+        android:layout_below="@id/AppItemImage"
+        android:layout_marginTop="13.5px"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/apps_name_textsize" >
+    </TextView>
+</RelativeLayout>

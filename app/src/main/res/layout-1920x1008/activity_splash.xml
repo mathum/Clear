@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_countdown_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="75px"
+        android:layout_gravity="right|top"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/horizontal_margin_2"
+        android:layout_marginTop="@dimen/vertical_margin_2"
+        android:orientation="horizontal" 
+        android:visibility="visible"
+        android:background="@color/deep_transparency">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textview_margin_left_small_2"
+            android:text="helloworld"
+            android:textColor="@color/count_down_text"
+            android:textSize="100px" />
+
+        <TextView
+            android:id="@+id/tv_minute_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textview_margin_left_small_2"
+            android:textColor="@color/count_down_digit"
+            android:textSize="@dimen/item_content_font_size_2" />
+
+        <TextView
+            android:id="@+id/tv_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textview_margin_left_small_2"
+            android:text="@string/minute"
+            android:textColor="@color/count_down_text"
+            android:textSize="@dimen/item_content_font_size_2" />
+
+        <TextView
+            android:id="@+id/tv_second_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textview_margin_left_small_2"
+            android:textColor="@color/count_down_digit"
+            android:textSize="@dimen/item_content_font_size_2" />
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textview_margin_left_small_2"
+            android:layout_marginRight="@dimen/textview_margin_left_small_2"
+            android:text="@string/second"
+            android:textColor="@color/count_down_text"
+            android:textSize="@dimen/item_content_font_size_2" />
+    </LinearLayout>
+
+</FrameLayout>

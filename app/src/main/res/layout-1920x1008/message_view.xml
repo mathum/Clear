@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:id="@+id/message_title"
+        android:layout_width="fill_parent"
+        android:layout_height="300px">
+        <LinearLayout 
+            android:id="@+id/message_title_left"
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:gravity="bottom|right"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/message_title_pic"
+                android:layout_width="150px"
+                android:layout_height="105px"
+                android:adjustViewBounds="true"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/message_pic" />
+            <TextView
+                android:id="@+id/message_title_name"
+                android:layout_width="150px"
+                android:layout_height="45px"
+                android:text="@string/message_title"
+                android:shadowColor="#000000"
+				android:shadowDx="0"
+				android:shadowDy="2"
+				android:shadowRadius="4"
+                android:gravity="center"
+                android:layout_gravity="bottom|right"
+                android:visibility="gone"
+                android:textSize="45px"/>
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/message_title_msgname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60px"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/message_title_left"/>
+        <TextView
+            android:id="@+id/message_curFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="300px"
+            android:textSize="45px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true" />
+        
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/message_baseline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/top_recommend_baseline"/>
+    <ListView
+        android:id="@+id/message_context"
+        android:layout_width="fill_parent"
+        android:layout_height="600px"
+        android:layout_marginLeft="300px"
+        android:layout_marginRight="300px"
+        android:scrollbars="none"
+        android:cacheColorHint="#FFFFFF"
+        android:listSelector="@drawable/msg_item_select"
+        android:divider="#FFFFFF"
+        android:dividerHeight="0px"
+        android:transcriptMode="alwaysScroll" />
+    
+    <LinearLayout 
+        android:id="@+id/message_command"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75px"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <ImageView 
+            android:id="@+id/message_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/message_command"/>
+    </LinearLayout>
+
+</LinearLayout>

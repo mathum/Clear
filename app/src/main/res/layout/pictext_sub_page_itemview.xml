@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    
+ 
+   
+  <ImageView
+    android:id="@+id/picText_sub_page_view_content"
+    android:layout_width="1280px"
+    android:layout_height="720px"
+    />
+  
+ 
+    
+  
+ </RelativeLayout>
+

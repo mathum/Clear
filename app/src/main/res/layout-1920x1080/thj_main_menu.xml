@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+      
+
+	 <FrameLayout 
+	     android:id="@+id/thj_mainmenu"
+	     android:layout_width="fill_parent"
+	     android:layout_height="fill_parent">
+	     
+	    
+	     
+	     <ImageView
+	         android:id="@+id/thj_menu_bakcground"
+	         android:layout_width="fill_parent"
+	         android:layout_height="fill_parent"/>
+	     
+	     <!--<ImageView 
+	         android:id="@+id/thj_focus_background"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginBottom="120dp"
+	         android:layout_marginLeft="155dp"
+	         android:adjustViewBounds="true"
+	         android:layout_gravity="left|bottom"/>-->
+	         
+	      <TextView 
+	         android:id="@+id/thj_menu_time"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginTop="36px"
+	         android:layout_marginLeft="1714.5px"
+	         android:textSize="60px"
+	         android:text="11:00"/>
+
+ 	     
+	     
+	     <LinearLayout
+	         android:id="@+id/thj_menu"
+	         android:layout_width="fill_parent"
+	         android:layout_height="fill_parent"
+	         android:layout_gravity="bottom"
+	         android:layout_marginBottom="142.5px"
+	         android:layout_marginLeft="255px"
+	         android:layout_marginRight="255px"
+	         android:gravity="bottom"
+	         android:orientation="horizontal">
+	         
+	         
+	         
+	     </LinearLayout>
+	     
+	 </FrameLayout>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:id="@+id/billing_item"
+        android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginBottom="10dp"
+	    android:layout_marginLeft="100dp"
+	    android:layout_marginRight="100dp"
+	    android:layout_gravity="center">
+	    <ImageView
+	        android:id="@+id/billing_num"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="10dp"
+	        android:adjustViewBounds="true"
+	        android:src="@drawable/ordering_detail_focus_bg" />
+	    
+        <TextView
+	        android:id="@+id/billing_item_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:lineSpacingExtra="5dp"
+      		android:textSize="20sp"
+      		android:textColor="#FFFFFF"
+      		android:layout_toRightOf="@+id/billing_num" />
+        
+        <LinearLayout
+            android:id="@+id/billing_item_detials"
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:layout_below="@+id/billing_item_name"
+		    android:orientation="vertical"
+		    android:layout_toRightOf="@+id/billing_num" >
+
+	    </LinearLayout>
+	</RelativeLayout>
+	<ImageView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:scaleType="fitXY"
+	    android:src="@drawable/ordering_detail_line"/>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+     >
+    
+<FrameLayout
+    android:id="@+id/movie_grid_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+ 
+<ImageView
+    android:id="@+id/movie_grid_pic_border"
+    android:layout_width="228px"
+    android:layout_height="148px"
+    android:background="@color/white"
+    android:visibility="invisible"
+    android:layout_gravity="center"
+    />  
+       
+    
+<ImageView
+    android:id="@+id/movie_grid_pic"
+    android:layout_width="226px"
+    android:layout_height="146px"
+    android:layout_gravity="center"
+    />
+    
+<TextView
+    android:visibility="invisible"
+    android:id="@+id/movie_grid_text"
+    android:layout_width="226px"
+    android:layout_height="24px"
+    android:layout_marginTop="123px"
+    android:paddingLeft="4px"
+    android:textColor="#ffffff"
+    android:background="#a3000000" />
+
+</FrameLayout>
+
+<com.clearcrane.util.MarqueeTextView
+    android:id="@+id/movie_grid_name"
+    android:layout_width="150px"
+    android:layout_height="21px"
+    android:layout_marginTop="8px"
+    android:focusable="true"
+    android:textColor="#ffffff"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"/>
+</LinearLayout>

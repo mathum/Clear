@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout 
+        android:id="@+id/picture_whole_category"
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	 >
+	 
+     <ImageView
+       android:id="@+id/cover_video_background_category"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="fitXY"
+       android:src="@drawable/body_background" />
+	 
+    <ImageView 
+        android:id="@+id/pictureView_category"
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:scaleType="fitXY"/> 
+	 
+	<ImageView 
+        android:id="@+id/shuiwu_layer_category"
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:scaleType="fitXY"
+	    android:src="@drawable/pic_list_shuiwu"/> 
+	    
+   	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" 
+	    android:layout_marginLeft="90px">
+	    
+        <LinearLayout 
+	        android:id="@+id/pictureTitle_category"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" 
+		    android:layout_marginTop="90px">
+		    <ImageView 
+		        android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			     android:layout_marginTop="30px"
+			    android:src="@drawable/picture_list_left_arrow"
+			    />   
+			<TextView
+			    android:id="@+id/pictureTitleText_category"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="30px"
+			    android:textSize="90px"
+			    />
+			<!--<TextView
+			    android:id = "@+id/"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20px"
+			    android:text=" - 分类列表"
+			    android:textSize="30px"
+			    />-->
+	    </LinearLayout>  
+       
+
+       <FrameLayout
+            android:layout_width="match_parent"
+		    android:layout_height="match_parent" >
+			
+	        <ListView
+		        android:id="@+id/pictureSubCategoryList"
+		        android:layout_width="300px"
+		        android:layout_height="match_parent"
+		        android:layout_marginTop="90px"
+		        android:layout_marginBottom="75px"
+		        android:scrollbars="none"
+		        android:cacheColorHint="#FFFFFF"
+		        android:listSelector="@drawable/pic_list_item_select"
+		        android:divider="#FFFFFF"
+		        android:dividerHeight="0px"
+		        android:transcriptMode="alwaysScroll"
+		         />
+	        
+	        <FrameLayout
+	            android:id="@+id/pictureSubCategoryTextIntroduceFL"
+	            android:layout_width="match_parent"
+		    	android:layout_height="match_parent">
+		    	
+	            <ImageView
+			        android:id="@+id/piclist_shuiwu_bg_pic_category"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="1050px"
+			        android:layout_marginTop="525px"
+			        android:layout_marginRight="90px"
+			        android:layout_marginBottom="90px"
+			        android:visibility="invisible"
+			        android:adjustViewBounds="true"
+			        android:scaleType="fitXY"
+		        	android:src="@drawable/sub_icon_shuiwu" />
+	            
+	                       
+		        <TextView
+		            android:id="@+id/picturCategoryText"
+		            android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:layout_marginLeft="1050px"
+			        android:layout_marginTop="525px"
+			        android:layout_marginRight="90px"
+			        android:layout_marginBottom="90px" 
+			        android:textSize="30px" 
+			        android:textColor="#ffffff"
+			        />
+			      
+	        </FrameLayout>
+	    </FrameLayout>
+	        	
+    </LinearLayout> 
+	    
+    <ImageView 
+        android:id="@+id/bottom_notice_category"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:visibility="visible"
+	    android:layout_gravity="center_horizontal|bottom"
+	    android:layout_marginBottom="15px"
+	    /> 
+	
+    </FrameLayout>
+
+</LinearLayout>

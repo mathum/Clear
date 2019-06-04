@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:id="@+id/message_item"
+        android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginTop="10px"
+	    android:layout_marginBottom="10px"
+	    android:layout_marginLeft="100px"
+	    android:layout_marginRight="100px"
+	    android:layout_gravity="center">
+	    
+        <ImageView
+	        android:id="@+id/message_item_status"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	       	android:layout_gravity="center"
+	        android:adjustViewBounds="true"
+	        android:src="@drawable/msg_close"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:layout_toRightOf="@+id/message_item_status"
+		    android:orientation="vertical" >
+		    <TextView
+		        android:id="@+id/message_item_title"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:lineSpacingExtra="5dp"
+        		android:textSize="20px"
+        		android:textColor="#FFFFFF"
+        		android:textStyle="normal"
+		       	android:padding="10px"/>
+		    <TextView
+		        android:id="@+id/message_item_msg"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:lineSpacingExtra="5dp"
+        		android:textSize="20px"
+        		android:textColor="#FFFFFF"
+        		android:textStyle="normal"
+        		android:paddingLeft="10px"
+		       	android:layout_gravity="center"/>
+	    </LinearLayout>
+	</RelativeLayout>
+	<ImageView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginTop="10px"
+	    android:scaleType="fitXY"
+	    android:src="@drawable/ordering_detail_line"/>
+
+</LinearLayout>

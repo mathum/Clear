@@ -1,0 +1,56 @@
+﻿{
+    "background": "http://192.168.0.62/nativevod/now/Main/resource/18917fc9102bcc934513a5551d238096_146276555309.jpg",
+    "name": "背景图片.png",
+    "widgets": [
+        {
+            "duration": 10,
+            "height": 400,
+            "left": 400,
+            "resources": [
+                {
+                    "duration": 1234,
+                    "name": "视频资源.mp4",
+                    "type_id": 1,
+                    "url": "http://192.168.0.62/nativevod/resource/0a529046032ef1381513566e109a6043_146129034744.mp4"
+                }
+            ],
+            "top": 200,
+            "type_id": "1",
+            "width": 800
+        },
+        {
+            "duration": 10,
+            "height": 300,
+            "left": 20,
+            "resources": [
+                {
+                    "duration": 1234,
+                    "name": "图片1.png",
+                    "type_id": 1,
+                    "url": "http://192.168.0.62/nativevod/resource/ea66c06c1e1c05fa9f1aa39d98dc5bc1_146165200515.png"
+                },
+                {
+                    "duration": 1234,
+                    "name": "图片2.png",
+                    "type_id": 2,
+                    "url": "http://192.168.0.62/nativevod/resource/d24771e578158689f729487cc8ab494c_146165234873.png"
+                },
+                {
+                    "duration": 1234,
+                    "name": "图片3.png",
+                    "type_id": 3,
+                    "url": "http://192.168.0.62/nativevod/resource/fb8c1747bca2571624eaee2f27739abd_146165244195.png"
+                },
+                {
+                    "duration": 1234,
+                    "name": "图片4.png",
+                    "type_id": 4,
+                    "url": "http://192.168.0.62/nativevod/resource/e27cc0c3c7daa4e49657a80cbcb6e326_146123439166.jpg"
+                }
+            ],
+            "top": 20,
+            "type_id": "2",
+            "width": 300
+        }
+    ]
+}

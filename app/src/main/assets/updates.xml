@@ -1,0 +1,16 @@
+<updates>
+    <update>
+    <model>A3000H</model>
+	<version>306</version>
+	<apkurl>http://192.168.0.62/nativevod/now/update/ClearNativeVoD_version170614_306.apk</apkurl>
+	<apkname>ClearNativeVoD_commitXXX.apk</apkname>
+	<md5>8948631920CBF069DE47ACDE5D6C0E57</md5>
+	</update>
+	<update>
+	<model>skyworth_368W</model>
+	<version>308</version>
+	<apkurl>http://192.168.0.62/nativevod/now/update/ClearNativeVoD_version170614_306.apk</apkurl>
+	<apkname>ClearNativeVoD_commitXXX.apk</apkname>
+	<md5>8948631920CBF069DE47ACDE5D6C0E57</md5>
+	</update>
+</updates>

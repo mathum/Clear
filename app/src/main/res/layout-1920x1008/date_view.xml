@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/weather_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+ 	<RelativeLayout 
+	     android:id="@+id/weather"
+	     android:layout_width="300px"
+	     android:layout_height="300px" >
+	
+	     <TextView
+	         android:id="@+id/weather_text"
+	         android:layout_width="wrap_content"
+	         android:layout_height="37.5px"
+	         android:textSize="30px"
+	         android:text="12~22C"
+	         android:layout_alignParentRight="true" />
+	     
+	     <ImageView
+	         android:id="@+id/weather_pic"
+	         android:layout_width="30px"
+	         android:layout_height="37.5px"
+	         android:src="@drawable/weather_pic"
+	         android:layout_toLeftOf="@+id/weather_text"/>
+	     <TextView
+	         android:id="@+id/weather_day"
+	         android:layout_width="wrap_content"
+	         android:layout_height="37.5px"
+	         android:textSize="30px"
+	         android:layout_below="@+id/weather_pic"
+	         android:layout_alignParentRight="true"
+	         android:text="Wethenday, March 19" />
+
+    </RelativeLayout>	        
+    <TextView 
+        android:id="@+id/weather_time"
+        android:layout_width="225px"
+        android:layout_height="90px"
+        android:gravity="top"
+        android:layout_marginBottom="30px"
+        android:layout_marginTop="-15px"
+        android:layout_marginLeft="7.5px"
+        android:layout_gravity="top"
+        android:lineSpacingExtra="15px"
+        android:textSize="75px" />
+     
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <ImageView
+        android:id="@+id/thj_wifi_bg"
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:scaleType="fitXY"/>
+    
+    <TextView
+        android:id="@+id/wifi_title"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+         android:layout_marginTop="59px"
+        android:layout_marginLeft="53px"
+        android:textSize="32px"/>
+    
+   
+     <TextView
+        android:id="@+id/thj_wifi_ssid"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+         android:layout_marginTop="200px"
+        android:layout_marginLeft="220px"
+        android:visibility="invisible"
+        android:textSize="32px"/>
+     
+     <TextView
+        android:id="@+id/thj_wifi_passwd"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+         android:layout_marginTop="200px"
+        android:layout_marginLeft="660px"
+        android:visibility="invisible"
+        android:textSize="32px"/>
+     
+     <Button 
+         android:id="@+id/start_button"
+         android:layout_width="162px"
+    	android:layout_height="48px"
+    	android:background="@drawable/thj_button_selector"
+    	android:textSize="30px"
+    	android:layout_marginTop="517px"
+        android:layout_marginLeft="55px"/>
+    	"
+   
+
+</FrameLayout>

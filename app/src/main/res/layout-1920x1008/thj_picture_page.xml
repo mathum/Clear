@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ImageView
+        android:id="@+id/thj_pictur_page_mainbackground"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"/>
+    
+    <ImageView
+        android:id="@+id/thj_pictur_page_image"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        />
+    
+    <TextView
+        android:id="@+id/thj_picture_page_title"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="82.5px"
+        android:layout_marginLeft="285px"
+        android:text="@string/message_title"
+        android:textSize="57px"/>
+    
+    <TextView
+        android:id="@+id/thj_picture_page_num"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="868.5px"
+        android:layout_gravity="center_horizontal"
+        android:textSize="36px"
+        android:text="-1/5-"/>
+    
+    <ImageView
+        android:id="@+id/thj_picture_page_left"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="513px"
+        android:layout_marginLeft="195px"
+        android:visibility="visible"
+        android:src="@drawable/iconleft"/>
+    
+    <ImageView
+        android:id="@+id/thj_picture_page_right"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="513px"
+        android:layout_marginLeft="1704px"
+        android:visibility="visible"
+        android:src="@drawable/iconright"/>
+    
+     <TextView
+        android:id="@+id/thj_picture_page_select"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="868.5px"
+        android:layout_marginLeft="1395px"
+        android:textSize="18px"
+        android:text="选择"/>
+     
+     <TextView
+        android:id="@+id/thj_picture_page_back"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="868.5px"
+        android:layout_marginLeft="1540.5px"
+        android:textSize="27px"
+        android:text="返回"/>
+    
+
+</FrameLayout>

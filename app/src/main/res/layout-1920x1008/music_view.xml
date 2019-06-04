@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?><FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+       android:id="@+id/music_backgroud_image"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"    
+       android:src="@drawable/background_music_view" 
+       android:scaleType="fitXY"
+        />
+      <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginLeft="300px"
+       android:layout_marginRight="300px"
+       android:layout_marginTop="80px"
+       android:layout_marginBottom="120px"
+       android:orientation="vertical"
+       >
+       
+        <LinearLayout
+           android:layout_width="match_parent"
+       	   android:layout_height="wrap_content"
+       	   android:orientation="horizontal" >
+       	 
+       	   <FrameLayout 
+       	     android:layout_width="wrap_content"
+       		 android:layout_height="wrap_content">
+       	       <ImageView
+			       android:layout_width="234px"
+			       android:layout_height="279px"
+			       android:scaleType="fitXY"
+			       android:src="@drawable/music_default_focus_kuang">
+	            </ImageView>
+       	   
+	            <ImageView
+	               android:id="@+id/music_album_image"
+			       android:layout_width="225px"
+			       android:layout_height="270px"
+			       android:layout_marginLeft="4.5px"
+			       android:layout_marginTop="4.5px"
+			       android:scaleType="fitXY">
+	            </ImageView>
+            
+            </FrameLayout>
+            
+            <LinearLayout
+	           android:layout_width="wrap_content"
+	       	   android:layout_height="wrap_content"
+	       	   android:layout_marginTop="45px"
+	       	   android:orientation="vertical"
+	       	   android:layout_marginLeft="30px"
+	       	   android:layout_gravity="bottom" >"
+	       	   
+               <LinearLayout
+		           android:layout_width="wrap_content"
+		       	   android:layout_height="wrap_content"
+		       	   android:orientation="horizontal" >
+		       	   
+	                <ImageView
+				       android:layout_width="30px"
+				       android:layout_height="30px"
+				       android:layout_marginTop="15px"
+				       android:scaleType="fitXY"
+				       android:src="@drawable/music_xuanlvtubiao" />
+	                <TextView 
+	                   android:id="@+id/music_name_in_title"
+	                   android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:layout_marginLeft="30px"
+				       android:textSize="45px"
+				       android:textColor="#ffffff"/>
+	            </LinearLayout>  
+    
+	                
+	            <LinearLayout
+		           android:layout_width="wrap_content"
+		       	   android:layout_height="wrap_content" 
+		       	   android:layout_marginTop="15px" 
+		       	   android:orientation="horizontal">
+				    <ImageView
+				       android:layout_width="30px"
+				       android:layout_height="30px"
+				       android:layout_marginTop="15px"
+				       android:scaleType="fitXY"
+				       android:src="@drawable/music_samll_icon" />
+				    <TextView 
+	                   android:id="@+id/music_singer_in_title"
+	                   android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:layout_marginLeft="30px"
+				       android:textSize="37.5px"
+				       android:textColor="#ffffff"/>
+				</LinearLayout>   
+				   
+				<LinearLayout
+		           android:layout_width="wrap_content"
+		       	   android:layout_height="wrap_content" 
+		       	   android:layout_marginTop="15px"
+		       	   android:orientation="horizontal" >  
+				    <ImageView
+				       android:layout_width="30px"
+				       android:layout_height="30px"
+				       android:layout_marginTop="15px"
+				       android:scaleType="fitXY"
+				       android:src="@drawable/music_quanquan" />
+				    <TextView 
+	                   android:id="@+id/music_album_in_title"
+	                   android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:layout_marginLeft="30px"
+				       android:textSize="37.5px"
+				       android:textColor="#ffffff"/>  
+				</LinearLayout>   
+             </LinearLayout>    
+        </LinearLayout>
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="45px"
+		    android:layout_marginBottom="15px" >
+           
+            <ImageView
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:scaleType="fitXY"
+	        	android:src="@drawable/sub_icon_shuiwu" />
+            
+            <LinearLayout
+		        android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
+		    	android:orientation="horizontal">
+				
+                <TextView
+                android:id="@+id/music_name_and_count"
+		        android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:textSize="37.5px"
+		    	android:layout_marginLeft="195px"
+		    	android:layout_weight="1"
+		    	android:textColor="#ffffff" 
+		    	android:text="@string/music_name" />"
+                
+				<TextView
+				android:id="@+id/music_singer_list"
+		        android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:textSize="37.5px"
+		    	android:layout_marginLeft="330px"
+		    	android:gravity="right"
+		    	android:textColor="#ffffff"
+		    	android:visibility="gone"
+		    	android:text="@string/music_singer"/>
+				
+				<TextView
+				android:id="@+id/music_duration_list"
+		        android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:textSize="37.5px"
+		    	android:layout_weight="1"
+		    	android:gravity="center_horizontal"
+		    	android:textColor="#ffffff"
+		    	android:text="@string/music_duration"/>  
+				
+            </LinearLayout>
+            
+            <ImageView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="1px"
+			    android:layout_marginLeft="22.5px"
+			    android:layout_marginRight="22.5px"
+			    android:layout_marginTop="72px"
+			    android:layout_marginBottom="1.5px"
+			    android:scaleType="fitXY"
+			    android:src="@drawable/ordering_detail_line"/>
+            
+	        <ListView
+		        android:id="@+id/musicList"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_marginTop="82.5px"
+		        android:layout_marginBottom="15px"
+		        android:scrollbars="none"
+		        android:cacheColorHint="#FFFFFF"
+		        android:divider="#FFFFFF"
+		        android:dividerHeight="0px"
+		        android:listSelector="@drawable/music_list_item_select"
+		         />
+        </FrameLayout>   
+    </LinearLayout>
+    
+    <ImageView 
+        android:id="@+id/music_ok_button"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:visibility="visible"
+	    android:layout_gravity="center_horizontal|bottom"
+	    android:layout_marginBottom="45px"
+	    /> 
+
+</FrameLayout>

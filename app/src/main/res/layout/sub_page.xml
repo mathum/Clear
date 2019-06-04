@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sub_page_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+
+    <ImageView
+        android:id="@+id/sub_pic_border"
+        android:layout_width="176px"
+        android:layout_height="176px"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/sub_pic"
+        android:layout_width="166px"
+        android:layout_height="166px"
+        android:layout_gravity="center"
+         android:layout_margin="20px"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/sub_install_status_pic"
+        android:layout_width="166px"
+        android:layout_height="166px"
+        android:layout_gravity="center"
+        android:scaleType="fitXY" />
+    
+    <com.clearcrane.view.RoundProgressBar
+        android:id="@+id/roundProgressBar"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_gravity="center"
+         />
+    
+
+    <TextView
+        android:id="@+id/sub_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60px"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3" />
+
+</FrameLayout>

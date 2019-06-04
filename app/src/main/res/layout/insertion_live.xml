@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<!-- 
+    <VideoView 
+        android:id="@+id/vv_channel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+ -->
+    
+    <ImageView 
+        android:id="@+id/live_channel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="10dip"
+        android:layout_marginRight="20dip"
+        android:background="@android:color/transparent"
+        android:textColor="#00BDE0"
+        android:textSize="30dip"
+        android:visibility="gone" />
+    
+</FrameLayout>

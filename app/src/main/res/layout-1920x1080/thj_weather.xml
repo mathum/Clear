@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+ <ImageView
+        android:id="@+id/thj_weather_mainbackground"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"/>
+       
+    <TextView
+        android:id="@+id/thj_weather_title"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="82.5px"
+        android:layout_marginLeft="285px"
+        android:text="@string/message_title"
+        android:textSize="57px"/>
+    
+    <ImageView
+        android:id="@+id/thj_weather_china_sel"
+        android:layout_width="192px"
+    	android:layout_height="75px"
+    	android:layout_marginTop="163.5px"
+        android:layout_marginLeft="289.5px"
+        android:alpha="100"
+        android:background="@color/weather_sel"/>
+     <TextView
+        android:id="@+id/thj_weather_china"
+        android:layout_width="192px"
+    	android:layout_height="75px"
+        android:layout_marginTop="163.5px"
+        android:layout_marginLeft="289.5px"
+        android:gravity="center"
+        android:textSize="37.5px"
+        android:text="国内"/>
+     
+     <ImageView
+        android:id="@+id/thj_weather_global_sel"
+        android:layout_width="192px"
+    	android:layout_height="75px"
+    	android:layout_marginTop="163.5px"
+        android:layout_marginLeft="480px"
+        android:visibility="invisible"
+        android:background="@color/weather_sel"/>
+     
+      <TextView
+        android:id="@+id/thj_weather_global"
+        android:layout_width="192px"
+    	android:layout_height="75px"
+        android:layout_marginTop="163.5px"
+        android:layout_marginLeft="480px"
+        android:gravity="center"
+        android:textSize="37.5px"
+        android:text="国际"/>
+      
+      
+      
+      <ImageView
+        android:id="@+id/thj_weather_lefticon"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="178.5px"
+        android:layout_marginLeft="259.5px"
+        android:src="@drawable/iconleft"/>
+      
+      <ImageView
+        android:id="@+id/thj_weather_righticon"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="178.5px"
+        android:layout_marginLeft="681px"
+        android:src="@drawable/iconright"/>
+      
+      <ListView
+        android:id="@+id/weather_item_list"
+        android:layout_width="450px"
+        android:layout_height="447px"
+        android:layout_marginLeft="252px"
+        android:layout_marginTop="247.5px"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="3px"
+        android:listSelector="@drawable/thj_button_selector" />
+    
+    <ImageView
+        android:id="@+id/thj_weather_image"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        />
+        
+     <ListView
+        android:id="@+id/cityList"
+        android:layout_width="450px"
+        android:layout_height="match_parent"
+        android:layout_marginTop="247.5px"
+        android:layout_marginBottom="211.5px"
+        android:scrollbars="none"
+        android:cacheColorHint="#FFFFFF"
+        android:listSelector="@drawable/button"
+        android:divider="#FFFFFF"
+        android:dividerHeight="0dp"
+        android:transcriptMode="alwaysScroll"
+         />
+    
+    <ImageView
+        android:id="@+id/thj_weather_left"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="513px"
+        android:layout_marginLeft="195px"
+        android:visibility="visible"/>
+    
+    <ImageView
+        android:id="@+id/thj_weather_right"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="513px"
+        android:layout_marginLeft="1704px"
+        android:visibility="visible"/>
+    
+     <TextView
+        android:id="@+id/thj_weather_select"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="868.5px"
+        android:layout_marginLeft="1395px"
+        android:textSize="27px"
+        android:text="选择"/>
+     
+     <TextView
+        android:id="@+id/thj_weather_back"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="868.5px"
+        android:layout_marginLeft="1540.5px"
+        android:textSize="27px"
+        android:text="返回"/>
+     
+     <TextView
+         android:id="@+id/thj_weather_today"
+         android:layout_width="226.5px"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="729px"
+         android:layout_marginTop="270px"
+         android:textSize="27px"
+         android:gravity="center"
+         />
+     <TextView
+         android:id="@+id/thj_weather_tomorrow"
+         android:layout_width="226.5px"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="1212px"
+         android:layout_marginTop="370.5px"
+         android:textSize="25.5px"
+         android:gravity="center"
+         />
+     <TextView
+        android:id="@+id/thj_weather_day3"
+        android:layout_width="226.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1437px"
+        android:layout_marginTop="370.5px"
+        android:gravity="center"
+        android:textSize="25.5px" />
+
+    <ImageView
+        android:id="@+id/thj_weather_today_pic"
+        android:layout_width="213px"
+        android:layout_height="177px"
+        android:layout_marginLeft="906px"
+        android:layout_marginTop="384px"
+         />
+
+    <ImageView
+        android:id="@+id/thj_weather_tomorrow_pic"
+        android:layout_width="99px"
+        android:layout_height="85.5px"
+        android:layout_marginLeft="1278px"
+        android:layout_marginTop="466.5px"
+         />
+
+    <ImageView
+        android:id="@+id/thj_weather_day3_pic"
+        android:layout_width="99px"
+        android:layout_height="85.5px"
+        android:layout_marginLeft="1504.5px"
+        android:layout_marginTop="465.5px"
+         />
+    
+    <TextView
+        android:id="@+id/thj_weather_today_temp"
+        android:layout_width="453px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="786px"
+        android:layout_marginTop="585px"
+        android:gravity="center"
+        android:textSize="45px" />
+
+    <TextView
+        android:id="@+id/thj_weather_tomorrow_temp"
+        android:layout_width="226.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1212px"
+        android:layout_marginTop="624px"
+        android:gravity="center"
+        android:textSize="27px" />
+
+    <TextView
+        android:id="@+id/thj_weather_day3_temp"
+        android:layout_width="226.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1437px"
+        android:layout_marginTop="624px"
+        android:gravity="center"
+        android:textSize="27px" />
+    <TextView
+        android:id="@+id/thj_weather_today_wind"
+        android:layout_width="453px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="786px"
+        android:layout_marginTop="711px"
+        android:gravity="center"
+        android:textSize="27px" />
+    <TextView
+        android:id="@+id/thj_weather_today_wea"
+        android:layout_width="453px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="786px"
+        android:layout_marginTop="663px"
+        android:gravity="center"
+        android:textSize="30px" />
+    <TextView
+        android:id="@+id/thj_weather_tomorrow_wea"
+        android:layout_width="226.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1212px"
+        android:layout_marginTop="666px"
+        android:gravity="center"
+        android:textSize="27px" />
+    <TextView
+        android:id="@+id/thj_weather_day3_wea"
+        android:layout_width="226.5px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1437px"
+        android:layout_marginTop="666px"
+        android:gravity="center"
+        android:textSize="27px" />
+</FrameLayout>

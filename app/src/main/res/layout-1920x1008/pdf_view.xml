@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+     >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_proportion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/textview_padding_right_2"
+        android:paddingRight="@dimen/textview_padding_right_2"
+	    android:layout_marginRight="@dimen/textview_margin_right_2"
+	    android:layout_marginBottom="@dimen/textview_margin_bottom_2"
+        android:textSize="@dimen/item_content_font_size_3"
+        android:textColor="@color/count_down_digit"
+        android:background="@color/white"
+         />
+
+</RelativeLayout>

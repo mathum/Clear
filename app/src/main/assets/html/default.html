@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Settings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css" >
+    body{
+        text-align:center;
+        font-family: tahoma, arial;
+        background: #fff;
+    }
+    .datagrid{
+        #margin-left:auto;
+        #margin-right:auto;
+        width:700px;
+        border-collapse:collapse;
+        border:1px #333 solid;
+    }
+    .datagrid th{
+        width:200px;
+        text-align: left;
+        background: #DDDDDD;
+        padding: 3px;
+        border:1px #333 solid;
+    }
+    .datagrid td{
+        padding: 3px;
+        border: none;
+        border:1px #333 solid;
+    }
+    .ad{
+        display:none;
+    }
+    .inputText{
+        width:500px;
+    }
+    select{
+        width:500px;
+    }
+</style>
+<script type="text/javascript">
+    var isIE = false;
+    var xmlHttp = false;
+    try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+        try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e2) {
+            xmlHttp = false;
+        }
+    }
+    if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+        xmlHttp = new XMLHttpRequest();
+        isIE = false;
+    } else {
+        isIE = true;
+    }
+
+	function setDefElementValue(response) {
+        var json = eval("(" + response + ")");
+        document.getElementById("deflogserver").value = json.deflogserver;
+		document.getElementById("defupdateserver").value = json.defupdateserver;
+    }
+	
+    function pageload() {
+        xmlHttp.open("POST","default.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("getdefaultinfo=true");
+        setDefElementValue(xmlHttp.responseText);
+    }
+	
+	function saveInfo(flag) {
+		xmlHttp.open("POST","default.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var jsonStr = '{';
+        
+        var value = document.getElementById("deflogserver").value;
+        if (checkUrl(value) == false) {
+            alert("网址格式错误，请重新输入");
+            document.getElementById("deflogserver").focus();
+            return -1;
+        }
+        jsonStr += '"deflogserver":"' + value + '"';
+		
+		var value = document.getElementById("defupdateserver").value;
+        if (checkUrl(value) == false) {
+            alert("网址格式错误，请重新输入");
+            document.getElementById("defupdateserver").focus();
+            return -1;
+        }
+        jsonStr += ',"defupdateserver":"' + value + '"';
+		
+		var a = prompt("请输入密码：","");
+		jsonStr += ',"defpassword":"' + a + '"';
+		
+        jsonStr += '}';
+        xmlHttp.send("setdefaultinfo=" + jsonStr);
+		
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            if (flag == 1) {
+                alert("保存成功");
+            }
+        } else {
+            alert("保存失败：" + result);
+            return -1;
+        }
+	}
+	
+	function restart() {
+		if (saveInfo(0) == -1) {
+            return;
+        }
+        xmlHttp.open("POST","default.html", false);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("op=restart");
+        var result = xmlHttp.responseText;
+        if (result == "true") {
+            alert("立即生效成功");
+        } else {
+            alert("立即生效失败：" + result);
+        }
+	}
+	
+	function checkUrl(value) {
+        var re = /[a-zA-z]+:\/\/[^\s]*/;
+        if (!re.test(value)) {
+            return false;
+        }
+		return true;
+    }
+    
+</script>
+<body onLoad="pageload();">
+    <table border="1" id="sysTable" class="datagrid">
+        <tr class="nc">
+            <th colspan="2"><div align="center">默认参数</div></th>
+        </tr>
+
+        <tr>
+            <th>日志服务器</th>
+            <td>
+                <input value="" type="text" id="deflogserver" class="inputText"/>
+            </td>
+        </tr>
+        <tr>
+            <th>升级服务器</th>
+            <td>
+                <input value="" type="text" id="defupdateserver" class="inputText"/>
+            </td>
+        </tr>
+		<tr class="nc">
+            <td colspan="2">
+                <div align="center">
+                    <input type="button" id="save" value="保存修改" onClick="saveInfo(1);"/>
+					<input type="button" id="restart" value="立即生效" onClick="restart();"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+     <!--
+<PreferenceCategory android:title="基本设置"
+    >
+    
+   	<EditTextPreference android:key="mainPage"
+       				android:title="主页地址"
+       				android:summary="点击输入"
+       				android:dialogTitle="主页地址"
+       				android:defaultValue="http://192.168.18.104/hoteltv/main/main.php"
+					/>
+ 	<ListPreference android:title="常用主页地址选择"
+                	android:key="mainPageSelect"
+                	android:summary="常用主页地址选择列表"
+                	android:dialogTitle="主页地址选择"
+                	android:defaultValue="http://192.168.18.104/hoteltv/main/main.php"
+                 	/>
+ 	<EditTextPreference android:key="backupMainPage"
+       				android:title="备用主页地址"
+       				android:summary="点击输入"
+       				android:dialogTitle="备用主页地址"
+       				android:defaultValue="file:///android_asset/tv_src_select.html"
+					/>
+        <ListPreference android:title="常用备用主页地址选择"
+ 	    			android:key="backupMainPageSelect"
+ 	    			android:summary="常用备用主页地址选择列表"
+ 	    			android:dialogTitle="备用主页地址选择"
+ 	    			android:defaultValue="file:///android_asset/tv_src_select.html"
+ 	    			/>
+ 	<CheckBoxPreference android:title="滚动字幕显示" 
+                    	android:key="subtitle"
+                    	android:summaryOn="打开滚动字幕"
+                    	android:summaryOff="关闭滚动字幕"
+                    	android:defaultValue="true"/>
+	<PreferenceScreen android:title="滚动字幕设置"
+	        android:key="subtitleSetting"
+	    ></PreferenceScreen>
+
+ 	
+	<CheckBoxPreference android:title="视频加载提示信息显示" 
+                    	android:key="loadinfo"
+                    	android:summaryOn="显示加载信息"
+                    	android:summaryOff="不显示加载嘻嘻"
+                    	android:defaultValue="false"/>
+    
+	<CheckBoxPreference android:title="开机默认音量设置" 
+                    	android:key="defaultVolume"
+                    	android:summaryOn="设置默认音量"
+                    	android:summaryOff="不设置默认音量"
+                    	android:defaultValue="true"/>
+	
+</PreferenceCategory>
+-->
+<PreferenceCategory android:title="高级设置">
+<!-- 	<com.clearcrane.vod.preference.MyPictureSetPreference  
+    	 	 android:title="图像设置" 
+   			 android:dialogTitle="图像设置" 
+    		 android:dialogLayout="@layout/picture_set" 
+	/>
+    
+	<PreferenceScreen android:title="有线网络设置"
+	        android:key="network"
+	    ></PreferenceScreen>
+	    -->	  
+	<PreferenceScreen android:title="自动搜台"
+	        android:key="autosearch"
+	    ></PreferenceScreen>
+	<PreferenceScreen
+	    android:key="otherSettings"
+	    android:title="电视原生设置"
+       	android:summary="无线网络、系统设置等"
+	    ></PreferenceScreen>
+	 <PreferenceScreen android:title="工厂菜单"
+	        android:key="skyfactory"
+	    ></PreferenceScreen>
+	
+</PreferenceCategory>
+<!--
+<PreferenceCategory android:title="其他设置">
+	<PreferenceScreen android:title="序列号码"
+	        android:key="serialNumber"
+	    ></PreferenceScreen>  
+    <PreferenceScreen android:title="版本信息"
+	        android:key="version"
+	    ></PreferenceScreen>
+    <PreferenceScreen android:title="版本更新"
+	        android:key="versionUpdate"
+	    ></PreferenceScreen>
+    
+    <PreferenceScreen android:title="工厂菜单"
+	        android:key="skyfactory"
+	    ></PreferenceScreen>
+    <PreferenceScreen android:title="酒店模式复制菜单"
+	        android:key="skyhotel"
+	></PreferenceScreen>
+</PreferenceCategory>-->
+</PreferenceScreen>

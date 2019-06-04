@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   <RelativeLayout 
+        android:id="@+id/room_title"
+        android:layout_width="fill_parent"
+        android:layout_height="300px">
+        <LinearLayout 
+            android:id="@+id/room_title_left"
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:gravity="bottom|right"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/room_title_pic"
+                android:layout_width="150px"
+                android:layout_height="105px"
+                android:adjustViewBounds="true"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/top_recommend_pic" />
+            <!-- 
+            <TextView 
+                android:id="@+id/room_title_name"
+                android:layout_width="100px"
+                android:layout_height="30px"
+                android:gravity="center"
+                android:layout_gravity="bottom|right"
+                android:textSize="20px"/>
+             -->
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/room_title_kindname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60px"
+            android:shadowColor="#000000"
+	       android:shadowDx="0"
+	       android:shadowDy="2"
+	       android:shadowRadius="4"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/room_title_left"
+         />
+        
+        <TextView
+            android:id="@+id/room_curFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="75px"
+            android:textSize="45px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="0/0" />
+        
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/room_baseline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/top_recommend_baseline"/>
+    <LinearLayout
+        android:id="@+id/room_pic"
+        android:layout_width="300000px"
+        android:layout_height="300px"
+        android:layout_marginLeft="300px"
+        android:scrollbars="vertical"
+        android:orientation="horizontal">
+        
+    </LinearLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+		android:layout_height="match_parent">
+        
+         <ImageView
+	        android:id="@+id/room_shuiwu_bg_pic"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="735px"
+	        android:layout_marginRight="270px"
+	        android:layout_marginBottom="165px"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	        android:visibility="invisible"
+        	android:src="@drawable/sub_icon_shuiwu" />
+         
+         <LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+            
+             <TextView 
+		        android:id="@+id/room_introduce"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="750px"
+		        android:layout_marginRight="300px"
+		        android:lineSpacingExtra="7.5px"
+		        android:ellipsize="end"
+		        android:lines="7"
+		        android:textSize="30px"/>
+		    <TextView
+		        android:id="@+id/room_facility"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="750px"
+		        android:layout_marginRight="300px"
+		        android:lineSpacingExtra="7.5px"
+		        android:ellipsize="end"
+		        android:lines="4"
+		        android:textSize="30px" />
+		    <ImageView 
+	            android:id="@+id/room_select"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:gravity="center"
+	            android:adjustViewBounds="true"
+	            android:src="@drawable/top_recommend_command"/>
+         </LinearLayout>
+        
+    </FrameLayout>
+    
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="30px" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <TextView 
+            android:id="@+id/dialog_title"
+            android:layout_width="753px"
+            android:layout_height="180px"
+            android:layout_marginLeft="-3px"
+            android:gravity="center"
+            android:textSize="45px"
+            android:text="@string/dialog_title_alert"
+            android:background="@drawable/dialog_title_bg"
+            android:visibility="visible"/>
+        
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="750px"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:lineSpacingMultiplier="1.5"
+            android:minHeight="180.0px"
+            android:textSize="45px"
+            android:background="@android:color/white"
+            android:padding="30px" />
+        <View
+            android:layout_width="750px"
+            android:layout_height="1.5px"
+            android:background="#FFD0D0D0" />
+        <LinearLayout
+            android:layout_width="750px"
+            android:layout_height="120px"
+            android:background="@drawable/dialog_bottom_bg"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/positivebutton"
+                android:layout_width="300px"
+                android:layout_height="90px"
+                android:background="@drawable/btn_ok_selector"
+                android:gravity="center"
+                android:text="@string/dialog_button_ok" />
+            <Button
+                android:id="@+id/negativebutton"
+                android:layout_width="300px"
+                android:layout_height="90px"
+                android:background="@drawable/btn_cancel_selector"
+                android:layout_marginLeft="60px"
+                android:gravity="center"
+                android:text="@string/dialog_button_cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout 
+        android:id="@+id/thj_main_menu_icon_fl"
+        android:layout_width="fill_parent"
+	    android:layout_height="262.5px"
+	    android:layout_marginBottom="16.5px"
+	    android:layout_gravity="bottom"
+	    >
+	    
+     
+         <ImageView
+	        android:id="@+id/thj_pic_text_wrapcontent_border"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:visibility="invisible"
+	        android:scaleType="fitXY"
+        	android:src="@drawable/main_icon_background" />
+  
+        
+        <FrameLayout
+            android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_gravity="center_horizontal|bottom" >
+		    
+
+            
+		    <ImageView
+		        android:id="@+id/thj_pic_text_wrapcontent_pic"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		       	android:layout_gravity="center_horizontal|top"
+		       	android:layout_marginTop="15px"
+		       	android:layout_marginBottom="75px"
+		        />
+		    <ImageView
+		        android:id="@+id/thj_pic_text_wrapcontent_pic_focus"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		       	android:layout_gravity="center_horizontal|top"
+		       	android:layout_marginTop="15px"
+		       	android:layout_marginBottom="75px"
+		        />
+		    <TextView 
+		        android:id="@+id/thj_pic_text_wrapcontent_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal|bottom"
+		        android:gravity="bottom"
+		        android:singleLine="true"
+		        android:ellipsize="marquee"
+		    	android:marqueeRepeatLimit="marquee_forever"
+		    	android:focusable="true"
+		        android:layout_marginBottom="15px"
+		        android:textSize="45px" />
+	    </FrameLayout>
+	    
+
+	       
+	</FrameLayout>
+
+    <!-- following the second icon list ... -->
+
+</LinearLayout>

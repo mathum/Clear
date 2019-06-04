@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/prison_live_view_LiearLayout"
+        android:layout_width="500px"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10px"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20px"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/prison_live_view_title"
+            android:layout_width="420px"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channellist_title"
+            android:gravity="center"
+            android:textSize="30sp" />
+
+        <ListView
+            android:id="@+id/prison_live_view_listView"
+            android:layout_width="420px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30px"
+            android:divider="@drawable/top_recommend_baseline"
+            android:dividerHeight="1px"
+            android:listSelector="@drawable/channel_item_select"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/prison_live_view_channelNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="64px"
+        android:layout_marginTop="64px"
+        android:layout_weight="0.93"
+        android:alpha="0.8"
+        android:gravity="right"
+        android:textColor="#0ff100"
+        android:textSize="66sp"
+        android:typeface="serif" />
+
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:id="@+id/top_recommend_title"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp">
+        <LinearLayout 
+            android:id="@+id/top_title_left"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:gravity="bottom|right"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/top_title_pic"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/top_recommend_pic" />
+            <TextView 
+                android:id="@+id/top_title_name"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                
+                android:layout_gravity="bottom|right"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/top_title_moviename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="#FFFFFF"
+            android:shadowColor="#000000"
+	       android:shadowDx="0"
+	       android:shadowDy="2"
+	       android:shadowRadius="4"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/top_title_left"/>
+        
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/top_recommend_baseline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/top_recommend_baseline"/>
+    <LinearLayout
+        android:id="@+id/top_recommend_movie_pic"
+        android:layout_width="20000dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="200dp"
+        android:scrollbars="vertical"
+        android:orientation="horizontal">
+        
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+		android:layout_height="match_parent">
+        
+        <ImageView
+	        android:id="@+id/shuiwu_bg_pic"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="190dp"
+	        android:layout_marginRight="140dp"
+	        android:layout_marginBottom="120dp"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	        android:visibility="invisible"
+        	android:src="@drawable/sub_icon_shuiwu" />
+        
+       <LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+            
+		    <TextView 
+		        android:id="@+id/top_recommend_movie_actor"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="200dp"
+		        android:lineSpacingExtra="5dp"
+		        android:shadowColor="#000000"
+		       android:shadowDx="0"
+		       android:shadowDy="2"
+		       android:shadowRadius="4"
+		        android:textSize="20sp"/>
+		    <TextView
+		        android:id="@+id/top_recommend_movie_director"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="200dp"
+		        android:lineSpacingExtra="5dp"
+		        android:shadowColor="#000000"
+		       android:shadowDx="0"
+		       android:shadowDy="2"
+		       android:shadowRadius="4"
+		        android:textSize="20sp" />
+		    <TextView 
+		        android:id="@+id/top_recommend_movie_type"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="200dp"
+		        android:lineSpacingExtra="5dp"
+		        android:shadowColor="#000000"
+		       android:shadowDx="0"
+		       android:shadowDy="2"
+		       android:shadowRadius="4"
+		        android:textSize="20sp"/>
+		    <TextView 
+		        android:id="@+id/top_recommend_movie_introduce"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="200dp"
+		        android:layout_marginRight="150dp"
+		        android:lineSpacingExtra="5dp"
+		        android:ellipsize="end"
+		        android:lines="3"
+		        android:shadowColor="#000000"
+		       android:shadowDx="0"
+		       android:shadowDy="2"
+		       android:shadowRadius="4"
+		        android:textSize="20sp"/>
+		    
+		    <ImageView 
+	            android:id="@+id/top_recommend_select"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="50dp"
+	            android:layout_gravity="center"
+	            android:gravity="center"
+	            android:adjustViewBounds="true"/>
+		    </LinearLayout>
+    </FrameLayout>
+  <!--   
+    <LinearLayout 
+        android:id="@+id/top_recommend_command"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <ImageView 
+            android:id="@+id/top_recommend_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/top_recommend_command"/>
+    </LinearLayout>
+ 	-->
+ 
+</LinearLayout>

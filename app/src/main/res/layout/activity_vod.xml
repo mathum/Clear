@@ -1,0 +1,79 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <!--  background view (video, alpha pic) -->
+    <FrameLayout
+        android:id="@+id/global_background_view"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:focusable="false">
+    	
+    	<com.clearcrane.player.ClearVideoView 
+            android:id="@+id/global_video_view"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:focusable="false"/>
+    	
+    	
+    	<com.clearcrane.player.ClearHiPlayerView 
+    	    android:id="@+id/global_live_view"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:focusable="false"/>
+    	<!-- 
+       
+        <com.clearcrane.player.ClearVideoView 
+            android:id="@+id/global_background_video"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"/>
+        <com.clearcrane.player.ClearVideoView 
+            android:id="@+id/global_live_video"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"/>
+        <com.clearcrane.player.ClearVideoView 
+            android:id="@+id/global_movie_video"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"/>
+	    	 -->
+        <!-- <com.clearcrane.player.ClearVideoView 
+            android:id="@+id/global_background_video"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"/> -->
+        
+        <!-- for video alpha. not used right now 
+        <ImageView
+            android:id="@+id/global_background_pic1"
+	        android:layout_width="match_parent"
+	    	android:layout_height="match_parent"/>
+	     -->
+	     
+    	
+    </FrameLayout>
+    
+    
+    <!--  main foreground view. only one exists at the same time -->
+    <FrameLayout
+        android:id="@+id/global_foreground_view"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent" 
+    	>
+    </FrameLayout>
+    
+   <!--  <com.clearcrane.view.VodDateView
+        android:id="@+id/date"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="top|right"/>-->
+    
+    
+    <com.clearcrane.view.MyProgressBarView
+        android:id="@+id/pb_page_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+</FrameLayout>

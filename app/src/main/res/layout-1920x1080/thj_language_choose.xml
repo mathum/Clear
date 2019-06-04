@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    
+    >
+    
+    <ImageView
+    android:id="@+id/thj_language_mainbackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+    
+    <ImageView
+    android:id="@+id/thj_main_logo"
+    android:layout_width="426px"
+    android:layout_height="274.5px"
+    android:layout_marginLeft="252px"
+    android:layout_marginTop="153px"
+    />
+    
+    <TextView
+    android:id="@+id/thj_time"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="324px"
+    android:layout_marginTop="460.5px"
+    android:gravity="center"
+    android:textColor="@color/white"
+    android:textSize="102px" />
+    <LinearLayout
+        android:layout_marginLeft="333px"
+        android:layout_marginTop="586.5px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/thj_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28.5px" />
+
+        <TextView
+            android:id="@+id/thj_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="28.5px" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/thj_temperture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="303px"
+        android:layout_marginTop="679.5px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+
+    <TextView
+        android:id="@+id/thj_weather"
+        android:layout_width="183px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="285px"
+        android:layout_marginTop="736.5px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30px" />
+    <ImageView
+        android:id="@+id/thj_weather_icon"
+        android:layout_marginLeft="492px"
+        android:layout_marginTop="667.5px"
+        android:layout_width="135px"
+        android:layout_height="112.5px"
+        android:gravity="center"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/thj_respect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="774px"
+        android:layout_marginTop="252px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="45px" />
+
+    <TextView
+        android:id="@+id/thj_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="928.5px"
+        android:layout_marginTop="244.5px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="60px" />
+    <TextView
+        android:id="@+id/thj_welcome"
+        android:layout_width="825px"
+        android:layout_height="300px"
+        android:layout_marginLeft="774px"
+        android:layout_marginTop="366px"
+        android:textColor="@color/white"
+        android:textSize="45px" />
+    <ImageView
+        android:id="@+id/thj_manager_sign"
+        android:layout_width="351px"
+        android:layout_height="162px"
+        android:layout_marginLeft="1299px"
+        android:layout_marginTop="543px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/thj_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="1299px"
+        android:layout_marginTop="646.5px"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+    <!-- android:layout_marginRight="415px" -->
+    <Button
+        android:id="@+id/thj_chinese"
+        android:layout_width="382.5px"
+        android:layout_height="72px"
+        android:layout_marginLeft="769.5px"
+        android:layout_marginTop="757.5px"
+        android:background="@drawable/thj_button_selector"
+        android:text="中文"
+        android:textSize="45px" />
+
+    <Button
+        android:id="@+id/thj_english"
+        android:layout_width="382.5px"
+        android:layout_height="72px"
+        android:layout_marginLeft="1152px"
+        android:layout_marginRight="7.5px"
+        android:layout_marginTop="757.5px"
+        android:background="@drawable/thj_button_selector"
+        android:text="English"
+        android:textColor="@color/white"
+        android:textSize="45px" />
+
+    <TextView
+        android:id="@+id/thj_main_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1350px"
+        android:layout_marginTop="867px"
+        android:textColor="#FFFFFF"
+        android:textSize="27px" />
+
+    <TextView
+        android:id="@+id/thj_main_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1545px"
+        android:layout_marginTop="867px"
+        android:textColor="#FFFFFF"
+        android:textSize="27px" />
+
+</FrameLayout>

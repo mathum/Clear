@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <dimen name="videosets_left_blank_width">156px</dimen>
+        <dimen name="videosets_right_blank_width">156px</dimen>
+        <dimen name="videosets_bottom_blank_width">90px</dimen>
+        <dimen name="videosets_top1_blank_width">56px</dimen>
+        <dimen name="videosets_top2_blank_width">25px</dimen>
+        <dimen name="videosets_box_to_top_height">52px</dimen>
+        <dimen name="videosets_box_to_left_width">156px</dimen>
+        <dimen name="videosets_cover_box_width">454px</dimen>
+        <dimen name="videosets_cover_box_height">262px</dimen>
+        <dimen name="videosets_cover_width">450px</dimen>
+        <dimen name="videosets_cover_height">255px</dimen>
+        <dimen name="videosets_introduction_width">450px</dimen>
+        <dimen name="videosets_introduction_height">600px</dimen>
+        <dimen name="videosets_name_width">1100px</dimen>
+		<dimen name="videosets_name_height">75px</dimen>
+        <dimen name="videosets_separator1_width">86px</dimen>
+         <dimen name="videosets_separator_width">86px</dimen>
+        <dimen name="videosets_separator2_width">45px</dimen>
+        <dimen name="videosets_separator3_width">28px</dimen>
+        <dimen name="videosets_separator3_label3_width">48px</dimen>
+        <dimen name="videosets_separator3_label1_width">45px</dimen>
+        <dimen name="videosets_separator1_height">54px</dimen>
+        <dimen name="videosets_separator2_height">48px</dimen>
+        <dimen name="videosets_separator3_height">63px</dimen>
+        <dimen name="videosets_separator4_height">24px</dimen>
+        <dimen name="videosets_divide_line_witdh">1100px</dimen>
+        <dimen name="videosets_divide_line_height">1px</dimen>
+        <dimen name="videosets_button_label_width">150px</dimen>
+        <dimen name="videosets_button_label_height">50px</dimen>
+        <dimen name="videosets_item_episode_width">450px</dimen>
+        <dimen name="videosets_item_episode_height">52px</dimen>
+        <dimen name="videosets_episode_gv_width">1100px</dimen>
+        <dimen name="videosets_episode_gv_height">750px</dimen>
+        <dimen name="videosets_episode_gv_column_width">300px</dimen>
+        <dimen name="videosets_episode_gv_vertical_space">20px</dimen>
+        <dimen name="videosets_episode_gv_horiz_space">45px</dimen>
+        <dimen name="videosets_episode_gv_margin_top">30px</dimen>
+        <dimen name="videosets_labels_height">54px</dimen>
+         <dimen name="videosets_episode_gv_column_height">52px</dimen>
+        
+        
+        <!-- text size -->
+		<dimen name="videosets_intrduction_text_size">16pt</dimen>
+		<dimen name="videosets_name_text_size">25pt</dimen>
+		<dimen name="videosets_label_text_size">18pt</dimen>
+        
+        <!-- MainPage #### -->
+
+        <dimen name="mainpage_mainitext_width">210px</dimen>
+        <dimen name="mainpage_mainitext_height">105px</dimen>
+        <dimen name="mainpage_maintext_textsize">48px</dimen>
+        
+        
+        <dimen name="mainpage_pagebutton_width">48px</dimen>
+        <dimen name="mainpage_pagebutton_height">48px</dimen>
+        
+        <dimen name="mainpage_pagebutton_textsize">30px</dimen>
+</resources>

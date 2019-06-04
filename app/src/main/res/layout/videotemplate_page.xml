@@ -1,0 +1,116 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    android:background="@drawable/tv_series_list_bg_1280" >
+
+    <LinearLayout
+        android:id="@+id/videoTemplate_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/logo_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="100px"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="10px"
+            android:orientation="horizontal" >
+
+             <ImageView
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:layout_marginLeft="45px"
+                android:layout_marginTop="15px"
+                android:src="@drawable/movie_top_symbol" />
+            <TextView
+                android:id="@+id/videoTemplate_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12px"
+                android:layout_marginTop="10px"
+                android:focusable="true"
+                android:text=""
+                android:textColor="#f0f031"
+                android:textSize="24px" />
+
+            <RelativeLayout
+                android:id="@+id/logo_menu1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/time_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="117px"
+                    android:layout_marginTop="28px"
+                    android:text=""
+                    android:textSize="24px" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/videoTemplate_list_layout"
+                android:layout_width="240px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="28px"
+                android:layout_marginLeft="35px"
+                android:layout_marginTop="15px"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/videoTemplate_sets_layout"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="28px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="40px"
+                android:layout_marginTop="15px"
+                android:columnCount="4"
+                android:rowCount="3" >
+            </GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="275px" >
+
+        <ImageView
+            android:id="@+id/gradual_change_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/video_demand_line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pagination"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/pagination_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="110px"
+            android:layout_marginTop="100px"
+            android:text="fdsafsda"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+</FrameLayout>

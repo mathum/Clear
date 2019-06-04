@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="videosets_left_blank_width">108px</dimen>
+    <dimen name="videosets_right_blank_width">104px</dimen>
+    <dimen name="videosets_bottom_blank_width">60px</dimen>
+    <dimen name="videosets_top1_blank_width">56px</dimen>
+    <dimen name="videosets_top2_blank_width">25px</dimen>
+    <dimen name="videosets_box_to_top_height">52px</dimen>
+    <dimen name="videosets_box_to_left_width">104px</dimen>
+    <dimen name="videosets_cover_box_width">308px</dimen>
+    <dimen name="videosets_cover_box_height">176px</dimen>
+    <dimen name="videosets_cover_width">300px</dimen>
+    <dimen name="videosets_cover_height">168px</dimen>
+    <dimen name="videosets_introduction_width">320px</dimen>
+    <dimen name="videosets_introduction_height">400px</dimen>
+    <dimen name="videosets_name_width">725px</dimen>
+    <dimen name="videosets_name_height">50px</dimen>
+    <dimen name="videosets_separator1_width">86px</dimen>
+    <dimen name="videosets_separator_width">60px</dimen>
+    <dimen name="videosets_separator2_width">30px</dimen>
+    <dimen name="videosets_separator3_label3_width">32px</dimen>
+    <dimen name="videosets_separator3_label1_width">31px</dimen>
+    <dimen name="videosets_separator3_width">25px</dimen>
+    <dimen name="videosets_separator1_height">36px</dimen>
+    <dimen name="videosets_separator2_height">32px</dimen>
+    <dimen name="videosets_separator3_height">28px</dimen>
+    <dimen name="videosets_separator4_height">10px</dimen>
+    <dimen name="videosets_divide_line_witdh">725px</dimen>
+    <dimen name="videosets_divide_line_height">2px</dimen>
+    <dimen name="videosets_button_label_width">100px</dimen>
+    <dimen name="videosets_labels_height">36px</dimen>
+    <dimen name="videosets_button_label_height">34px</dimen>
+    <dimen name="videosets_item_episode_width">298px</dimen>
+    <dimen name="videosets_item_episode_height">38px</dimen>
+    <dimen name="videosets_episode_gv_width">725px</dimen>
+    <dimen name="videosets_episode_gv_height">550px</dimen>
+    <dimen name="videosets_episode_gv_column_width">298px</dimen>
+    <dimen name="videosets_episode_gv_vertical_space">14px</dimen>
+    <dimen name="videosets_episode_gv_horiz_space">10px</dimen>
+    <dimen name="videosets_episode_gv_margin_top">12px</dimen>
+    <dimen name="videosets_episode_gv_column_height">38px</dimen>
+    <dimen name="videosets_introduction_line_space">8px</dimen>
+
+    <!-- text size -->
+    <dimen name="videosets_intrduction_text_size">11pt</dimen>
+    <dimen name="videosets_name_text_size">17pt</dimen>
+    <dimen name="videosets_label_text_size">11pt</dimen>
+
+    <!-- MainPage #### -->
+
+    <dimen name="mainpage_maintext_width">140px</dimen>
+    <dimen name="mainpage_maintext_height">70px</dimen>
+    <dimen name="mainpage_maintext_textsize">36px</dimen>
+    <dimen name="mainpage_pagebutton_width">36px</dimen>
+    <dimen name="mainpage_pagebutton_height">36px</dimen>
+    <dimen name="mainpage_pagebutton_textsize">20px</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_size_xxxxhuge">60sp</dimen>
+    <dimen name="text_size_xxxhuge">32sp</dimen>
+    <dimen name="text_size_xxhuge">26sp</dimen>
+    <dimen name="text_size_xhuge">22sp</dimen>
+    <dimen name="text_size_huge">18sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_main">10sp</dimen>
+    <dimen name="padding_xxxhuge">48px</dimen>
+    <dimen name="padding_xxhuge">32px</dimen>
+    <dimen name="padding_xhuge">20px</dimen>
+    <dimen name="padding_huge">16px</dimen>
+    <dimen name="padding_large">12px</dimen>
+    <dimen name="padding_medium">8px</dimen>
+    <dimen name="padding_small">4px</dimen>
+    <dimen name="padding_micro">2px</dimen>
+
+    <!-- VodPictureViewpager -->
+    <dimen name="textview_padding_right_1">16px</dimen>
+    <dimen name="textview_padding_right_2">24px</dimen>
+    <dimen name="textview_margin_right_1">64px</dimen>
+    <dimen name="textview_margin_right_2">96px</dimen>
+    <dimen name="textview_margin_bottom_1">16px</dimen>
+    <dimen name="textview_margin_bottom_2">24px</dimen>
+    <dimen name="textview_size">60sp</dimen>
+
+    <dimen name="horizontal_margin_1">16px</dimen>
+    <dimen name="horizontal_margin_2">24px</dimen>
+    <dimen name="horizontal_margin_3">48px</dimen>
+    <dimen name="vertical_margin_1">16px</dimen>
+    <dimen name="vertical_margin_2">24px</dimen>
+    <dimen name="vertical_margin_3">48px</dimen>
+    <!-- MyProgressBarView begin -->
+    
+    
+    <!-- MyProgressBarView end -->
+    
+    <!-- SplashActivity -->
+    <dimen name="textview_margin_left_small_1">5px</dimen>
+    <dimen name="textview_margin_left_small_2">8px</dimen>
+    <dimen name="textview_margin_left_small_3">16px</dimen>
+
+    <dimen name="page_title_font_size_0">14pt</dimen>
+    <dimen name="page_title_font_size_1">16pt</dimen>
+    <dimen name="page_title_font_size_2">18pt</dimen>
+    <dimen name="item_title_font_size_0">11pt</dimen>
+    <dimen name="item_title_font_size_1">13pt</dimen>
+    <dimen name="item_title_font_size_2">15pt</dimen>
+    <dimen name="item_content_font_size_n2">6pt</dimen>
+    <dimen name="item_content_font_size_n1">8pt</dimen>
+    <dimen name="item_content_font_size_0">10pt</dimen>
+    <dimen name="item_content_font_size_1">12pt</dimen>
+    <dimen name="item_content_font_size_2">14pt</dimen>
+    <dimen name="item_content_font_size_28">28pt</dimen>
+    <dimen name="item_content_font_size_3">16pt</dimen>
+    <dimen name="item_content_font_size_4">18pt</dimen>
+    <dimen name="item_content_font_size_5">20pt</dimen>
+    <dimen name="item_content_font_size_6">22pt</dimen>
+    <dimen name="item_content_font_size_7">24pt</dimen>
+    <dimen name="divider_line_height">0.5px</dimen>
+    <dimen name="date_item_font_size_n2">5pt</dimen>
+    <dimen name="date_item_font_size_n1">6pt</dimen>
+    <dimen name="date_item_font_size_0">8pt</dimen>
+    <dimen name="date_item_font_size_1">10pt</dimen>
+    <dimen name="date_item_font_size_2">12pt</dimen>
+    
+    <!-- 音乐播放器 -->
+    <dimen name="toast_padding">10.0dip</dimen>
+    <dimen name="dialog_layout_margin_horizontal">106.0dip</dimen>
+    <dimen name="dialog_exit_width">642.0dip</dimen>
+    <dimen name="dialog_exit_height">234.0dip</dimen>
+    <dimen name="dialog_exit_title_height">68.0dip</dimen>
+    <dimen name="dialog_exit_title_margin">10.0dip</dimen>
+    <dimen name="dialog_exit_btn_width">210.0dip</dimen>
+    <dimen name="dialog_exit_btn_height">50.0dip</dimen>
+    <dimen name="dialog_exit_btn_horizontal_margin">80.0dip</dimen>
+    <dimen name="dialog_exit_btn_vertical_margin">50.0dip</dimen>
+    <dimen name="main_tab_top_text_size">24.0sp</dimen>
+    <dimen name="main_tab_top_text_width">134.0dip</dimen>
+    <dimen name="custom_grid_layout_spaceing">16.0dip</dimen>
+    <dimen name="custom_grid_layout_width">392.0dip</dimen>
+    <dimen name="custom_grid_layout_height">188.0dip</dimen>
+    <dimen name="play_bar_ctrl_height">96.0dip</dimen>
+    <dimen name="play_resume_btn_width">138.0dip</dimen>
+
+</resources>

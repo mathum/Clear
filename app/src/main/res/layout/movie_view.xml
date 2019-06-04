@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/movie_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="MOVIE"
+        android:lineSpacingExtra="5dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="45sp"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/movie_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:src="@drawable/movie_stop" />
+    
+    <LinearLayout
+        android:id="@+id/movie_control"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/movie_progress_bg" 
+        >
+        
+        <TextView
+            android:id="@+id/movie_take_time"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:lines="1"
+            android:layout_marginRight="20dp"
+            android:lineSpacingExtra="5dp"
+            android:gravity="center"
+            android:text="00:00:00" />
+        <SeekBar
+            android:id="@+id/movie_progress"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="5dp"
+            android:minHeight="5dp"
+            android:max="100"
+            android:progressDrawable="@drawable/mediacontroller_seekbar"
+            android:secondaryProgress="0"
+            android:thumb="@drawable/mediacontroller_seekbar_thumb"
+            android:thumbOffset="10dp" 
+            android:focusable="false"/>
+        <TextView
+            android:id="@+id/movie_left_time"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:lines="1"
+            android:layout_marginLeft="20dp"
+            android:lineSpacingExtra="5dp"
+            android:gravity="center"
+            android:text="00:00:00" />
+    </LinearLayout>
+
+    <RelativeLayout 
+        android:id="@+id/intercut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+         <TextView
+            android:id="@+id/movie_intercut"
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:textSize="30px"
+            android:lines="1"
+            android:gravity="center"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="5px"
+            android:text="插播中" 
+            android:visibility="invisible"/>
+    </RelativeLayout> 
+         
+</FrameLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/court_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150px"
+            android:layout_gravity="left"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="100px"
+                android:layout_height="100px"
+                android:layout_marginLeft="100px"
+                android:gravity="center"
+                android:src="@drawable/court_hammer" />
+
+            <TextView
+                android:id="@+id/court_live_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80px"
+                android:layout_marginTop="-20px"
+                android:gravity="center"
+                android:text="庭审直播"
+                android:textColor="#ffffff"
+                android:textSize="40px" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/court_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="150px"
+            android:gravity="center"
+            android:text="XXX人民法院"
+            android:textColor="#ffffff"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <GridView
+                android:id="@+id/court_live_gridView"
+                android:layout_width="545px"
+                android:layout_height="105px"
+                android:layout_marginLeft="20px"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:columnWidth="140px"
+                android:horizontalSpacing="3.0px"
+                android:listSelector="@drawable/court_live_item_background"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="3.0px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155px"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="15px"
+                android:paddingBottom="30px" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/court_live_already"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="09"
+                        android:textColor="#ffffff"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/court_live_already_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="已开庭数"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/court_live_living"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="03"
+                        android:textColor="#ffffff"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/court_live_living_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:text="正在开庭"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/court_live_today"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="11"
+                        android:textColor="#ffffff"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/court_live_today_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:text="今日开庭"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/court_live_tempButton"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:background="@drawable/court_live_media_background"
+            android:clickable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true"
+            android:orientation="vertical" >
+
+            <!--
+                 <Button
+             
+                android:layout_width="60px"
+                android:layout_height="60px" />
+            -->
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/court_live_container"
+            android:layout_width="match_parent"
+            android:layout_height="440px"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginLeft="40px"
+            android:background="@drawable/court_live_item_background"
+            android:gravity="center" >
+
+            <VideoView
+                android:id="@+id/court_live_videoView"
+                android:layout_width="600px"
+                android:layout_height="350px"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="20px" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

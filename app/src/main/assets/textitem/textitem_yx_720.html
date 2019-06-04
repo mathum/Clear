@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi" />
+</head>
+<body style="overflow:hidden;background-color:transparent;" onLoad="init()">
+<div id="content" style="%1">%2</div>
+<script type="text/javascript">
+function init() {
+	var divx = document.getElementById("content").offsetLeft;
+	var divy = document.getElementById("content").offsetTop;
+	var divw = document.getElementById("content").clientWidth;
+	var divh = document.getElementById("content").clientHeight;
+	var obj = window.imsTextItem;
+	obj.textsize(divw, divh);
+}
+</script>
+</body>
+</html>
