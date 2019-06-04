@@ -337,13 +337,13 @@ public class MainPageView extends VoDBaseView {
          *
          **/
 
+        // 更新时间
+//        long currentTime = DateUtil.getCurrentTimeMillSecond();
+//        Date date = new Date(currentTime);
+//        timetext = formatter.format(date);
 
-        long currentTime = DateUtil.getCurrentTimeMillSecond();
-        Date date = new Date(currentTime);
-        timetext = formatter.format(date);
 
-
-        //timetext = accessTimeSharePre.getString("NativeTime", null);
+        timetext = accessTimeSharePre.getString("NativeTime", null);
         Log.i("2016", ":" + timetext);
     }
 
