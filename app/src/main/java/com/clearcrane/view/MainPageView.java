@@ -238,7 +238,7 @@ public class MainPageView extends VoDBaseView {
                     break;
                 default:
 
-                    timetv.setTextSize(TypedValue.COMPLEX_UNIT_PX, ClearConfig.getScreenHeight() / 30);
+                    timetv.setTextSize(TypedValue.COMPLEX_UNIT_PX, ClearConfig.getScreenHeight() / 20);
                     timetv.setTextColor(Color.rgb(255, 255, 255));
                     timetv.setText(timetext);
                     super.handleMessage(msg);
