@@ -160,7 +160,7 @@ public class ChannelState extends PrisonBaseModeState {
                 ProgramObject programObject = new ProgramObject(jsonObjProgram, i);
                 mProgramObjects.add(programObject);
             }
-        } catch (JSONException e) {
+        } catch (Exception e) {
             Log.e(TAG, "parseReturnJson error json :" + result);
             Editor editor = mPreference.edit();
             editor.putInt(ClearConstant.STR_NEWEST_VERSION, -1);
