@@ -443,6 +443,28 @@ public class pushMsgService extends Service {
                     }
                     break;
             }
+        } else if (topView instanceof TermForcedView) {
+            ;
+            switch (((TermForcedView) topView).getTermForcedType()) {
+                //图片
+                case 0:
+                    Bitmap bitmap = ShotScreen.shot((VoDActivity) context);
+                    int resouce_id = ShotScreen.saveBitmap(bitmap);
+                    Log.e(TAG, "shotscreen" + resouce_id);
+                    if (resouce_id != -1) {
+                        baseShotScreen = new StaticPageShot("snapshot_url", ClearConfig.getMac(), resouce_id);
+                        baseShotScreen.postRequest(baseShotScreen.getPost());
+                    }
+                    break;
+                //视频
+                case 1:
+                    long time = VoDViewManager.getInstance().getMovieCurrentPosition();
+                    String currentTime = StringUtils.transferLongToDate(time);
+                    baseShotScreen = new VideoPageShot("video_url", ClearConfig.getMac(),
+                            ((TermForcedView) topView).getUrl(), currentTime);
+                    baseShotScreen.postRequest(baseShotScreen.getPost());
+                    break;
+            }
         } else {
             Bitmap bitmap = ShotScreen.shot((VoDActivity) context);
             int resouce_id = ShotScreen.saveBitmap(bitmap);
@@ -817,13 +839,15 @@ public class pushMsgService extends Service {
             if (is_forced == 1 && isFirstAlermCome) {
                 isFirstAlermCome = false;
                 VoDViewManager.getInstance().stopBackgroundVideo();
+                VoDViewManager.getInstance().stopMusic();
 
                 Intent intent = new Intent(context, PerfectPlayerService.class);
                 intent.putExtra("url", "");
                 intent.putExtra("listPosition", 0);
-                intent.putExtra("MSG", ClearConstant.STOP_MSG);
+                intent.putExtra("MSG", ClearConstant.PAUSE_MSG);
                 context.startService(intent);
             }
+
 
             JSONArray jsonArray = jsonObject.getJSONArray("ControlCommandsRes");
             for (int i = 0; i < jsonArray.length(); i++) {
