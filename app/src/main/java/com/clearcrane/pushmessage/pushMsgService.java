@@ -813,6 +813,7 @@ public class pushMsgService extends Service {
 
             if (is_forced == 1) {
                 VoDViewManager.getInstance().stopBackgroundVideo();
+                VoDViewManager.getInstance().stopMusic();
             }
 
             JSONArray jsonArray = jsonObject.getJSONArray("ControlCommandsRes");
