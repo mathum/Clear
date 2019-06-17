@@ -69,7 +69,7 @@ public class ProgramObject extends PrisonOrganism {
                 } else {
                     this.index = 0;
                 }
-                ProgramOrgan organ = new ProgramOrgan(segmentJson, this.index);
+                ProgramOrgan organ = new ProgramOrgan(segmentJson, this.index, priority);
                 mSegmentList.add(organ);
             }
             this.isValid = true;

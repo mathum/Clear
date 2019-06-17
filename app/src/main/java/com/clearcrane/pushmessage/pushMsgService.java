@@ -43,6 +43,7 @@ import com.clearcrane.logic.view.InterCutView;
 import com.clearcrane.logic.view.ProgramView;
 import com.clearcrane.logic.view.TermForcedView;
 import com.clearcrane.schedule.DateUtil;
+import com.clearcrane.service.PerfectPlayerService;
 import com.clearcrane.tool.RebootTool;
 import com.clearcrane.tool.ShotScreen;
 import com.clearcrane.util.ClearConfig;
@@ -799,6 +800,8 @@ public class pushMsgService extends Service {
     }
 
     // 处理每三秒从后台获取的数据
+    private boolean isFirstAlermCome = true;
+
     private void handleHeartBeatResponse(String result) {
         Log.e(TAG, "heartbeat return " + result);
         JSONTokener jsonTokener = new JSONTokener(result);
@@ -811,9 +814,15 @@ public class pushMsgService extends Service {
                 checkIsInForcedState();
             }
 
-            if (is_forced == 1) {
+            if (is_forced == 1 && isFirstAlermCome) {
+                isFirstAlermCome = false;
                 VoDViewManager.getInstance().stopBackgroundVideo();
-                VoDViewManager.getInstance().stopMusic();
+
+                Intent intent = new Intent(context, PerfectPlayerService.class);
+                intent.putExtra("url", "");
+                intent.putExtra("listPosition", 0);
+                intent.putExtra("MSG", ClearConstant.STOP_MSG);
+                context.startService(intent);
             }
 
             JSONArray jsonArray = jsonObject.getJSONArray("ControlCommandsRes");

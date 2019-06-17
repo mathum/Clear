@@ -75,6 +75,28 @@ public class ProgramOrgan extends Organism {
 
     }
 
+    private int priority;
+
+    public ProgramOrgan(JSONObject jsonObject, int index, int priority) {
+        this.priority = priority;
+        mResourceList = new ArrayList<ProgramResource>();
+        try {
+            this.index = index;
+            this.dayStartTime = jsonObject.getString(ClearConstant.STR_START_TIME);
+            this.dayEndTime = jsonObject.getString(ClearConstant.STR_END_TIME);
+            JSONArray resources = jsonObject.getJSONArray("materials");
+            for (int i = 0; i < resources.length(); i++) {
+                JSONObject resouceJson = (JSONObject) resources.opt(i);
+                ProgramResource pr = new ProgramResource(resouceJson, priority);
+                //Log.e("11111111111111111", "url = " + pr.getUrl());
+                mResourceList.add(pr);
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "ProgramOrgan error json: " + jsonObject);
+        }
+
+    }
+
     @Override
     public void init(String start_time, String end_time) {
         // TODO Auto-generated method stub
