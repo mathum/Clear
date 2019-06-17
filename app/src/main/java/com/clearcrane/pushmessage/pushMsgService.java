@@ -522,6 +522,7 @@ public class pushMsgService extends Service {
 //			float max = audiomanage.getStreamMaxVolume(AudioManager.STREAM_SYSTEM);
             float max = audiomanage.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
             int volume = (int) (max * ((float) volumeNumber / 100));
+            Log.e("111111111111111", "volume = " + volume);
             if (PlatformSettings.getPlatform() == Platform.skyworth_368W) {
                 TvManager mTvmanager = (TvManager) context.getSystemService("tv_manager");
                 mTvmanager.setVolume(volume);
@@ -811,24 +812,38 @@ public class pushMsgService extends Service {
             }
 
             if (is_forced == 1) {
-                return;
+                VoDViewManager.getInstance().stopBackgroundVideo();
             }
+
             JSONArray jsonArray = jsonObject.getJSONArray("ControlCommandsRes");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject tempjson = (JSONObject) jsonArray.opt(i);
                 String typeName = tempjson.getString("commandtype");
+
+                // 获取后台推送的最新消息标志
+                int remoteVersion = tempjson.getInt(ClearConstant.STR_NEWEST_VERSION);
+                Log.e(TAG, "remoteVersion:" + remoteVersion);
+                /*
+                 * TODO,FIXME every time new and read ? 存储获取的数据
+                 */
+                SharedPreferences sharePre = getSharedPreferences(typeName, Context.MODE_PRIVATE);
+
+                if (typeName.equals(ClearConstant.STR_SNAP_SHOT) &&
+                        remoteVersion != sharePre.getInt(ClearConstant.STR_NEWEST_VERSION, -1)) {
+                    specialShotScreenHandle();
+                }
+
+                if (is_forced == 1) {
+                    continue;
+                }
+
                 if (typeName.equals(ClearConstant.STR_INTER_CUT) || typeName.equals(ClearConstant.STR_SCROLL_TEXT)
                         || typeName.equals(ClearConstant.STR_CHANNEL) || typeName.equals(ClearConstant.STR_ACCESS_TIME)
                         || typeName.equals(ClearConstant.STR_MODULE_GROUP)
-                        || typeName.equals(ClearConstant.STR_SNAP_SHOT) || typeName.equals(ClearConstant.STR_VOLUME)
+                        //|| typeName.equals(ClearConstant.STR_SNAP_SHOT)
+                        || typeName.equals(ClearConstant.STR_VOLUME)
                         || typeName.equals(ClearConstant.STR_UPDATE_MAINMENU)) {
-                    // 获取后台推送的最新消息标志
-                    int remoteVersion = tempjson.getInt(ClearConstant.STR_NEWEST_VERSION);
-                    Log.e(TAG, "remoteVersion:" + remoteVersion);
-                    /*
-                     * TODO,FIXME every time new and read ? 存储获取的数据
-                     */
-                    SharedPreferences sharePre = getSharedPreferences(typeName, Context.MODE_PRIVATE);
+
                     // 如果获取的消息标志与上次一样那么就不做改变，直接跳到下一个type
                     if (remoteVersion == sharePre.getInt(ClearConstant.STR_NEWEST_VERSION, -1)) {
                         continue;
@@ -839,9 +854,10 @@ public class pushMsgService extends Service {
                         return;
                     }
                     // 截屏单独处理
-                    else if (typeName.equals(ClearConstant.STR_SNAP_SHOT)) {
-                        specialShotScreenHandle();
-                    } else if (typeName.equals(ClearConstant.STR_VOLUME)) {// 设置终端音量处理
+//                    else if (typeName.equals(ClearConstant.STR_SNAP_SHOT)) {
+//                        specialShotScreenHandle();
+//                    }
+                    else if (typeName.equals(ClearConstant.STR_VOLUME)) {// 设置终端音量处理
                         specialVolumeHandle(remoteVersion);
                     } else {
                         PrisonBaseVersion prisonBaseVersion = VersionFatory.createVersion(typeClassMap.get(typeName));
