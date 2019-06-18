@@ -70,5 +70,7 @@ public class ProgramResource {
         return seq;
     }
 
-
+    public int getPriority() {
+        return priority;
+    }
 }

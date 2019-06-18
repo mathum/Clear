@@ -42,6 +42,7 @@ import com.clearcrane.logic.view.BannerView;
 import com.clearcrane.logic.view.InterCutView;
 import com.clearcrane.logic.view.ProgramView;
 import com.clearcrane.logic.view.TermForcedView;
+import com.clearcrane.player.ClearVideoView;
 import com.clearcrane.schedule.DateUtil;
 import com.clearcrane.service.PerfectPlayerService;
 import com.clearcrane.tool.RebootTool;
@@ -833,21 +834,21 @@ public class pushMsgService extends Service {
             DateUtil.setSystemTime(context, serverTime);
             if (jsonObject.has("is_forced")) {
                 is_forced = jsonObject.getInt("is_forced");
-                checkIsInForcedState();
+
             }
 
             if (is_forced == 1 && isFirstAlermCome) {
                 isFirstAlermCome = false;
                 VoDViewManager.getInstance().stopBackgroundVideo();
                 VoDViewManager.getInstance().stopMusic();
-
                 Intent intent = new Intent(context, PerfectPlayerService.class);
                 intent.putExtra("url", "");
                 intent.putExtra("listPosition", 0);
                 intent.putExtra("MSG", ClearConstant.PAUSE_MSG);
                 context.startService(intent);
+                VoDViewManager.getInstance().popForegroundView();
             }
-
+            checkIsInForcedState();
 
             JSONArray jsonArray = jsonObject.getJSONArray("ControlCommandsRes");
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -932,7 +933,7 @@ public class pushMsgService extends Service {
             Message msg = mHandler.obtainMessage();
             msg.obj = fvi;
             msg.what = ClearConstant.MSG_SET_TERM_FORCED;
-            mHandler.sendMessageDelayed(msg, period / 2);
+            mHandler.sendMessageDelayed(msg, period / 4);
         }
     }
 

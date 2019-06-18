@@ -155,6 +155,8 @@ public class ChannelState extends PrisonBaseModeState {
             JSONObject jsonObject = (JSONObject) jsonTokener.nextValue();
             this.curVersion = jsonObject.getInt("version_num");
             JSONArray jsonArray = jsonObject.getJSONArray("programs");
+
+            Log.e("11111111111111111111", "length = " + jsonArray.length());
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObjProgram = (JSONObject) jsonArray.opt(i);
                 ProgramObject programObject = new ProgramObject(jsonObjProgram, i);
@@ -197,6 +199,7 @@ public class ChannelState extends PrisonBaseModeState {
     public void startPlay() {
         VoDViewManager.getInstance().setActivityMode(mStateCode);
         pv = new ProgramView();
+        //首先找到权限最大的播单，并且判断时间轴是否符合要求
         pv.init(mContext, null);
         //初始化时间段
         pv.setLifeTime(((ProgramOrgan) mPrisonOrganism.getWorkOrgan()).getDayStartTime(), ((ProgramOrgan) mPrisonOrganism.getWorkOrgan()).getDayEndTime());

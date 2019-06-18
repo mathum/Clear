@@ -83,7 +83,7 @@ public class ProgramView extends VoDBaseView {
      * @param resourceList
      */
     public void setWidgetResource(List<ProgramResource> resourceList) {
-        Log.e(TAG, "setWidgetResource list" + resourceList.size());
+        Log.e(TAG, "setWidgetResource list = " + resourceList.size());
         for (ProgramResource resource : resourceList) {
             int rid = resource.getLayoutParamId();
             for (int i = 0; i < regionList.size(); i++) {
@@ -95,6 +95,7 @@ public class ProgramView extends VoDBaseView {
             }
         }
     }
+
 
     public void play() {
         //safe play

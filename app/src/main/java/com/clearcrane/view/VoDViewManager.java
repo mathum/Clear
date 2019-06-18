@@ -967,4 +967,11 @@ public class VoDViewManager {
         return videoView.isInPlaybackState() + "";
     }
 
+    public boolean isPlayVideo() {
+        if (videoView != null) {
+            return videoView.isPlaying();
+        }
+        return false;
+    }
+
 }
