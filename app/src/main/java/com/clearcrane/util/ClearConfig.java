@@ -41,8 +41,8 @@ import java.util.Map;
 
 public class ClearConfig {
 
-    //public static final String STR_NETWORK = "networkXj";
-    public static final String STR_NETWORK = "network";
+    public static final String STR_NETWORK = "networkXj";
+    //public static final String STR_NETWORK = "network";
 
     // 更新时间
     public static final int UPDATE_TIME = 10 * 1000;
@@ -50,7 +50,7 @@ public class ClearConfig {
     /**
      * 异步加载的数据类型
      */
-    public static final int TYPE_IMAGE = 0;
+    public static final int TYPE_IMAGE   = 0;
     public static final int TYPE_JSON = 1;
     public static final int TYPE_IMAGE_SUB_ICON = 3;
     public static final int TYPE_IMAGE_BG = 2;
@@ -68,7 +68,7 @@ public class ClearConfig {
 
     private static DisplayMetrics mDisplayMetrics = new DisplayMetrics();
 
-    public static final String DEFAULT_MAIN_URI = "http://31.6.0.1/nativevod/now/main.json";
+    public static final String DEFAULT_MAIN_URI = "http://31.13.0.1/nativevod/now/main.json";
     public static final String BOOT_ADVERTISEMENT_URL = ":8000/backend/getBootAnimation";
     private static final String TAG = "clearconfig";
 
