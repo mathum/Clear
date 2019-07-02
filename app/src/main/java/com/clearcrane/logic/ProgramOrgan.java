@@ -49,11 +49,7 @@ public class ProgramOrgan extends Organism {
     private int index = 0;
 
     public List<ProgramResource> getmResourceList() {
-        for (ProgramResource resource : mResourceList) {
-            Log.e("11111111111111111111", "name      = " + resource.getName());
-            Log.e("11111111111111111111", "url      = " + resource.getUrl());
-            Log.e("11111111111111111111", "priority = " + resource.getPriority());
-        }
+
         return mResourceList;
     }
 

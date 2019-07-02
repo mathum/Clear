@@ -84,8 +84,10 @@ public class ProgramObject extends PrisonOrganism {
     public boolean isAwake() {
         // TODO Auto-generated method stub
         Log.e(TAG, "isValid " + isValid);
+        Log.e(TAG, "isInAwakeSegment " + isInAwakeSegment());
+        Log.e(TAG, "isAlive " + isAlive());
 //
-        return isValid && isInWeekDay() && isInAwakeSegment() && isAlive();
+        return isValid && isInAwakeSegment() && isAlive();
     }
 
     /*
@@ -97,7 +99,7 @@ public class ProgramObject extends PrisonOrganism {
             return false;
         Calendar calendar = DateUtil.getCurrentTimeCalendar();
         int dow = getNumByDayOfWeek(calendar.get(Calendar.DAY_OF_WEEK));
-        Log.e(TAG, "dow " + dow + "re " + repeatation + "isture" + ((dow & repeatation) > 0));
+        Log.e(TAG, "dow  = " + dow + "repeatation = " + repeatation + "isTrue = " + ((dow & repeatation) > 0));
         return (dow & repeatation) > 0;
     }
 
