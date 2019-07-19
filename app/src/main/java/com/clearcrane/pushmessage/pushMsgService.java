@@ -175,7 +175,7 @@ public class pushMsgService extends Service {
                 case ClearConstant.MSG_START_CHANNEL_LIST:
                     ProgramView pv = (ProgramView) msg.obj;
                     showChannelView(pv);
-                    saveStatue(5, "正在计划播");
+                    saveStatue(5, "正在播单中");
                     break;
                 case ClearConstant.MSG_STOP_CHANNEL_LIST:
                     ProgramView prv = (ProgramView) msg.obj;
