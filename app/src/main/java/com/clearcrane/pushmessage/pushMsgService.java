@@ -25,7 +25,9 @@ import com.clearcrane.constant.ClearConstant;
 import com.clearcrane.log.ClearLog;
 import com.clearcrane.logic.InterCutOrgan;
 import com.clearcrane.logic.PrisonLogicManager;
+import com.clearcrane.logic.StateInterCutOrgan;
 import com.clearcrane.logic.state.PrisonBaseModeState;
+import com.clearcrane.logic.state.StateInterCutState;
 import com.clearcrane.logic.version.AccessTimeVersion;
 import com.clearcrane.logic.version.BaseShotScreen;
 import com.clearcrane.logic.version.ChannelVersion;
@@ -34,6 +36,7 @@ import com.clearcrane.logic.version.LivePageShot;
 import com.clearcrane.logic.version.ModuleGroupVersion;
 import com.clearcrane.logic.version.PrisonBaseVersion;
 import com.clearcrane.logic.version.ScrollTextVersion;
+import com.clearcrane.logic.version.StateInterCutVersion;
 import com.clearcrane.logic.version.StaticPageShot;
 import com.clearcrane.logic.version.VersionFatory;
 import com.clearcrane.logic.version.VideoPageShot;
@@ -108,6 +111,7 @@ public class pushMsgService extends Service {
     public int curModuleGroupVersion = -1;
     public int curChannelVersion = -1;
     public int curInterCutVersion = -1;
+    public int curStateInterCutVersion = -1;
     //心跳间隔的倍数
     public int interval = 7;
     //当前的倍数
@@ -145,11 +149,21 @@ public class pushMsgService extends Service {
                 case ClearConstant.MSG_SET_TERM_FREE:
                     hideTermForcedView();
                     break;
+                case ClearConstant.MSG_START_STATE_INTER_CUT:
+                    Log.e("xb", "showInterCutView");
+                    StateInterCutOrgan organ = (StateInterCutOrgan) msg.obj;
+                    showStateInterCutView(organ);
+                    saveStatue(4, organ.getInterCutTitle());
+                    break;
+                case ClearConstant.MSG_STOP_STATE_INTER_CUT:
+                    Log.e("xb", "hideInterCutView");
+                    hideStateInterCutView();
+                    break;
                 case ClearConstant.MSG_START_INTER_CUT:
                     Log.e("xb", "showInterCutView");
-                    InterCutOrgan organ = (InterCutOrgan) msg.obj;
-                    showInterCutView(organ);
-                    saveStatue(4, organ.getInterCutTitle());
+                    InterCutOrgan organ1 = (InterCutOrgan) msg.obj;
+                    showInterCutView(organ1);
+                    saveStatue(4, organ1.getInterCutTitle());
                     break;
                 case ClearConstant.MSG_STOP_INTER_CUT:
                     Log.e("xb", "hideInterCutView");
@@ -272,6 +286,37 @@ public class pushMsgService extends Service {
     }
 
     private void hideInterCutView() {
+        Log.e(TAG, "hideInterCutView");
+        VoDViewManager voDViewManager = VoDViewManager.getInstance();
+        VoDBaseView topView = voDViewManager.getTopView();
+        if (topView instanceof InterCutView) {
+            Log.e(TAG, "hideInterCutView stop !");
+            ((InterCutView) topView).stopPlay();
+            VoDViewManager.getInstance().popForegroundView();
+            VoDViewManager.getInstance().setActivityMode(0);
+        }
+        topView = voDViewManager.getTopView();
+        specialHideHandle(topView);
+        sendLogEnd(mApp.interruptProgramContent);
+    }
+
+    private void showStateInterCutView(StateInterCutOrgan organ) {
+        VoDViewManager voDViewManager = VoDViewManager.getInstance();
+        VoDBaseView voDBaseView = voDViewManager.getTopView();
+        specialShowHandle(voDBaseView);
+        InterCutView interCutView = new InterCutView();
+        interCutView.init(this, organ.getSource_url(), organ.getInterCutType());
+        if (interCutView != null) {
+            VoDViewManager.getInstance().pushForegroundView(interCutView);
+            if (organ.getSource_url().contains("m3u8"))
+                mApp.interruptProgramContent = "直播";
+            else
+                mApp.interruptProgramContent = "视频";
+            sendLogStart(organ.getInterCutTitle(), "插播", mApp.interruptProgramContent);
+        }
+    }
+
+    private void hideStateInterCutView() {
         Log.e(TAG, "hideInterCutView");
         VoDViewManager voDViewManager = VoDViewManager.getInstance();
         VoDBaseView topView = voDViewManager.getTopView();
@@ -582,6 +627,7 @@ public class pushMsgService extends Service {
         typeClassMap = new HashMap<>();
         typeClassMap.put(ClearConstant.STR_SCROLL_TEXT, ScrollTextVersion.class.getName().toString());
         typeClassMap.put(ClearConstant.STR_INTER_CUT, InterCutVersion.class.getName().toString());
+        typeClassMap.put(ClearConstant.STR_STATE_INTER_CUT, StateInterCutVersion.class.getName().toString());
         typeClassMap.put(ClearConstant.STR_CHANNEL, ChannelVersion.class.getName().toString());
         typeClassMap.put(ClearConstant.STR_ACCESS_TIME, AccessTimeVersion.class.getName().toString());
         typeClassMap.put(ClearConstant.STR_MODULE_GROUP, ModuleGroupVersion.class.getName().toString());
@@ -821,7 +867,7 @@ public class pushMsgService extends Service {
                         || typeName.equals(ClearConstant.STR_CHANNEL) || typeName.equals(ClearConstant.STR_ACCESS_TIME)
                         || typeName.equals(ClearConstant.STR_MODULE_GROUP)
                         || typeName.equals(ClearConstant.STR_SNAP_SHOT) || typeName.equals(ClearConstant.STR_VOLUME)
-                        || typeName.equals(ClearConstant.STR_UPDATE_MAINMENU)) {
+                        || typeName.equals(ClearConstant.STR_UPDATE_MAINMENU) || typeName.equals(ClearConstant.STR_STATE_INTER_CUT)) {
                     // 获取后台推送的最新消息标志
                     int remoteVersion = tempjson.getInt(ClearConstant.STR_NEWEST_VERSION);
                     Log.e(TAG, "remoteVersion:" + remoteVersion);
@@ -830,6 +876,7 @@ public class pushMsgService extends Service {
                      */
                     SharedPreferences sharePre = getSharedPreferences(typeName, Context.MODE_PRIVATE);
                     // 如果获取的消息标志与上次一样那么就不做改变，直接跳到下一个type
+
                     if (remoteVersion == sharePre.getInt(ClearConstant.STR_NEWEST_VERSION, -1)) {
                         continue;
                     }
@@ -844,6 +891,7 @@ public class pushMsgService extends Service {
                     } else if (typeName.equals(ClearConstant.STR_VOLUME)) {// 设置终端音量处理
                         specialVolumeHandle(remoteVersion);
                     } else {
+
                         PrisonBaseVersion prisonBaseVersion = VersionFatory.createVersion(typeClassMap.get(typeName));
                         if (prisonBaseVersion == null) {
                             Log.e("xb", "prisonBaseVersion is null!!!!" + typeName);
@@ -1036,6 +1084,8 @@ public class pushMsgService extends Service {
         paras += "\"curScorollVersion\":" + curScorollVersion + "},{";
         paras += "\"commandtype\":\"" + ClearConstant.STR_ACCESS_TIME + "\",";
         paras += "\"curAccessTimeVersion\":" + curAccessTimeVersion + "},{";
+        paras += "\"commandtype\":\"" + ClearConstant.STR_STATE_INTER_CUT + "\",";
+        paras += "\"curStateInterCutVersion\":" + curStateInterCutVersion + "},{";
         paras += "\"commandtype\":\"" + ClearConstant.STR_INTER_CUT + "\",";
         paras += "\"curInterCutVersion\":" + curInterCutVersion + "},{";
         paras += "\"commandtype\":\"" + ClearConstant.STR_CHANNEL + "\",";

@@ -1,6 +1,8 @@
 package com.clearcrane.logic;
 
 
+import android.util.Log;
+
 import com.clearcrane.schedule.DateUtil;
 
 
@@ -48,9 +50,9 @@ public class LifeCycle {
 	 */
 	public boolean isInLifeCycle(){
 		long now_seconds = DateUtil.getCurrentTimeSecond();
-//		Log.e("organrism","isAlive start " + birth_time_seconds);
-//		Log.e("organrism","isAlive end " + dead_time_seconds);
-//		Log.e("organrism","isAlive now " + now_seconds);
+		Log.e("organrism","isAlive start " + birth_time_seconds);
+		Log.e("organrism","isAlive end " + dead_time_seconds);
+		Log.e("organrism","isAlive now " + now_seconds);
 		if (birth_time_seconds < 0 || birth_time_seconds == Long.MAX_VALUE)
 			return false;
 		if(dead_time_seconds < 0 || dead_time_seconds == Long.MAX_VALUE)

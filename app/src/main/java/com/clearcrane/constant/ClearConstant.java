@@ -212,6 +212,12 @@ public class ClearConstant {
 	 */
 	public static final String STR_INTER_CUT = "intercut";
 	public static final String URL_INTER_CUT_SUFFIX = "/backend/GetInterCut";
+
+	/*
+	 * state intercut
+	 */
+	public static final String STR_STATE_INTER_CUT = "stateIntercut";
+	public static final String URL_STATE_INTER_CUT_SUFFIX = "/backend/GetStateInterCut";
 	
 	/*
 	 * channel
@@ -260,6 +266,8 @@ public class ClearConstant {
 	 * state msg code
 	 * 
 	 */
+	public static final int MSG_START_STATE_INTER_CUT = 315;
+	public static final int MSG_STOP_STATE_INTER_CUT = 316;
 	public static final int MSG_START_INTER_CUT = 301;
 	public static final int MSG_STOP_INTER_CUT = 302;
 	public static final int MSG_START_CHANNEL = 303;

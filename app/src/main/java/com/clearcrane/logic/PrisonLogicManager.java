@@ -12,6 +12,7 @@ import com.clearcrane.logic.state.ChannelState;
 import com.clearcrane.logic.state.InterCutState;
 import com.clearcrane.logic.state.PrisonBaseModeState;
 import com.clearcrane.logic.state.ScrollTextState;
+import com.clearcrane.logic.state.StateInterCutState;
 import com.clearcrane.logic.state.VodState;
 import com.clearcrane.logic.version.VersionChangeListener;
 import com.clearcrane.view.VoDViewManager;
@@ -27,6 +28,7 @@ public class PrisonLogicManager {
     private VodState mVodState;
     private ScrollTextState mScrollTextState;
     private InterCutState mInterCutState;
+    private StateInterCutState mStateInterCutState;
     private ChannelState mChannelState;
     private AccessTimeState mAccessTimeState;
     private boolean isRunning = false;
@@ -44,7 +46,9 @@ public class PrisonLogicManager {
      *
      */
     public VersionChangeListener getVersionChangeListenerByTypeName(String typeName) {
-        if (typeName.equals(ClearConstant.STR_SCROLL_TEXT)) {
+        if (typeName.equals(ClearConstant.STR_STATE_INTER_CUT)) {
+            return mStateInterCutState.getVersionChangeListener();
+        } else if (typeName.equals(ClearConstant.STR_SCROLL_TEXT)) {
             return mScrollTextState.getVersionChangeListener();
         } else if (typeName.equals(ClearConstant.STR_INTER_CUT)) {
             return mInterCutState.getVersionChangeListener();
@@ -75,6 +79,9 @@ public class PrisonLogicManager {
 
         mAccessTimeState = new AccessTimeState();
         mAccessTimeState.init(mContext, mHandler);
+
+        mStateInterCutState = new StateInterCutState();
+        mStateInterCutState.init(mContext, mHandler);
 
         curModeState = mVodState;
     }
@@ -113,6 +120,9 @@ public class PrisonLogicManager {
         PrisonBaseModeState tempState = mScrollTextState;
         if (mAccessTimeState.isReady()) {
             tempState = mAccessTimeState;
+        } else if (mStateInterCutState.isReady()) {
+            Log.e(TAG, "checkReadyState mStateInterCutState : " + true);
+            tempState = mStateInterCutState;
         } else if (mInterCutState.isReady()) {
             Log.e("xb", "mintercutstate");
             tempState = mInterCutState;
@@ -148,6 +158,18 @@ public class PrisonLogicManager {
             Message msg = mHandler.obtainMessage(ClearConstant.MSG_STOP_CHANNEL);
             msg.obj = curModeState;
             msg.sendToTarget();
+        }
+        if (state instanceof StateInterCutState) {
+            if (curModeState instanceof ChannelState && curModeState.isPlaying()) {
+                Message msg = mHandler.obtainMessage(ClearConstant.MSG_STOP_CHANNEL);
+                msg.obj = curModeState;
+                msg.sendToTarget();
+            }
+            if (curModeState instanceof InterCutState && curModeState.isPlaying()) {
+                Message msg = mHandler.obtainMessage(ClearConstant.MSG_STOP_INTER_CUT);
+                msg.obj = curModeState;
+                msg.sendToTarget();
+            }
         }
         curModeState = state;
         Message msg = mHandler.obtainMessage(ClearConstant.MSG_START_CHANNEL);
