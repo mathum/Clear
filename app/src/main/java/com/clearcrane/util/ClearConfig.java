@@ -68,7 +68,7 @@ public class ClearConfig {
 
     private static DisplayMetrics mDisplayMetrics = new DisplayMetrics();
 
-    public static final String DEFAULT_MAIN_URI = "http://31.13.0.1/nativevod/now/main.json";
+    public static final String DEFAULT_MAIN_URI = "http://31.21.0.1/nativevod/now/main.json";
     public static final String BOOT_ADVERTISEMENT_URL = ":8000/backend/getBootAnimation";
     private static final String TAG = "clearconfig";
 
