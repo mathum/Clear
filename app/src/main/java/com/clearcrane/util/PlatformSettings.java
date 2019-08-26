@@ -68,7 +68,10 @@ public class PlatformSettings {
 	public static String platformStr = "";
 
     public enum Platform{
-        unknown, coship, letv, skyworth, skyworth_368W, skyworth_362, skyworth_388,skyworth_32d5, skyworth_3RT84, himedia, s805, tcl_icescreen, hisense, uninit, philips, konka32, BaoFeng_50F1, tcl, tcl_tv338, s905x, JiuUnion, TCL6800, skyworth_368hs, skyworth_368, CH_3500, A3000H, KR_905, HAIER_43,TCL_A260,TCL_A360,BAOFENG_65R4
+        unknown, coship, letv, skyworth, skyworth_368W, skyworth_362, skyworth_388,skyworth_32d5,
+		skyworth_3RT84, himedia, s805, tcl_icescreen, hisense, uninit, philips, konka32, BaoFeng_50F1,
+		tcl, tcl_tv338, s905x, JiuUnion, TCL6800, skyworth_368hs, skyworth_368, CH_3500, A3000H, KR_905,
+		HAIER_43,TCL_A260,TCL_A360,BAOFENG_65R4
     }
 
     public static String getPlatformString(){
