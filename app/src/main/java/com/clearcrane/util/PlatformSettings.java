@@ -143,7 +143,7 @@ public class PlatformSettings {
             	platformStr = SKYWORTH_32D5;
             	return Platform.skyworth_32d5;
             }
-            	
+
             platform = Platform.skyworth;
             platformStr = SKYWORTH;
             return Platform.skyworth;
