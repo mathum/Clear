@@ -924,13 +924,41 @@ public class pushMsgService extends Service {
         VoDViewManager vvm = VoDViewManager.getInstance();
         if ((is_forced == 0) && (vvm.getActivityMode() == ClearConstant.CODE_TERM_FORCED_STATE)) {
             mHandler.sendEmptyMessage(ClearConstant.MSG_SET_TERM_FREE);
-        } else if ((is_forced == 1) && (vvm.getActivityMode() != ClearConstant.CODE_TERM_FORCED_STATE)) {
-            VoDViewManager.getInstance().setActivityMode(ClearConstant.CODE_TERM_FORCED_STATE);
-            ForcedViewInfo fvi = new ForcedViewInfo();
-            Message msg = mHandler.obtainMessage();
-            msg.obj = fvi;
-            msg.what = ClearConstant.MSG_SET_TERM_FORCED;
-            mHandler.sendMessageDelayed(msg, period / 2);
+        } else if ((is_forced == 1)) {
+            if (vvm.getActivityMode() == ClearConstant.CODE_TERM_FORCED_STATE) {
+                TermForcedView tfView = (TermForcedView) VoDViewManager.getInstance().getTopView();
+                tfView.showImageView();
+            } else {
+                VoDViewManager.getInstance().setActivityMode(ClearConstant.CODE_TERM_FORCED_STATE);
+                ForcedViewInfo fvi = new ForcedViewInfo();
+                Message msg = mHandler.obtainMessage();
+                msg.obj = fvi;
+                msg.what = ClearConstant.MSG_SET_TERM_FORCED;
+                mHandler.sendMessageDelayed(msg, period / 4);
+            }
+        } else if (is_forced == 2) {
+            if (VoDViewManager.getInstance().getTopView() instanceof TermForcedView) {
+                TermForcedView tfView = (TermForcedView) VoDViewManager.getInstance().getTopView();
+                tfView.hideImageView();
+            } else {
+                VoDViewManager.getInstance().setActivityMode(ClearConstant.CODE_TERM_FORCED_STATE);
+                ForcedViewInfo fvi = new ForcedViewInfo();
+                Message msg = mHandler.obtainMessage();
+                msg.obj = fvi;
+                msg.what = ClearConstant.MSG_SET_TERM_FORCED;
+                mHandler.sendMessageDelayed(msg, period / 4);
+            }
+
+//            if (pre_is_forced == 1 && vvm.getActivityMode() == ClearConstant.CODE_TERM_FORCED_STATE) {
+//                mHandler.sendEmptyMessage(ClearConstant.MSG_SET_TERM_FREE);
+//                return;
+//            }
+//            VoDViewManager.getInstance().setActivityMode(ClearConstant.CODE_TERM_FORCED_STATE);
+//            ForcedViewInfo fvi = new ForcedViewInfo();
+//            Message msg = mHandler.obtainMessage();
+//            msg.obj = fvi;
+//            msg.what = ClearConstant.MSG_SET_TERM_FORCED;
+//            mHandler.sendMessageDelayed(msg, period / 4);
         }
     }
 
