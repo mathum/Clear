@@ -1,6 +1,7 @@
 package com.clearcrane.logic.state;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -21,6 +22,7 @@ public class StateInterCutState extends PrisonBaseModeState {
     String interCutType = "";
     String songName = "";
     String duration = "";
+    SharedPreferences forced_sharedPreferences;
 
     public StateInterCutState() {
         this.mStateCode = ClearConstant.CODE_INTER_CUT_STATE;
@@ -91,6 +93,12 @@ public class StateInterCutState extends PrisonBaseModeState {
     public void init(Context context, Handler handler) {
         // TODO Auto-generated method stub
         super.init(context, handler);
+        if (forced_sharedPreferences == null) {
+            forced_sharedPreferences = mContext.getSharedPreferences("is_forced", Context.MODE_PRIVATE);
+        }
+        if (forced_sharedPreferences.getInt("is_forced", 0) == 2) {
+            return;
+        }
         mPreference = mContext.getSharedPreferences(ClearConstant.STR_STATE_INTER_CUT, Context.MODE_PRIVATE);
         initStateParams();
         initPrisonOrganism();

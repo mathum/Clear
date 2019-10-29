@@ -843,6 +843,9 @@ public class pushMsgService extends Service {
         }
     }
 
+    SharedPreferences forced_sharedPreferences;
+    Editor forced_editor;
+
     // 处理每三秒从后台获取的数据
     private void handleHeartBeatResponse(String result) {
         Log.e(TAG, "heartbeat return " + result);
@@ -851,6 +854,14 @@ public class pushMsgService extends Service {
             JSONObject jsonObject = (JSONObject) jsonTokener.nextValue();
             String serverTime = jsonObject.getString(ClearConstant.STR_SERVER_TIME);
             DateUtil.setSystemTime(context, serverTime);
+            if (forced_sharedPreferences == null) {
+                forced_sharedPreferences = context.getSharedPreferences("is_forced", Context.MODE_PRIVATE);
+            }
+            if (forced_editor == null) {
+                forced_editor = forced_sharedPreferences.edit();
+            }
+            forced_editor.putInt("is_forced", is_forced);
+            forced_editor.apply();
             if (jsonObject.has("is_forced")) {
                 is_forced = jsonObject.getInt("is_forced");
                 checkIsInForcedState();
