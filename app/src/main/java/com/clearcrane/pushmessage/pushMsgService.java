@@ -406,6 +406,7 @@ public class pushMsgService extends Service {
         }
         VoDBaseView topView = voDViewManager.getTopView();
         specialHideHandle(topView);
+        sendLogEnd(mApp.interruptProgramContent);
     }
 
     // 针对截取当前屏幕做特殊处理
