@@ -8,10 +8,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.clearcrane.log.ClearLog;
+import com.clearcrane.logic.Organism;
 import com.clearcrane.logic.util.ProgramBaseWidget;
 import com.clearcrane.logic.util.ProgramLayoutParam;
 import com.clearcrane.logic.util.ProgramResource;
 import com.clearcrane.logic.util.ProgramWidgetFactory;
+import com.clearcrane.schedule.DateUtil;
 import com.clearcrane.view.VoDBaseView;
 import com.clearcrane.vod.R;
 
@@ -26,13 +29,23 @@ public class ProgramView extends VoDBaseView {
     private ImageView ivWait;
     private FrameLayout flBase;
 
-    private String name;
+    private String title;
     private String backgroundUrl;
     private ArrayList<ProgramBaseWidget> regionList;
 
     private boolean isWidgetsOk; //to ensure init success!
     public String startTime;
     public String endTime;
+
+    private int typeId;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     @Override
     public void init(Context ctx, String u) {
@@ -59,6 +72,7 @@ public class ProgramView extends VoDBaseView {
             return;
         for (int i = 0; i < list.size(); i++) {
             ProgramLayoutParam plp = list.get(i);
+            typeId = plp.typeId;
             Log.e("xbb", "typeId:" + plp.typeId);
             ProgramBaseWidget pbw = ProgramWidgetFactory.createWidget(plp);
             if (pbw == null) {
@@ -86,6 +100,7 @@ public class ProgramView extends VoDBaseView {
         Log.e(TAG, "setWidgetResource list" + resourceList.size());
         for (ProgramResource resource : resourceList) {
             int rid = resource.getLayoutParamId();
+
             for (int i = 0; i < regionList.size(); i++) {
                 ProgramBaseWidget pbw = regionList.get(i);
                 if (pbw.getmRegionId() == rid) {
@@ -104,11 +119,26 @@ public class ProgramView extends VoDBaseView {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
         for (ProgramBaseWidget pbw : regionList) {
             Log.e("111111111111111", "!1111111111111111");
             pbw.play();
+
+            switch (typeId) {
+                case 1:
+                    mApp.interruptProgramContent = "视频";
+                    break;
+                case 2:
+                    mApp.interruptProgramContent = "图文";
+                    break;
+                default:
+                    mApp.interruptProgramContent = "音频";
+                    break;
+            }
+
         }
     }
+
 
     public void stop() {
         for (ProgramBaseWidget pbw : regionList) {

@@ -186,6 +186,8 @@ public class ClearLog {
 	});
 	
 	private static void doPost(String url, String info) {
+		Log.d(TAG, "info : " + info);
+		Log.d(TAG, " url : " + url);
 		HttpClient hc = new DefaultHttpClient();
 		HttpPost hp = new HttpPost(url);
 		
@@ -215,7 +217,7 @@ public class ClearLog {
 	}
 	
 	private static void Log_Inter(String info) {
-		//Log.d(TAG, "Log_Inter: " + info);
+		Log.d(TAG, "Log_Inter: " + info);
 		
 		/* check if info has 12 \t and end with \n */
 		if(info == null || info.length() <= 0) {
@@ -299,7 +301,7 @@ public class ClearLog {
 		Log.i(TAG, "Memory: " + memInfo);
 		Log.i(TAG, "Storage: " + storageInfo);
 		
-		LogInfo("RES\tREPORT\t"+cpuUsage+"\t"+memInfo+"\t"+storageInfo);
+		LogInfo("RES\tREPORT\t"+ cpuUsage+"\t"+memInfo+"\t"+storageInfo);
 	}
 	
 	public static float readCPUUsage() {

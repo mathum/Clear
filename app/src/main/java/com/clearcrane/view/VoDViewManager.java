@@ -368,6 +368,7 @@ public class VoDViewManager {
                 videoView.start();
             }
         });
+
         if (PlatformSettings.getPlatform() == Platform.philips
                 || PlatformSettings.getPlatform() == Platform.tcl
                 || PlatformSettings.getPlatform() == Platform.tcl_tv338

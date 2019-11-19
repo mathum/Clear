@@ -23,6 +23,9 @@ public class Organism {
 
     }
 
+    public String getName() {
+        return name;
+    }
 
     /*
      * init Organism's lifecycle

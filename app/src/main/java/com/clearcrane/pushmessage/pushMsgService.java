@@ -22,10 +22,12 @@ import android.util.Log;
 import com.clearcrane.activity.ClearApplication;
 import com.clearcrane.activity.VoDActivity;
 import com.clearcrane.constant.ClearConstant;
+import com.clearcrane.databean.ChannelBean;
 import com.clearcrane.log.ClearLog;
 import com.clearcrane.logic.InterCutOrgan;
 import com.clearcrane.logic.PrisonLogicManager;
 import com.clearcrane.logic.StateInterCutOrgan;
+import com.clearcrane.logic.state.ChannelState;
 import com.clearcrane.logic.state.PrisonBaseModeState;
 import com.clearcrane.logic.state.StateInterCutState;
 import com.clearcrane.logic.version.AccessTimeVersion;
@@ -45,6 +47,8 @@ import com.clearcrane.logic.view.BannerView;
 import com.clearcrane.logic.view.InterCutView;
 import com.clearcrane.logic.view.ProgramView;
 import com.clearcrane.logic.view.TermForcedView;
+import com.clearcrane.player.ClearVideoView;
+import com.clearcrane.schedule.Channel;
 import com.clearcrane.schedule.DateUtil;
 import com.clearcrane.tool.RebootTool;
 import com.clearcrane.tool.ShotScreen;
@@ -389,6 +393,8 @@ public class pushMsgService extends Service {
         specialShowHandle(topView);
         VoDViewManager.getInstance().pushForegroundView(pv);
         pv.play();
+
+        sendLogStart(pv.getTitle(), "计划播", mApp.interruptProgramContent);
     }
 
     private void hideChannelView(ProgramView pv) {
@@ -1170,7 +1176,7 @@ public class pushMsgService extends Service {
         mApp.interruptProgramResourceName = resourceName;
         mApp.interruptProgramTimeInS = DateUtil.getCurrentTimeSecond();
         String logInsert = mApp.combinatePostParasString("start", "0", type, resourceType, resourceName, "");
-        // ClearLog.logInsert(logInsert);
+        ClearLog.logInsert(logInsert);
         mApp.SendLogMode = 1;
         mApp.isInterruptProgram = true;
 

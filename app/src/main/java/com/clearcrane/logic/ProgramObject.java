@@ -27,6 +27,11 @@ public class ProgramObject extends PrisonOrganism {
     private ProgramOrgan organ;
     public int index = 0;
 
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
 
     public List<ProgramLayoutParam> getmRegionList() {
         return mRegionList;
@@ -51,6 +56,7 @@ public class ProgramObject extends PrisonOrganism {
             this.priority = programJson.getInt("priority");
             this.repeatation = programJson.getInt("repeat");
             this.background = programJson.getString("background");
+            title = this.name;
             String startTime = programJson.getString(ClearConstant.STR_START_TIME);
             String endTime = programJson.getString(ClearConstant.STR_END_TIME);
             this.init(startTime, endTime);
