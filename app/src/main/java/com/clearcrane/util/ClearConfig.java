@@ -41,8 +41,8 @@ import java.util.Map;
 
 public class ClearConfig {
 
-    //public static final String STR_NETWORK = "networkXj";
-    public static final String STR_NETWORK = "network";
+    public static final String STR_NETWORK = "networkXj";
+    //public static final String STR_NETWORK = "network";
 
     // 更新时间
     public static final int UPDATE_TIME = 10 * 1000;
