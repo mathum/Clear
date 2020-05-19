@@ -1,0 +1,360 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .fatjar
+* .gitignore
+* ClearPlatform/
+* ClearPlatform/.classpath
+* ClearPlatform/.fatjar
+* ClearPlatform/.git/
+* ClearPlatform/.git/HEAD
+* ClearPlatform/.git/config
+* ClearPlatform/.git/description
+* ClearPlatform/.git/hooks/
+* ClearPlatform/.git/hooks/applypatch-msg.sample
+* ClearPlatform/.git/hooks/commit-msg.sample
+* ClearPlatform/.git/hooks/post-update.sample
+* ClearPlatform/.git/hooks/pre-applypatch.sample
+* ClearPlatform/.git/hooks/pre-commit.sample
+* ClearPlatform/.git/hooks/pre-push.sample
+* ClearPlatform/.git/hooks/pre-rebase.sample
+* ClearPlatform/.git/hooks/pre-receive.sample
+* ClearPlatform/.git/hooks/prepare-commit-msg.sample
+* ClearPlatform/.git/hooks/update.sample
+* ClearPlatform/.git/index
+* ClearPlatform/.git/info/
+* ClearPlatform/.git/info/exclude
+* ClearPlatform/.git/logs/
+* ClearPlatform/.git/logs/HEAD
+* ClearPlatform/.git/logs/refs/
+* ClearPlatform/.git/logs/refs/heads/
+* ClearPlatform/.git/logs/refs/heads/master
+* ClearPlatform/.git/logs/refs/remotes/
+* ClearPlatform/.git/logs/refs/remotes/origin/
+* ClearPlatform/.git/logs/refs/remotes/origin/HEAD
+* ClearPlatform/.git/objects/
+* ClearPlatform/.git/objects/pack/
+* ClearPlatform/.git/objects/pack/pack-d13f22baeaa0a1c68a17c5e602cfd96278466c1d.idx
+* ClearPlatform/.git/objects/pack/pack-d13f22baeaa0a1c68a17c5e602cfd96278466c1d.pack
+* ClearPlatform/.git/packed-refs
+* ClearPlatform/.git/refs/
+* ClearPlatform/.git/refs/heads/
+* ClearPlatform/.git/refs/heads/master
+* ClearPlatform/.git/refs/remotes/
+* ClearPlatform/.git/refs/remotes/origin/
+* ClearPlatform/.git/refs/remotes/origin/HEAD
+* ClearPlatform/.gitignore
+* ClearPlatform/.project
+* ClearPlatform/.settings/
+* ClearPlatform/.settings/org.eclipse.core.resources.prefs
+* ClearPlatform/.settings/org.eclipse.jdt.core.prefs
+* ClearPlatform/AndroidManifest.xml
+* ClearPlatform/bin/
+* ClearPlatform/bin/AndroidManifest.xml
+* ClearPlatform/bin/R.txt
+* ClearPlatform/bin/aidl/
+* ClearPlatform/bin/aidl/com/
+* ClearPlatform/bin/aidl/com/android/
+* ClearPlatform/bin/aidl/com/android/aidl/
+* ClearPlatform/bin/aidl/com/android/aidl/IUserInterfaceService.aidl
+* ClearPlatform/bin/classes/
+* ClearPlatform/bin/classes/com/
+* ClearPlatform/bin/classes/com/android/
+* ClearPlatform/bin/classes/com/android/aidl/
+* ClearPlatform/bin/classes/com/android/aidl/IUserInterfaceService$Stub$Proxy.class
+* ClearPlatform/bin/classes/com/android/aidl/IUserInterfaceService$Stub.class
+* ClearPlatform/bin/classes/com/android/aidl/IUserInterfaceService.aidl
+* ClearPlatform/bin/classes/com/android/aidl/IUserInterfaceService.class
+* ClearPlatform/bin/classes/com/clearcrane/
+* ClearPlatform/bin/classes/com/clearcrane/platform/
+* ClearPlatform/bin/classes/com/clearcrane/platform/BuildConfig.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$1.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$10.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$11.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$12.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$13.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$14.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$15.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$16.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$17.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$18.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$19.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$2.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$20.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$21.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$22.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$23.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$24.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$25.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$26.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$27.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$28.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$29.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$3.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$30.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$31.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$32.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$33.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$34.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$35.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$36.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$37.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$38.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$39.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$4.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$40.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$41.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$42.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$43.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$44.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$45.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$46.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$47.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$48.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$49.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$5.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$50.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$51.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$52.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$6.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$7.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$8.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1$9.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo$1.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceInfo.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/DeviceOperate.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/Platform$1.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/Platform.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformA20.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformA40.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformBaofengTV.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformChanghongJ3000.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformHiMedia.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformHikvisionRK3288.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformHisense.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformHkcT400.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformImpl.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformPhilips.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformPhilips5933.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformPhilips5973.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformPhilips6501.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformPhilips6932.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformRK312X.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformRockchip.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformRockchipRK3188.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformRockchipRK3288.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformRockchipZ33L.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformS805.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformS905.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformS905IPTV.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSeeyooA20.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth32D5.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth362.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth368.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth368HS$1.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSkyworth368HS.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformSleepOff.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformStorage.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformTCLA360.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformTCLA580.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformTCLE6800.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformUniWinM185.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformUnknownA20.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformXSDA20$1.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformXSDA20.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/PlatformYSM8.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/R$attr.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/R$drawable.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/R$string.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/R$style.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/R.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/CommandUtil$CommandResult.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/CommandUtil.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/CommonUtils.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/FileUtil.class
+* ClearPlatform/bin/classes/com/clearcrane/platform/util/ImageUtil.class
+* ClearPlatform/bin/clearplatform.jar
+* ClearPlatform/bin/proguard.txt
+* ClearPlatform/bin/res/
+* ClearPlatform/bin/res/crunch/
+* ClearPlatform/bin/res/crunch/drawable-hdpi/
+* ClearPlatform/bin/res/crunch/drawable-hdpi/ic_launcher.png
+* ClearPlatform/bin/res/crunch/drawable-mdpi/
+* ClearPlatform/bin/res/crunch/drawable-mdpi/ic_launcher.png
+* ClearPlatform/bin/res/crunch/drawable-xhdpi/
+* ClearPlatform/bin/res/crunch/drawable-xhdpi/ic_launcher.png
+* ClearPlatform/gen/
+* ClearPlatform/gen/com/
+* ClearPlatform/gen/com/android/
+* ClearPlatform/gen/com/android/aidl/
+* ClearPlatform/gen/com/android/aidl/IUserInterfaceService.java
+* ClearPlatform/gen/com/clearcrane/
+* ClearPlatform/gen/com/clearcrane/platform/
+* ClearPlatform/gen/com/clearcrane/platform/BuildConfig.java
+* ClearPlatform/gen/com/clearcrane/platform/R.java
+* ClearPlatform/libs/
+* ClearPlatform/libs/BFTVMiddleware.jar
+* ClearPlatform/libs/TCLCustomerAPI.jar
+* ClearPlatform/libs/TpvtvFramwork.jar
+* ClearPlatform/libs/android-support-v4.jar
+* ClearPlatform/libs/android.jar
+* ClearPlatform/libs/com.changhong.tvos.jar
+* ClearPlatform/libs/com.tcl.tvmanager.jar
+* ClearPlatform/libs/dmb.jar
+* ClearPlatform/libs/f_int.jar
+* ClearPlatform/libs/hidiaplay.jar
+* ClearPlatform/libs/hotel_sdk_classes.jar
+* ClearPlatform/libs/mstar6501.jar
+* ClearPlatform/libs/rkapi-ysm8.jar
+* ClearPlatform/libs/rkapi.jar
+* ClearPlatform/libs/rt.jar
+* ClearPlatform/libs/s905.jar
+* ClearPlatform/libs/skyworth_tv.jar
+* ClearPlatform/proguard-project.txt
+* ClearPlatform/proguard/
+* ClearPlatform/proguard/mapping.txt
+* ClearPlatform/project.properties
+* ClearPlatform/res/
+* ClearPlatform/res/drawable-hdpi/
+* ClearPlatform/res/drawable-hdpi/ic_launcher.png
+* ClearPlatform/res/drawable-mdpi/
+* ClearPlatform/res/drawable-mdpi/ic_launcher.png
+* ClearPlatform/res/drawable-xhdpi/
+* ClearPlatform/res/drawable-xhdpi/ic_launcher.png
+* ClearPlatform/res/values-v11/
+* ClearPlatform/res/values-v11/styles.xml
+* ClearPlatform/res/values-v14/
+* ClearPlatform/res/values-v14/styles.xml
+* ClearPlatform/res/values/
+* ClearPlatform/res/values/strings.xml
+* ClearPlatform/res/values/styles.xml
+* ClearPlatform/src/
+* ClearPlatform/src/com/
+* ClearPlatform/src/com/android/
+* ClearPlatform/src/com/android/aidl/
+* ClearPlatform/src/com/android/aidl/IUserInterfaceService.aidl
+* ClearPlatform/src/com/clearcrane/
+* ClearPlatform/src/com/clearcrane/platform/
+* ClearPlatform/src/com/clearcrane/platform/DeviceInfo.java
+* ClearPlatform/src/com/clearcrane/platform/DeviceOperate.java
+* ClearPlatform/src/com/clearcrane/platform/Platform.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformA20.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformA40.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformBaofengTV.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformChanghongJ3000.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformHiMedia.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformHikvisionRK3288.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformHisense.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformHkcT400.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformImpl.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformPhilips.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformPhilips5933.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformPhilips5973.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformPhilips6501.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformPhilips6932.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformRK312X.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformRockchip.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformRockchipRK3188.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformRockchipRK3288.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformRockchipZ33L.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformS805.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformS905.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformS905IPTV.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSeeyooA20.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSkyworth.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSkyworth32D5.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSkyworth362.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSkyworth368.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSkyworth368HS.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformSleepOff.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformStorage.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformTCLA360.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformTCLA580.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformTCLE6800.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformUniWinM185.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformUnknownA20.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformXSDA20.java
+* ClearPlatform/src/com/clearcrane/platform/PlatformYSM8.java
+* ClearPlatform/src/com/clearcrane/platform/util/
+* ClearPlatform/src/com/clearcrane/platform/util/CommandUtil.java
+* ClearPlatform/src/com/clearcrane/platform/util/CommonUtils.java
+* ClearPlatform/src/com/clearcrane/platform/util/FileUtil.java
+* ClearPlatform/src/com/clearcrane/platform/util/ImageUtil.java
+* proguard/
+* proguard/mapping.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:21.+
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => clearPlatform/src/main/AndroidManifest.xml
+* libs/BFTVMiddleware.jar => clearPlatform/libs/BFTVMiddleware.jar
+* libs/TCLCustomerAPI.jar => clearPlatform/libs/TCLCustomerAPI.jar
+* libs/TpvtvFramwork.jar => clearPlatform/libs/TpvtvFramwork.jar
+* libs/android.jar => clearPlatform/libs/android.jar
+* libs/com.changhong.tvos.jar => clearPlatform/libs/com.changhong.tvos.jar
+* libs/com.tcl.tvmanager.jar => clearPlatform/libs/com.tcl.tvmanager.jar
+* libs/dmb.jar => clearPlatform/libs/dmb.jar
+* libs/f_int.jar => clearPlatform/libs/f_int.jar
+* libs/hidiaplay.jar => clearPlatform/libs/hidiaplay.jar
+* libs/hotel_sdk_classes.jar => clearPlatform/libs/hotel_sdk_classes.jar
+* libs/mstar6501.jar => clearPlatform/libs/mstar6501.jar
+* libs/rkapi-ysm8.jar => clearPlatform/libs/rkapi-ysm8.jar
+* libs/rkapi.jar => clearPlatform/libs/rkapi.jar
+* libs/rt.jar => clearPlatform/libs/rt.jar
+* libs/s905.jar => clearPlatform/libs/s905.jar
+* libs/skyworth_tv.jar => clearPlatform/libs/skyworth_tv.jar
+* proguard-project.txt => clearPlatform/proguard-project.txt
+* res/ => clearPlatform/src/main/res/
+* src/ => clearPlatform/src/main/java/
+* src/com/android/aidl/IUserInterfaceService.aidl => clearPlatform/src/main/aidl/com/android/aidl/IUserInterfaceService.aidl
+
+Missing Android Support Repository:
+-----------------------------------
+Some useful libraries, such as the Android Support Library, are
+installed from a special Maven repository, which should be installed
+via the SDK manager.
+
+It looks like this library is missing from your SDK installation at:
+null
+
+To install it, open the SDK manager, and in the Extras category,
+select "Android Support Repository". You may also want to install the
+"Google Repository" if you want to use libraries like Google Play
+Services.
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
