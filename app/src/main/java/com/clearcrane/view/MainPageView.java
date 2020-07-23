@@ -808,7 +808,7 @@ public class MainPageView extends VoDBaseView {
             ImageLoader.getInstance().displayImage(subIcon.iconBgURL, ivSubIcon);
 
             TextView subIconText = (TextView) subIcon.subiconview.findViewById(R.id.sub_name);
-            subIconText.setTextSize(TypedValue.COMPLEX_UNIT_SP, ClearConfig.getScreenWidth() / 70);
+            subIconText.setTextSize(TypedValue.COMPLEX_UNIT_SP, ClearConfig.getScreenWidth() / 90);
 //			subIconText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 1920 / 70);
             subIconText.setTextColor(Color.rgb(255, 255, 255));
             subIconText.setText(subIcon.name);
