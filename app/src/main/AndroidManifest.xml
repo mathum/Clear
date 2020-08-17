@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clearcrane.vod"
-    android:versionCode="380"
-    android:versionName="3.8.0_beta">
+    android:versionCode="385"
+    android:versionName="3.8.5_beta">
     <!--
     android:sharedUserId="android.uid.system"
      -->

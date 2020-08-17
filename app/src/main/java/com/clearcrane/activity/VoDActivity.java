@@ -15,6 +15,7 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -43,6 +44,7 @@ import com.clearcrane.pushmessage.FloatViewService;
 import com.clearcrane.pushmessage.pushMsgService;
 import com.clearcrane.receiver.InStalledReceiver;
 import com.clearcrane.service.PerfectPlayerService;
+import com.clearcrane.tool.RebootTool;
 import com.clearcrane.tool.SettingsTool;
 import com.clearcrane.util.ClearConfig;
 import com.clearcrane.view.MyProgressBarView;
@@ -171,14 +173,27 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
         Log.i(TAG, "onSaveInstanceState");
+        Log.d(TAG, "isNeedReboot = " + isNeedReboot);
+        if (isNeedReboot) {
+            isNeedReboot = false;
+            RebootTool.doReboot();
+        } else {
+            isNeedReboot = true;
+        }
         // super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle arg0) {
         Log.i(TAG, "onRestoreInstanceState");
+        Log.d(TAG, "isNeedReboot = " + isNeedReboot);
+        if (isNeedReboot) {
+            isNeedReboot = false;
+            RebootTool.doReboot();
+        } else {
+            isNeedReboot = true;
+        }
         // super.onRestoreInstanceState(arg0);
     }
 
@@ -303,7 +318,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     private boolean isClickToFast() {
         long last = System.currentTimeMillis();
-        if (last - lasttimes < 100) {
+        if (last - lasttimes < 500) {
 //			lastTime = last;
             return true;
         }
@@ -314,6 +329,8 @@ public class VoDActivity extends Activity implements OnClickListener {
     /* TODO, FIXME */
     /* 1. where should we take the key event, here or let view's requestFocus */
     /* 2. support touch event */
+    boolean isNeedReboot = false;
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG + "key", "key down:" + keyCode);
         if (isClickToFast()) {
@@ -414,6 +431,7 @@ public class VoDActivity extends Activity implements OnClickListener {
         mAppKeys += key;
     }
 
+
     private boolean checkKeys() {
         Log.i(TAG, "addkeys: " + mSettingsKeys);
         if (!ClearConstant.SETTING_KEYS.startsWith(mSettingsKeys) && !SETTINGSKEYS_BAOFENG.startsWith(mSettingsKeys)) {
@@ -482,6 +500,8 @@ public class VoDActivity extends Activity implements OnClickListener {
         }
 
     }
+
+
 
     @Override
     protected void onStop() {
