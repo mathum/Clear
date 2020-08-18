@@ -136,6 +136,7 @@ public class VoDActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate");
         super.onCreate(savedInstanceState);
+        onRestoreInstanceState(savedInstanceState);
 
         times = System.currentTimeMillis() / 1000;
         // mHandler.post(run);
@@ -171,29 +172,26 @@ public class VoDActivity extends Activity implements OnClickListener {
 //        str.trim();
     }
 
+    SharedPreferences rebootSp;
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         Log.i(TAG, "onSaveInstanceState");
-        Log.d(TAG, "isNeedReboot = " + isNeedReboot);
-        if (isNeedReboot) {
-            isNeedReboot = false;
-            RebootTool.doReboot();
-        } else {
-            isNeedReboot = true;
+        if (rebootSp == null) {
+            rebootSp = getSharedPreferences("reboot", Context.MODE_PRIVATE);
         }
-        // super.onSaveInstanceState(outState);
+        Editor editor = rebootSp.edit();
+        editor.putBoolean("isNeedReboot", true);
+        editor.commit();
     }
+
 
     @Override
     protected void onRestoreInstanceState(Bundle arg0) {
-        Log.i(TAG, "onRestoreInstanceState");
-        Log.d(TAG, "isNeedReboot = " + isNeedReboot);
-        if (isNeedReboot) {
-            isNeedReboot = false;
-            RebootTool.doReboot();
-        } else {
-            isNeedReboot = true;
+        if (arg0 == null) {
+            return;
         }
+        Log.i(TAG, "onRestoreInstanceState");
         // super.onRestoreInstanceState(arg0);
     }
 
@@ -318,7 +316,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     private boolean isClickToFast() {
         long last = System.currentTimeMillis();
-        if (last - lasttimes < 500) {
+        if (last - lasttimes < 100) {
 //			lastTime = last;
             return true;
         }
@@ -499,8 +497,20 @@ public class VoDActivity extends Activity implements OnClickListener {
 
         }
 
-    }
 
+        if (rebootSp == null) {
+            rebootSp = getSharedPreferences("reboot", Context.MODE_PRIVATE);
+        }
+        isNeedReboot = rebootSp.getBoolean("isNeedReboot", false);
+        //重启之前需要赋初值
+        Editor editor = rebootSp.edit();
+        editor.putBoolean("isNeedReboot", false);
+        editor.commit();
+
+        if (isNeedReboot) {
+            RebootTool.doReboot();
+        }
+    }
 
 
     @Override
