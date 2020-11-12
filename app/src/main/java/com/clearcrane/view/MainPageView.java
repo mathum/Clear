@@ -35,6 +35,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.clearcrane.activity.VoDActivity;
 import com.clearcrane.constant.ClearConstant;
 import com.clearcrane.log.ClearLog;
 import com.clearcrane.provider.MaterialRequest;
@@ -1463,7 +1464,13 @@ public class MainPageView extends VoDBaseView {
             return;
         }
         try {
-
+//            VoDActivity.forbidKeycode = true;
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    VoDActivity.forbidKeycode = false;
+//                }
+//            }, 5000);
             JSONTokener jsonParser = new JSONTokener(MainPageJson);
             JSONObject objectjson = (JSONObject) jsonParser.nextValue();
 

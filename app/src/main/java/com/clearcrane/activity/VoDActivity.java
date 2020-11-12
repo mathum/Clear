@@ -47,6 +47,7 @@ import com.clearcrane.service.PerfectPlayerService;
 import com.clearcrane.tool.RebootTool;
 import com.clearcrane.tool.SettingsTool;
 import com.clearcrane.util.ClearConfig;
+import com.clearcrane.view.MainPageView;
 import com.clearcrane.view.MyProgressBarView;
 import com.clearcrane.view.VoDViewManager;
 import com.clearcrane.vod.R;
@@ -109,6 +110,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     private long times = 0;
     private long lasttimes = 0;
+    //public static boolean forbidKeycode = false;
 
     private long getOffsetTimes() {
         return System.currentTimeMillis() / 1000 - times;
@@ -331,6 +333,10 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG + "key", "key down:" + keyCode);
+//        if (forbidKeycode) {
+//            Log.d(TAG + "key", "forbid keycode");
+//            return true;
+//        }
         if (isClickToFast()) {
             return true;
         }
