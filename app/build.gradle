@@ -74,4 +74,5 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.4.0'
     api 'com.squareup.okhttp3:logging-interceptor:3.11.0'
     implementation files('libs/xUtils-2.6.14.jar')
+    implementation files('libs/346_hotel_classes.jar')
 }
