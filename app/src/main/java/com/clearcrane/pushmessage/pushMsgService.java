@@ -580,7 +580,8 @@ public class pushMsgService extends Service {
                 Log.e("zxb", "设置音量启动123" + volume);
             } else {
 //				audiomanage.setStreamVolume(AudioManager.STREAM_SYSTEM, volume, AudioManager.FLAG_SHOW_UI);
-                audiomanage.setStreamVolume(AudioManager.STREAM_MUSIC, volume, AudioManager.FLAG_SHOW_UI);
+                //audiomanage.setStreamVolume(AudioManager.STREAM_MUSIC, volume, AudioManager.FLAG_SHOW_UI);
+                ClearApplication.instance().getHotelSystemManager().setVolume(volume);
             }
         }
     }

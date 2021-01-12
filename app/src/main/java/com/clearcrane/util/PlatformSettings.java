@@ -117,6 +117,7 @@ public class PlatformSettings {
         if (model.toUpperCase().contains("HISENSE") || manufacturer.toUpperCase().contains("HISENSE")) {
             platform = Platform.hisense;
             platformStr = HISENSE;
+
             return Platform.hisense;
         }
         if (manufacturer.equals("Skyworth")) {

@@ -5,11 +5,16 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.hardware.usb.UsbDevice;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.clearcrane.constant.ClearConstant;
@@ -20,17 +25,23 @@ import com.clearcrane.util.CrashHandler;
 import com.clearcrane.util.ImageUtil;
 import com.clearcrane.util.PlatformSettings;
 import com.hisense.hotel.HotelSystemManager;
+import com.hisense.hotel.IServicesReadyListener;
 import com.tcl.customerapi.ICustomerApi;
 import com.tencent.smtt.sdk.QbSdk;
 
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.lang.Thread.UncaughtExceptionHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ClearApplication extends Application {
 
@@ -45,6 +56,7 @@ public class ClearApplication extends Application {
     public long timeInS = 0;
     public boolean isUpdateApp = false;
     public String curServTime;
+    private HotelSystemManager hotelSystemManager;
     /**
      * 0 为不发送， 1 发送
      */
@@ -123,13 +135,56 @@ public class ClearApplication extends Application {
 //        initTbs();
 
         //更换开机logo开机视频，打开adb
-        HotelSystemManager hotelSystemManager = new HotelSystemManager(this);
-        if (!hotelSystemManager.isAdbEnabled()) {
-            hotelSystemManager.enableAdb(true);
-        }
-        hotelSystemManager.setBootLogo("file:///android_asset/boot/logo.jpg");
-        hotelSystemManager.setBootAnimation("file:///android_asset/boot/animation.mp4");
+        hotelSystemManager = new HotelSystemManager(this);
+        hotelSystemManager.addServiceReadyListener(new IServicesReadyListener() {
+            @Override
+            public void allServicesReady() {
+
+                Log.d(TAG, "直播键 = " + hotelSystemManager.setKeyLock(170, true));
+                Log.d(TAG, "影视键 = " + hotelSystemManager.setKeyLock(131, true));
+                Log.d(TAG, "游戏键 = " + hotelSystemManager.setKeyLock(209, true));
+                Log.d(TAG, "指南键 = " + hotelSystemManager.setKeyLock(132, true));
+                Log.d(TAG, "主页键 = " + hotelSystemManager.setKeyLock(142, true));
+                Log.d(TAG, "设置键 = " + hotelSystemManager.setKeyLock(82, true));
+                Log.d(TAG, "设置键 = " + hotelSystemManager.setKeyLock(176, true));
+                Log.d(TAG, "信号源键 = " + hotelSystemManager.setKeyLock(140, true));
+                Log.d(TAG, "信号源键 = " + hotelSystemManager.setKeyLock(178, true));
+                Log.d(TAG, "信号源左键 = " + hotelSystemManager.setKeyLock(4307, true));
+                Log.d(TAG, "信号源右键 = " + hotelSystemManager.setKeyLock(4308, true));
+                Log.d(TAG, "智能截屏键 = " + hotelSystemManager.setKeyLock(2021, true));
+                Log.d(TAG, "搜索键 = " + hotelSystemManager.setKeyLock(2022, true));
+                if (!hotelSystemManager.isAdbEnabled()) {
+                    hotelSystemManager.enableAdb(true);
+                }
+                String root = readUsbDevice();
+                Log.d(TAG, root);
+                if (!TextUtils.isEmpty(root)) {
+                    Log.d(TAG, "bootLogo : " + hotelSystemManager.setBootLogo("/mnt/usb/sda4/startup_logo/"));
+                    Log.d(TAG, "bootAnimation : " + hotelSystemManager.setBootAnimation("/mnt/usb/sda4/third_party_bootanimation/"));
+                }
+
+            }
+        });
     }
+
+    public HotelSystemManager getHotelSystemManager() {
+        return hotelSystemManager;
+    }
+
+    public static String readUsbDevice() {
+        try {
+            StorageManager sm = (StorageManager) mClearApp.getSystemService(STORAGE_SERVICE);
+            Method getVolumePathsMethod = StorageManager.class.getMethod("getVolumePaths", null);
+            String[] paths = (String[]) getVolumePathsMethod.invoke(sm, null);
+            // second element in paths[] is secondary storage path
+            return paths.length <= 1 ? null : paths[1];
+
+        } catch (Exception e) {
+            Log.e(TAG, "------getSecondaryStoragePath() failed", e);
+        }
+        return null;
+    }
+
 
     public void initOtherLib() {
         if (PlatformSettings.platformStr.equals(PlatformSettings.TCL_49)) {

@@ -103,6 +103,7 @@ public class VoDActivity extends Activity implements OnClickListener {
     private int re = -1;
     // 0 for vod 1 for ims
     public int activityMode = 0;
+    public static final int FLAG_HOMEKEY_DISPATCHED = 0x80000000; //需要自己定义标志
 
     public void setActivityMode(int mode) {
         this.activityMode = mode;
@@ -145,6 +146,7 @@ public class VoDActivity extends Activity implements OnClickListener {
         Log.e("lilei", "onCreate time:" + times);
         mApp = (ClearApplication) getApplication();
 
+        this.getWindow().setFlags(FLAG_HOMEKEY_DISPATCHED, FLAG_HOMEKEY_DISPATCHED);//关键代码
         setContentView(R.layout.activity_vod);
 
         // universal image loader initting
@@ -333,10 +335,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG + "key", "key down:" + keyCode);
-//        if (forbidKeycode) {
-//            Log.d(TAG + "key", "forbid keycode");
-//            return true;
-//        }
+
         if (isClickToFast()) {
             return true;
         }
@@ -514,7 +513,7 @@ public class VoDActivity extends Activity implements OnClickListener {
         editor.commit();
 
         if (isNeedReboot) {
-            RebootTool.doReboot();
+            //RebootTool.doReboot();
         }
     }
 
