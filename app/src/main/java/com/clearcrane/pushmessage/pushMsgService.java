@@ -643,6 +643,7 @@ public class pushMsgService extends Service {
     @Override
     public void onDestroy() {
         // TODO Auto-generated method stub
+        Log.d(TAG, "service destroyed");
         super.onDestroy();
         stop();
     }
@@ -700,6 +701,7 @@ public class pushMsgService extends Service {
         } catch (SocketException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            Log.e(TAG, e.getMessage());
         }
 
         if (timer != null) {
@@ -713,6 +715,7 @@ public class pushMsgService extends Service {
             public void run() {
                 // TODO Auto-generated method stub
                 // doHeartBeat();
+                Log.d(TAG, "isStarted = " + isStarted);
                 try {
                     doRebootSchdule();
                     doClearHeartBeat();
@@ -1044,6 +1047,11 @@ public class pushMsgService extends Service {
             return;
         }
     }
+
+//    @Override
+//    public int onStartCommand(Intent intent, int flags, int startId) {
+//        return START_STICKY;
+//    }
 
     @SuppressLint("NewApi")
     public String getPostParas() {

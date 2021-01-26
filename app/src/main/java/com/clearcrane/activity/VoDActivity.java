@@ -110,7 +110,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     private long times = 0;
     private long lasttimes = 0;
-    //public static boolean forbidKeycode = false;
+    public static boolean forbidKeycode = false;
 
     private long getOffsetTimes() {
         return System.currentTimeMillis() / 1000 - times;
@@ -333,10 +333,10 @@ public class VoDActivity extends Activity implements OnClickListener {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG + "key", "key down:" + keyCode);
-//        if (forbidKeycode) {
-//            Log.d(TAG + "key", "forbid keycode");
-//            return true;
-//        }
+        if (forbidKeycode) {
+            Log.d(TAG + "key", "forbid keycode");
+            return true;
+        }
         if (isClickToFast()) {
             return true;
         }

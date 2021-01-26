@@ -18,6 +18,7 @@ public class PlatformSettings {
 
     private final static String TAG = "Platform";
     public final static String COSHIP = "A3000";
+    public final static String TCL_G62 = "Tcl_G62";
     public final static String LETV = "LeTV";
     public final static String SKYWORTH = "Skyworth";
     public final static String SKYWORTH_3RT84 = "Skyworth3RT84";
@@ -65,54 +66,72 @@ public class PlatformSettings {
     private static Hashtable<String, String> musicMap = null;
 
     public static Platform platform = Platform.uninit;
-	public static String platformStr = "";
+    public static String platformStr = "";
 
-    public enum Platform{
-        unknown, coship, letv, skyworth, skyworth_368W, skyworth_362, skyworth_388,skyworth_32d5,
-		skyworth_3RT84, himedia, s805, tcl_icescreen, hisense, uninit, philips, konka32, BaoFeng_50F1,
-		tcl, tcl_tv338, s905x, JiuUnion, TCL6800, skyworth_368hs, skyworth_368, CH_3500, A3000H, KR_905,
-		HAIER_43,TCL_A260,TCL_A360,BAOFENG_65R4
+    public enum Platform {
+        unknown, coship, letv, skyworth, skyworth_368W, skyworth_362, skyworth_388, skyworth_32d5,
+        skyworth_3RT84, himedia, s805, tcl_icescreen, hisense, uninit, philips, konka32, BaoFeng_50F1,
+        tcl, tcl_tv338, s905x, JiuUnion, TCL6800, skyworth_368hs, skyworth_368, CH_3500, A3000H, KR_905,
+        HAIER_43, TCL_A260, TCL_A360, BAOFENG_65R4, TCL_G62
     }
 
-    public static String getPlatformString(){
+    public static String getPlatformString() {
         return platformStr;
     }
 
-	public static Platform getPlatform() {
-		if (platform != Platform.uninit) {
-			return platform;
-		}
+    public static Platform getPlatform() {
+//		if (platform != Platform.uninit) {
+//			return platform;
+//		}
 
-		String manufacturer = android.os.Build.MANUFACTURER;
-		String model = android.os.Build.MODEL;
-		String platformID = manufacturer + "_" + model;
+        String manufacturer = android.os.Build.MANUFACTURER;
+        String model = android.os.Build.MODEL;
+        String platformID = manufacturer + "_" + model;
 
-		Log.d(TAG, "manufacturer: " + manufacturer + "\n" + "model: " + model);
+        Log.d(TAG, "manufacturer: " + manufacturer + "\n" + "model: " + model);
 
-		if (manufacturer.equalsIgnoreCase("coship") && model.equalsIgnoreCase("n9085i")) {
-			platform = Platform.coship;
-			platformStr = COSHIP;
-			return Platform.coship;
-		}
+        if (manufacturer.equalsIgnoreCase("TCL Multimedia") && model.equalsIgnoreCase("x32a0")) {
+            platform = Platform.TCL_G62;
+            platformStr = TCL_G62;
+            return Platform.TCL_G62;
+        }
 
-		if (manufacturer.equalsIgnoreCase("MBX") && model.equalsIgnoreCase("AMLOGIC8726MX")) {
-			platform = Platform.letv;
-			platformStr = LETV;
-			return Platform.letv;
-		}
+        if (manufacturer.equalsIgnoreCase("TCL Multimedia") && model.equalsIgnoreCase("TCL Android TV")) {
+            platform = Platform.TCL_A260;
+            platformStr = TCL_49;
+            return Platform.TCL_A260;
+        }
 
-		if ((manufacturer.equalsIgnoreCase("MBX") && model.equalsIgnoreCase("m201_512m"))
-				|| (manufacturer.equalsIgnoreCase("FONPO"))) {
-			platform = Platform.s805;
-			platformStr = S805;
-			return Platform.s805;
-		}
+        if (manufacturer.equals("amlogic") && model.equals("AOSP on p32a6")) {
+            platform = Platform.TCL_A360;
+            platformStr = TCL_A360;
+            return Platform.TCL_A360;
+        }
 
-		if (model.toUpperCase().contains("HIMEDIA") || manufacturer.toUpperCase().contains("HIMEDIA")) {
-			platform = Platform.himedia;
-			platformStr = HIMEDIA;
-			return Platform.himedia;
-		}
+        if (manufacturer.equalsIgnoreCase("coship") && model.equalsIgnoreCase("n9085i")) {
+            platform = Platform.coship;
+            platformStr = COSHIP;
+            return Platform.coship;
+        }
+
+        if (manufacturer.equalsIgnoreCase("MBX") && model.equalsIgnoreCase("AMLOGIC8726MX")) {
+            platform = Platform.letv;
+            platformStr = LETV;
+            return Platform.letv;
+        }
+
+        if ((manufacturer.equalsIgnoreCase("MBX") && model.equalsIgnoreCase("m201_512m"))
+                || (manufacturer.equalsIgnoreCase("FONPO"))) {
+            platform = Platform.s805;
+            platformStr = S805;
+            return Platform.s805;
+        }
+
+        if (model.toUpperCase().contains("HIMEDIA") || manufacturer.toUpperCase().contains("HIMEDIA")) {
+            platform = Platform.himedia;
+            platformStr = HIMEDIA;
+            return Platform.himedia;
+        }
 
         if (model.toUpperCase().contains("HISENSE") || manufacturer.toUpperCase().contains("HISENSE")) {
             platform = Platform.hisense;
@@ -138,10 +157,10 @@ public class PlatformSettings {
                 platformStr = SKYWORTH_368W;
                 return Platform.skyworth_368W;
             }
-            if (model.equals("Skyworth 8H21 D5")){
-            	platform = Platform.skyworth_32d5;
-            	platformStr = SKYWORTH_32D5;
-            	return Platform.skyworth_32d5;
+            if (model.equals("Skyworth 8H21 D5")) {
+                platform = Platform.skyworth_32d5;
+                platformStr = SKYWORTH_32D5;
+                return Platform.skyworth_32d5;
             }
 
             platform = Platform.skyworth;
@@ -154,57 +173,57 @@ public class PlatformSettings {
             return Platform.skyworth_3RT84;
         }
 
-		if (model.contains("Tcl") && model.contains("Amber3")) {
-			platform = Platform.tcl_icescreen;
-			platformStr = TCLICESCREEN;
-			return Platform.tcl_icescreen;
-		}
-		if (model.equalsIgnoreCase("tv338")&&manufacturer.equals("TCL_PRISON")){
-			platform = Platform.tcl_tv338;
-			platformStr = TCL_TV338;
-			return Platform.tcl_tv338;
-		}
-		if (model.contains("Konka Android TV 2992") && manufacturer.contains("Konka")) {
-			platform = Platform.konka32;
-			platformStr = KONKA32;
-			Log.d(TAG, "konka32 type");
-			return Platform.konka32;
-		}
-		if (model.contains("BAOFENG_TV")){// MST_6A338") && manufacturer.contains("MStar Semiconductor, Inc.")) {
-			Log.e("xb", "BAOFENG_TV MST_6A338");
-			platform = Platform.BaoFeng_50F1;
-			platformStr = BAOFENG_50F1;
-			Log.d("xb", "BAOFENG type");
-			return Platform.BaoFeng_50F1;
-		}
-		if (model.contains("TV628") && manufacturer.contains("KTC")) {
-			Log.i(TAG, "is philips");
-			platform = Platform.philips;
-			platformStr = PHILIPS;
-			return Platform.philips;
-		}
-		if (model.equals("Generic Android on mt5882") && manufacturer.equals("MTK")) {
-			platform = Platform.tcl;
-			platformStr = TCL;
-			return Platform.tcl;
-		}
-		if(model.equalsIgnoreCase(S905X) && manufacturer.equalsIgnoreCase("Amlogic")){
-			platform = Platform.s905x;
-			platformStr = S905X;
-			return Platform.s905x;
-		}
-		
-		if(manufacturer.equalsIgnoreCase("Unionman")){
-			platform = Platform.JiuUnion;
-			platformStr = JIUUNION;
-			return Platform.JiuUnion;
-		}
+        if (model.contains("Tcl") && model.contains("Amber3")) {
+            platform = Platform.tcl_icescreen;
+            platformStr = TCLICESCREEN;
+            return Platform.tcl_icescreen;
+        }
+        if (model.equalsIgnoreCase("tv338") && manufacturer.equals("TCL_PRISON")) {
+            platform = Platform.tcl_tv338;
+            platformStr = TCL_TV338;
+            return Platform.tcl_tv338;
+        }
+        if (model.contains("Konka Android TV 2992") && manufacturer.contains("Konka")) {
+            platform = Platform.konka32;
+            platformStr = KONKA32;
+            Log.d(TAG, "konka32 type");
+            return Platform.konka32;
+        }
+        if (model.contains("BAOFENG_TV")) {// MST_6A338") && manufacturer.contains("MStar Semiconductor, Inc.")) {
+            Log.e("xb", "BAOFENG_TV MST_6A338");
+            platform = Platform.BaoFeng_50F1;
+            platformStr = BAOFENG_50F1;
+            Log.d("xb", "BAOFENG type");
+            return Platform.BaoFeng_50F1;
+        }
+        if (model.contains("TV628") && manufacturer.contains("KTC")) {
+            Log.i(TAG, "is philips");
+            platform = Platform.philips;
+            platformStr = PHILIPS;
+            return Platform.philips;
+        }
+        if (model.equals("Generic Android on mt5882") && manufacturer.equals("MTK")) {
+            platform = Platform.tcl;
+            platformStr = TCL;
+            return Platform.tcl;
+        }
+        if (model.equalsIgnoreCase(S905X) && manufacturer.equalsIgnoreCase("Amlogic")) {
+            platform = Platform.s905x;
+            platformStr = S905X;
+            return Platform.s905x;
+        }
 
-		if(model.contains(TCL6800)){
-			platform = Platform.TCL6800;
-			platformStr = TCL6800;
-			return Platform.TCL6800;
-		}
+        if (manufacturer.equalsIgnoreCase("Unionman")) {
+            platform = Platform.JiuUnion;
+            platformStr = JIUUNION;
+            return Platform.JiuUnion;
+        }
+
+        if (model.contains(TCL6800)) {
+            platform = Platform.TCL6800;
+            platformStr = TCL6800;
+            return Platform.TCL6800;
+        }
 
         if (platformID.equals(SKYWORTH_368)) {
             platform = Platform.skyworth_368;
@@ -221,7 +240,7 @@ public class PlatformSettings {
             platformStr = CH_3500;
             return Platform.CH_3500;
         }
-        if(manufacturer.contains("Hisilicon") && model.contains("Hi3798MV100")){
+        if (manufacturer.contains("Hisilicon") && model.contains("Hi3798MV100")) {
             platform = Platform.A3000H;
             platformStr = A3000H;
             return Platform.A3000H;
@@ -231,26 +250,26 @@ public class PlatformSettings {
             platformStr = KR_905;
             return Platform.KR_905;
         }
-        if (platformID.equals(HAIER_43)){
+        if (platformID.equals(HAIER_43)) {
             platform = Platform.HAIER_43;
             platformStr = HAIER_43;
-            return  Platform.HAIER_43;
+            return Platform.HAIER_43;
         }
-        if(platformID.equals(TCL_49)){
+        if (platformID.equals(TCL_49)) {
             platform = Platform.TCL_A260;
             platformStr = TCL_49;
-            return  Platform.TCL_A260;
+            return Platform.TCL_A260;
         }
-        if(platformID.equals(TCL_A360)){
-        	platform = Platform.TCL_A360;
-        	platformStr = TCL_A360;
-        	return Platform.TCL_A360;
-        	
+        if (platformID.equals(TCL_A360)) {
+            platform = Platform.TCL_A360;
+            platformStr = TCL_A360;
+            return Platform.TCL_A360;
+
         }
-        if(platformID.equals(BAOFENG_65R4)){
+        if (platformID.equals(BAOFENG_65R4)) {
             platform = Platform.BAOFENG_65R4;
             platformStr = BAOFENG_65R4;
-            return  Platform.BAOFENG_65R4;
+            return Platform.BAOFENG_65R4;
         }
 
         platform = Platform.unknown;
@@ -294,105 +313,105 @@ public class PlatformSettings {
         }
     }
 
-	public static void init(Context ctx) {
-		if (musicMap == null) {
-			musicMap = new Hashtable<String, String>();
-			for (int i = 0; i < musiclist.length; i++) {
-				musicMap.put(musiclist[i], "1");
-			}
-		}
+    public static void init(Context ctx) {
+        if (musicMap == null) {
+            musicMap = new Hashtable<String, String>();
+            for (int i = 0; i < musiclist.length; i++) {
+                musicMap.put(musiclist[i], "1");
+            }
+        }
 
-		if (platform != Platform.uninit) {
-			Log.d(TAG, "inited");
-			return;
-		}
+        if (platform != Platform.uninit) {
+            Log.d(TAG, "inited");
+            return;
+        }
 
-		if (platform == Platform.uninit) {
-			getPlatform();
-		}
-	}
+        if (platform == Platform.uninit) {
+            getPlatform();
+        }
+    }
 
-	public static String getSettingsPackage() {
-		if (platform == Platform.coship) {
-			return COSHIP_SETTINGS;
-		} else if (platform == Platform.letv) {
-			return LETV_SETTINGS;
-		} else if (platform == Platform.skyworth) {
-			return SKYWORTH_SETTINGS;
-		} else if (platform == Platform.s805) {
-			return MBX_SETTINGS;
-		} else {
-			return CLEAR_SETTINGS;
-		}
-	}
+    public static String getSettingsPackage() {
+        if (platform == Platform.coship) {
+            return COSHIP_SETTINGS;
+        } else if (platform == Platform.letv) {
+            return LETV_SETTINGS;
+        } else if (platform == Platform.skyworth) {
+            return SKYWORTH_SETTINGS;
+        } else if (platform == Platform.s805) {
+            return MBX_SETTINGS;
+        } else {
+            return CLEAR_SETTINGS;
+        }
+    }
 
-	public static boolean isMusic(String extention) {
-		if (extention == null || extention.length() == 0) {
-			Log.w(TAG, "wrong extention");
-			return false;
-		}
-		if (musicMap == null) {
-			musicMap = new Hashtable<String, String>();
-			for (int i = 0; i < musiclist.length; i++) {
-				musicMap.put(musiclist[i], "1");
-			}
-		}
-		String res = musicMap.get(extention);
-		if (res != null && res.equals("1")) {
-			return true;
-		}
-		return false;
-	}
+    public static boolean isMusic(String extention) {
+        if (extention == null || extention.length() == 0) {
+            Log.w(TAG, "wrong extention");
+            return false;
+        }
+        if (musicMap == null) {
+            musicMap = new Hashtable<String, String>();
+            for (int i = 0; i < musiclist.length; i++) {
+                musicMap.put(musiclist[i], "1");
+            }
+        }
+        String res = musicMap.get(extention);
+        if (res != null && res.equals("1")) {
+            return true;
+        }
+        return false;
+    }
 
-	public static String getLocalIPAddres() throws SocketException {
-		for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
-			NetworkInterface intf = en.nextElement();
-			for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
-				InetAddress inetAddress = enumIpAddr.nextElement();
-				if (!inetAddress.isLoopbackAddress() && (inetAddress instanceof Inet4Address)) {
-					return inetAddress.getHostAddress().toString();
-				}
-			}
-		}
-		return "0.0.0.0";
-	}
+    public static String getLocalIPAddres() throws SocketException {
+        for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
+            NetworkInterface intf = en.nextElement();
+            for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
+                InetAddress inetAddress = enumIpAddr.nextElement();
+                if (!inetAddress.isLoopbackAddress() && (inetAddress instanceof Inet4Address)) {
+                    return inetAddress.getHostAddress().toString();
+                }
+            }
+        }
+        return "0.0.0.0";
+    }
 
-	public static boolean launchApp(Context ctx, String packageName) {
-		if(getPlatform() == Platform.BaoFeng_50F1 && packageName.endsWith("com.bftv.usermanual")){
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setComponent(new ComponentName("com.baofengtv.customersetting","com.baofengtv.customersetting.MainActivity"));
-			ctx.startActivity(intent);
-			return true;
-		}
-		PackageManager packageManager = ctx.getPackageManager();
-		Intent intent = null;
+    public static boolean launchApp(Context ctx, String packageName) {
+        if (getPlatform() == Platform.BaoFeng_50F1 && packageName.endsWith("com.bftv.usermanual")) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setComponent(new ComponentName("com.baofengtv.customersetting", "com.baofengtv.customersetting.MainActivity"));
+            ctx.startActivity(intent);
+            return true;
+        }
+        PackageManager packageManager = ctx.getPackageManager();
+        Intent intent = null;
 
-		intent = packageManager.getLaunchIntentForPackage(packageName);
+        intent = packageManager.getLaunchIntentForPackage(packageName);
 
-		if (intent == null) {
-			Log.w(TAG, "no such " + packageName + " found");
-			return false;
-		}
-		ctx.startActivity(intent);
+        if (intent == null) {
+            Log.w(TAG, "no such " + packageName + " found");
+            return false;
+        }
+        ctx.startActivity(intent);
 
-		if (REMOTE_DESKTOP.equals(packageName)) {
-			new Thread(new Runnable() {
+        if (REMOTE_DESKTOP.equals(packageName)) {
+            new Thread(new Runnable() {
 
-				@Override
-				public void run() {
-					Log.i(TAG, "wait 3.6s");
-					try {
-						Thread.sleep(3600);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					Common.readContentFromGet(
-							"http://127.0.0.1:19003/index.html?keycode=" + KeyEvent.KEYCODE_DPAD_CENTER);
-				}
+                @Override
+                public void run() {
+                    Log.i(TAG, "wait 3.6s");
+                    try {
+                        Thread.sleep(3600);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Common.readContentFromGet(
+                            "http://127.0.0.1:19003/index.html?keycode=" + KeyEvent.KEYCODE_DPAD_CENTER);
+                }
 
-			}).start();
-		}
+            }).start();
+        }
 
-		return true;
-	}
+        return true;
+    }
 }

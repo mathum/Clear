@@ -1464,13 +1464,13 @@ public class MainPageView extends VoDBaseView {
             return;
         }
         try {
-//            VoDActivity.forbidKeycode = true;
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    VoDActivity.forbidKeycode = false;
-//                }
-//            }, 5000);
+            VoDActivity.forbidKeycode = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    VoDActivity.forbidKeycode = false;
+                }
+            }, 5000);
             JSONTokener jsonParser = new JSONTokener(MainPageJson);
             JSONObject objectjson = (JSONObject) jsonParser.nextValue();
 

@@ -95,6 +95,7 @@ public class PrisonLogicManager {
         new Thread() {
             public void run() {
                 while (isRunning) {
+
                     try {
                         Thread.sleep(CHECK_STATE_TIME);
                         checkReadyState();

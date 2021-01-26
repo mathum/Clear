@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class MarqueeTextView extends TextView {
 
+	//private final float TEXT_MARQUEE_STEP = 12.0f;// 每一次的偏移量 湖南
 	private final float TEXT_MARQUEE_STEP = 2.0f;// 每一次的偏移量
 	private float textLength = 0f;
 	private float viewWidth = 0f;
