@@ -169,6 +169,7 @@ public class VoDActivity extends Activity implements OnClickListener {
 //		}
         initView();
         ctx = this;
+
         // bindUpdateManagerService();
         mainEntry();
 
