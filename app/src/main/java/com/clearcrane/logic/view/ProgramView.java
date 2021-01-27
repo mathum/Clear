@@ -104,7 +104,7 @@ public class ProgramView extends VoDBaseView {
             for (int i = 0; i < regionList.size(); i++) {
                 ProgramBaseWidget pbw = regionList.get(i);
                 if (pbw.getmRegionId() == rid) {
-                    Log.e(TAG, "setWidgetResource resourcr " + resource.getUrl());
+                    Log.e(TAG, "setWidgetResource resource " + resource.getUrl());
                     pbw.addWorkResource(resource);
                 }
             }
@@ -121,7 +121,6 @@ public class ProgramView extends VoDBaseView {
         }
 
         for (ProgramBaseWidget pbw : regionList) {
-            Log.e("111111111111111", "!1111111111111111");
             pbw.play();
 
             switch (typeId) {

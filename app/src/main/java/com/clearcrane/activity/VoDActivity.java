@@ -47,6 +47,7 @@ import com.clearcrane.service.PerfectPlayerService;
 import com.clearcrane.tool.RebootTool;
 import com.clearcrane.tool.SettingsTool;
 import com.clearcrane.util.ClearConfig;
+import com.clearcrane.util.PlatformSettings;
 import com.clearcrane.view.MainPageView;
 import com.clearcrane.view.MyProgressBarView;
 import com.clearcrane.view.VoDViewManager;
@@ -170,8 +171,9 @@ public class VoDActivity extends Activity implements OnClickListener {
         // bindUpdateManagerService();
         mainEntry();
 
-//        String str = null;
-//        str.trim();
+        if (PlatformSettings.getPlatform().toString().equals("TCL_G62")) {
+            PlatformSettings.bindCustomerAPIService(this);
+        }
     }
 
     SharedPreferences rebootSp;

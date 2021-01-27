@@ -3,9 +3,15 @@ package com.clearcrane.util;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.KeyEvent;
+
+import com.tcl.customerapi.ICustomerApi;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -74,6 +80,59 @@ public class PlatformSettings {
         tcl, tcl_tv338, s905x, JiuUnion, TCL6800, skyworth_368hs, skyworth_368, CH_3500, A3000H, KR_905,
         HAIER_43, TCL_A260, TCL_A360, BAOFENG_65R4, TCL_G62
     }
+
+    public static final String TCL_APIACTION = "action.tvcustomer.api";
+    public static final String TCL_APIPACKAGENAME = "com.tcl.customerapi";
+
+
+    public static ICustomerApi myCustomerApi = null;
+
+    private static ServiceConnection serviceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName arg0, IBinder arg1) {
+            Log.i("TEST", "this si ");
+            myCustomerApi = ICustomerApi.Stub.asInterface(arg1);
+            //Debug.v(TAG, "-------> onServiceConnected ");
+            //updateDetailInfoLayer();
+//       Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            //Debug.v(TAG, "-------> onServiceDisconnected ");
+        }
+    };
+
+    public static void bindCustomerAPIService(Context context) {
+        Intent tclIntent = new Intent(TCL_APIACTION);
+        tclIntent.setPackage(TCL_APIPACKAGENAME);
+        try {
+            boolean result = context.bindService(tclIntent, serviceConnection, Context.BIND_AUTO_CREATE);
+            System.out.println("get connect");
+            Log.v(TAG, "TvService ICustomerApi--result----" + result);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        if (!result) {
+                            bindCustomerAPIService(context);
+                            return;
+                        }
+                        if (myCustomerApi != null) {
+                            myCustomerApi.setTrace(true);
+                        }
+                    } catch (RemoteException e) {
+
+                    }
+
+                }
+            }, 10000);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static String getPlatformString() {
         return platformStr;
