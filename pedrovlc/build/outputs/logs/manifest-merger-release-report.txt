@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+	package
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:11-34
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:1:1-13:12
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:3:5-63
+application
+ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:6:5-11:19
+	android:supportsRtl
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:8:9-35
+	android:label
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:7:9-41
+	android:allowBackup
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml:6:18-44
+uses-sdk
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		ADDED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml
+		INJECTED from /Users/mathum/Documents/VodActivity/pedrovlc/src/main/AndroidManifest.xml

@@ -1,0 +1,2 @@
+com.pedro.vlc
+string app_name
