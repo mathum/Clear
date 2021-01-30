@@ -20,7 +20,7 @@ import com.clearcrane.view.VoDViewManager;
 
 public class PrisonLogicManager {
 
-    private final int CHECK_STATE_TIME = 2000;
+    private final int CHECK_STATE_TIME = 10000;
     private final String TAG = "PrisonLogicManager";
     private Context mContext;
     private PrisonBaseModeState curModeState;

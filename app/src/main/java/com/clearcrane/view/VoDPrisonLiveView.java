@@ -213,9 +213,9 @@ public class VoDPrisonLiveView extends VoDBaseView
 			return false;
 		}
 	};
-	
+
 	private OnErrorListener mOnErrorListener = new OnErrorListener() {
-		
+
 		@Override
 		public boolean onError(MediaPlayer mp, int what, int extra) {
 			// TODO Auto-generated method stub
@@ -227,7 +227,7 @@ public class VoDPrisonLiveView extends VoDBaseView
 			return false;
 		}
 	};
-	
+
 
 	public static SharedPreferences activitySharePre;
 	public static SharedPreferences INTERCUTSharePre;
@@ -265,7 +265,7 @@ public class VoDPrisonLiveView extends VoDBaseView
 				ClearConfig.getScreenHeight());
 		VoDViewManager.getInstance().showLiveVideo();
 
-//		VoDViewManager.getInstance().getVideoView().setOnInfoListener(onInfoListener);
+		VoDViewManager.getInstance().getVideoView().setOnInfoListener(onInfoListener);
 //		VoDViewManager.getInstance().getVideoView().setOnErrorListener(mOnErrorListener);
 
 		linearLayout.setPivotX(0.0f);
@@ -317,7 +317,7 @@ public class VoDPrisonLiveView extends VoDBaseView
 		lastTime = last;
 		return false;
 	}
-	
+
 	@Override
 	public boolean onKeyDpadDown() {
 		// TODO Auto-generated method stub
@@ -783,9 +783,9 @@ public class VoDPrisonLiveView extends VoDBaseView
 		editor.putString(ClearConstant.Movie_NAME, movieName);
 		editor.commit();
 	}
-	
+
 private Runnable checkPlayerIsPlaying = new Runnable() {
-		
+
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub

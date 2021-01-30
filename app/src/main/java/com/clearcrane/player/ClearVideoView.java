@@ -396,6 +396,8 @@ public class ClearVideoView extends SurfaceView implements ClearMediaController.
                     if (mUri.toString().endsWith("m3u8")) {
                         mHandler.sendEmptyMessage(4);
                     }
+                } else if (what == 710) {
+
                 }
                 return false;
 
@@ -452,10 +454,9 @@ public class ClearVideoView extends SurfaceView implements ClearMediaController.
             mMediaPlayer.setDataSource(mContext, mUri);
 
             // for ffmpeg player. not supported by native player
-            // mMediaPlayer.setBufferSize(mBufSize);
-            //mMediaPlayer
-            //		.setVideoChroma(mVideoChroma == MediaPlayer.VIDEOCHROMA_RGB565 ? MediaPlayer.VIDEOCHROMA_RGB565
-            //				: MediaPlayer.VIDEOCHROMA_RGBA);
+//            mMediaPlayer.setBufferSize(mBufSize);
+//            mMediaPlayer.setVideoChroma(mVideoChroma == MediaPlayer.VIDEOCHROMA_RGB565 ? MediaPlayer.VIDEOCHROMA_RGB565
+//            				: MediaPlayer.VIDEOCHROMA_RGBA);
             mMediaPlayer.setScreenOnWhilePlaying(true);
             mMediaPlayer.prepareAsync();
             mCurrentState = STATE_PREPARING;
