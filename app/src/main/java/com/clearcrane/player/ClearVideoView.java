@@ -394,7 +394,7 @@ public class ClearVideoView extends SurfaceView implements ClearMediaController.
                 else if (what == 1002) {
                     Log.e("winter", "1002 chu xian le");
                     if (mUri.toString().endsWith("m3u8")) {
-                        mHandler.sendEmptyMessage(4);
+                        //mHandler.sendEmptyMessage(4);
                     }
                 }
                 return false;

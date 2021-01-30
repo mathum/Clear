@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clearcrane.vod"
     android:versionCode="1308"
-    android:versionName="13.0.8_beta">
+    android:versionName="13.0.8_beta0"
+    android:sharedUserId="android.uid.system">
     <!--
     android:versionName="13.0.9_beta0"
     android:sharedUserId="android.uid.system"
