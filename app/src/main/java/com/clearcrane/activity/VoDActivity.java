@@ -516,7 +516,7 @@ public class VoDActivity extends Activity implements OnClickListener {
         editor.commit();
 
         if (isNeedReboot) {
-            RebootTool.doReboot();
+            //RebootTool.doReboot();
         }
     }
 
